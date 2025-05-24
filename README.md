@@ -2,8 +2,6 @@
 
 Este proyecto tiene como objetivo digitalizar y optimizar el proceso de **emisión de pases de entrada y salida de artículos personales** en el área de prevención de una organización. Los pases son comprobantes que validan la entrada o retiro de objetos como teléfonos, laptops, audífonos, etc., por parte de trabajadores, proveedores u otras personas autorizadas.
 
-Actualmente este proceso es manual, lo que implica validaciones lentas de información como el nombre del responsable, la descripción del artículo, número de serie o IMEI. Este sistema busca resolver ese problema mediante una aplicación multiplataforma.
-
 ---
 
 ## 🚀 Características principales
