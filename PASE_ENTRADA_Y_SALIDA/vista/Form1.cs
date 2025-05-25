@@ -110,5 +110,20 @@ namespace PASE_ENTRADA_Y_SALIDA
         {
 
         }
+
+        private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonHeader1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

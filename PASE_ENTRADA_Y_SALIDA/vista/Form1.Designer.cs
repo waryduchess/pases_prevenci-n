@@ -67,16 +67,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.MostrarDatosArticulos = new System.Windows.Forms.DataGridView();
             this.Agregar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.pdfConfig2 = new Syncfusion.Pdf.PdfConfig();
             this.groupBox1.SuspendLayout();
             this.TIPODEVISITNTE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MostrarDatosArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +89,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(569, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(825, 38);
             this.textBox1.TabIndex = 1;
@@ -120,7 +117,7 @@
             // Generar
             // 
             this.Generar.Location = new System.Drawing.Point(1858, 70);
-            this.Generar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Generar.Margin = new System.Windows.Forms.Padding(5);
             this.Generar.Name = "Generar";
             this.Generar.Size = new System.Drawing.Size(169, 48);
             this.Generar.TabIndex = 4;
@@ -141,7 +138,7 @@
             // folio
             // 
             this.folio.Location = new System.Drawing.Point(1639, 73);
-            this.folio.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.folio.Margin = new System.Windows.Forms.Padding(5);
             this.folio.Name = "folio";
             this.folio.Size = new System.Drawing.Size(205, 38);
             this.folio.TabIndex = 6;
@@ -152,7 +149,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(135, 26);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(5);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(310, 36);
             this.radioButton1.TabIndex = 7;
@@ -164,7 +161,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(772, 26);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(5);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(185, 36);
             this.radioButton2.TabIndex = 8;
@@ -176,7 +173,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(1132, 25);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(5);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(432, 36);
             this.radioButton3.TabIndex = 9;
@@ -279,7 +276,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(196, 308);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(1001, 38);
             this.textBox3.TabIndex = 19;
@@ -287,7 +284,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(228, 614);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(5);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(681, 38);
             this.textBox5.TabIndex = 21;
@@ -297,7 +294,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(91, 43);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(275, 36);
             this.checkBox1.TabIndex = 22;
@@ -309,7 +306,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(455, 43);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(274, 36);
             this.checkBox2.TabIndex = 23;
@@ -321,7 +318,7 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(91, 107);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(316, 36);
             this.checkBox3.TabIndex = 24;
@@ -333,7 +330,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(455, 107);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(272, 36);
             this.checkBox4.TabIndex = 25;
@@ -344,7 +341,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(457, 352);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(5);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(923, 38);
             this.textBox6.TabIndex = 26;
@@ -352,7 +349,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(313, 412);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(5);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(1067, 38);
             this.textBox7.TabIndex = 27;
@@ -360,7 +357,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(396, 471);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(5);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(984, 38);
             this.textBox8.TabIndex = 28;
@@ -368,7 +365,7 @@
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(503, 529);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(5);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(877, 38);
             this.textBox9.TabIndex = 29;
@@ -376,7 +373,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(327, 236);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(582, 38);
             this.dateTimePicker1.TabIndex = 30;
@@ -384,7 +381,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(1294, 232);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(5);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(566, 38);
             this.dateTimePicker2.TabIndex = 31;
@@ -395,9 +392,9 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Location = new System.Drawing.Point(341, 127);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(1685, 82);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
@@ -410,9 +407,9 @@
             this.TIPODEVISITNTE.Controls.Add(this.checkBox2);
             this.TIPODEVISITNTE.Controls.Add(this.checkBox1);
             this.TIPODEVISITNTE.Location = new System.Drawing.Point(1595, 296);
-            this.TIPODEVISITNTE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TIPODEVISITNTE.Margin = new System.Windows.Forms.Padding(5);
             this.TIPODEVISITNTE.Name = "TIPODEVISITNTE";
-            this.TIPODEVISITNTE.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.TIPODEVISITNTE.Padding = new System.Windows.Forms.Padding(5);
             this.TIPODEVISITNTE.Size = new System.Drawing.Size(812, 178);
             this.TIPODEVISITNTE.TabIndex = 33;
             this.TIPODEVISITNTE.TabStop = false;
@@ -421,7 +418,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(2160, 228);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -459,7 +456,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(1294, 609);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(676, 38);
             this.textBox2.TabIndex = 36;
@@ -468,7 +465,7 @@
             // 
             this.MostrarDatosArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MostrarDatosArticulos.Location = new System.Drawing.Point(292, 766);
-            this.MostrarDatosArticulos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.MostrarDatosArticulos.Margin = new System.Windows.Forms.Padding(5);
             this.MostrarDatosArticulos.Name = "MostrarDatosArticulos";
             this.MostrarDatosArticulos.RowHeadersWidth = 62;
             this.MostrarDatosArticulos.RowTemplate.Height = 28;
@@ -479,58 +476,18 @@
             // Agregar
             // 
             this.Agregar.Location = new System.Drawing.Point(2050, 601);
-            this.Agregar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Agregar.Margin = new System.Windows.Forms.Padding(5);
             this.Agregar.Name = "Agregar";
             this.Agregar.Size = new System.Drawing.Size(192, 57);
             this.Agregar.TabIndex = 38;
             this.Agregar.Text = "Agregar";
             this.Agregar.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(850, 928);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 12);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // kryptonComboBox1
-            // 
-            this.kryptonComboBox1.DropDownWidth = 400;
-            this.kryptonComboBox1.Location = new System.Drawing.Point(916, 683);
-            this.kryptonComboBox1.Name = "kryptonComboBox1";
-            this.kryptonComboBox1.Size = new System.Drawing.Size(400, 46);
-            this.kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.kryptonComboBox1.TabIndex = 40;
-            this.kryptonComboBox1.Text = "kryptonComboBox1";
-            // 
-            // guna2CheckBox1
-            // 
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.Location = new System.Drawing.Point(1449, 656);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(277, 36);
-            this.guna2CheckBox1.TabIndex = 41;
-            this.guna2CheckBox1.Text = "guna2CheckBox1";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2444, 1121);
-            this.Controls.Add(this.guna2CheckBox1);
-            this.Controls.Add(this.kryptonComboBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Agregar);
             this.Controls.Add(this.MostrarDatosArticulos);
             this.Controls.Add(this.textBox2);
@@ -562,7 +519,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -573,7 +530,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MostrarDatosArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,10 +576,8 @@
         private System.Windows.Forms.DataGridView MostrarDatosArticulos;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button Agregar;
-        private System.Windows.Forms.Button button1;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
         private Syncfusion.Pdf.PdfConfig pdfConfig1;
+        private Syncfusion.Pdf.PdfConfig pdfConfig2;
     }
 }
 
