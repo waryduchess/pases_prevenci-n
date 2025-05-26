@@ -25,7 +25,7 @@ Este proyecto tiene como objetivo digitalizar y optimizar el proceso de **emisi�
 ## 🛠️ Tecnologías utilizadas
 
 - **Lenguaje:** C#
-- **Framework:** .NET MAUI (.NET Multi-platform App UI)
+- **Framework:** .NET
 - **Base de datos:** No se cual usaremos aun
 - **IDE recomendado:** Visual Studio 2022+ con la carga de trabajo .NET MAUI
 - **Sistema operativo objetivo:** Windows y Android
