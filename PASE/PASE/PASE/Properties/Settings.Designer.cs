@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PASE_ENTRADA_Y_SALIDA.Properties
+namespace PASE.Properties
 {
 
 
