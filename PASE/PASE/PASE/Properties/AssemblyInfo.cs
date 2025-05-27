@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("PASE_ENTRADA_Y_SALIDA")]
+[assembly: AssemblyTitle("PASE")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PASE_ENTRADA_Y_SALIDA")]
+[assembly: AssemblyProduct("PASE")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("83fd44e9-f5a1-4139-a42a-cbf4a94fc059")]
+[assembly: Guid("369eba14-4dca-4c75-9be0-5dfae474e2fa")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

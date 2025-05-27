@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PASE_ENTRADA_Y_SALIDA.Properties
+namespace PASE.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace PASE_ENTRADA_Y_SALIDA.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PASE_ENTRADA_Y_SALIDA.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PASE.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
