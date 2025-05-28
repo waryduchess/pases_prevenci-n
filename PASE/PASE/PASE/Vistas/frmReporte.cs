@@ -19,29 +19,27 @@ namespace PASE.Vistas
         private List<Movimiento> resultados = new List<Movimiento>();
         public frmReporte()
         {
+            InitializeComponent(); // Se agregó esta línea para inicializar los componentes del formulario.
             cmbTipoMovimiento.Items.Clear();
             cmbTipoMovimiento.Items.Add("Todos");
             cmbTipoMovimiento.Items.AddRange(new string[] {
-        "Entrada", "Salida definitiva", "Salida con devolución"
-    });
+                "Entrada", "Salida definitiva", "Salida con devolución"
+            });
             cmbTipoMovimiento.SelectedIndex = 0;
-
         }
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string tipoSeleccionado = cmbTipoMovimiento.SelectedItem.ToString();
+            string tipoSeleccionado = cmbTipoMovimiento.SelectedItem.ToString();    
             if (tipoSeleccionado == "Todos")
                 tipoSeleccionado = null;
 
             var lista = controlador.ObtenerMovimientos(dtpDesde.Value, dtpHasta.Value, tipoSeleccionado);
             dgvResultados.DataSource = lista;
-
         }
 
         private void btnExportarPdf_Click(object sender, EventArgs e)
@@ -66,15 +64,10 @@ namespace PASE.Vistas
 
         private void dgvResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void cmbTipoMovimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
         }
-    }
-        
-            
     }
 }

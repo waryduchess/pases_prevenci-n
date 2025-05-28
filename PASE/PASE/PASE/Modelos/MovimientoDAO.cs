@@ -105,6 +105,19 @@ namespace PASE.Modelos
             return lista;
         }
 
+        public bool ExisteFolio(string folio)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM movimientos WHERE folio = @folio";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@folio", folio);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
 
 
     }

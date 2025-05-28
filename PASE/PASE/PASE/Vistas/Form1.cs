@@ -28,10 +28,12 @@ namespace PASE
 
         }
 
+                
+
+
         private void buttonGenerar_Click(object sender, EventArgs e)
         {
-           
-        }
+                    }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
@@ -100,7 +102,7 @@ namespace PASE
                 controller.GuardarMovimiento(movimiento);
                 MessageBox.Show("Datos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SaveFileDialog saveDialog = new SaveFileDialog();
+              /*  SaveFileDialog saveDialog = new SaveFileDialog();
                 saveDialog.Filter = "Archivo PDF|*.pdf";
                 saveDialog.Title = "Guardar pase como PDF";
                 saveDialog.FileName = $"Pase_{movimiento.Folio}.pdf";
@@ -111,7 +113,7 @@ namespace PASE
                     pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
                     MessageBox.Show("PDF generado correctamente.", "PDF listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
+              */
         
             }
             catch (Exception ex)
@@ -178,6 +180,43 @@ namespace PASE
 
         private void textHotel_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void textFolio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerarPDF_Click(object sender, EventArgs e)
+        {
+            Movimiento movimiento = new Movimiento
+            {
+                Folio = textFolio.Text,
+                TipoMovimiento = GroupEntradaSalidaRadio(), // método que extrae el tipo del RadioButton seleccionado
+                FechaSalida = Salida.Value,
+                FechaRegreso = Regreso.Value,
+                NumeroPaquetes = (int)numeroPaquetes.Value,
+                NombreSolicitante = textNombre.Text,
+                TipoPersona = GetTipoPersonaSeleccionada(), // método que junta los checkboxes seleccionados
+                FirmaSeguridadNombre = textNombreSeguridad.Text
+            };
+
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Archivo PDF|*.pdf",
+                Title = "Guardar Pase de Vehículo",
+                FileName = $"PaseCarro_{movimiento.Folio}.pdf"
+            };
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                PDFGenerator pdfGen = new PDFGenerator();
+                pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
+                MessageBox.Show("PDF generado correctamente.");
+                System.Diagnostics.Process.Start(saveDialog.FileName);
+            }
+
 
         }
     }

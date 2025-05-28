@@ -8,6 +8,7 @@ namespace PASE.Modelos
 {
     public class Movimiento
     {
+        public int Id { get; set; } // Se agrega la propiedad faltante
         public string Folio { get; set; }
         public string TipoMovimiento { get; set; }
         public DateTime FechaSalida { get; set; }
@@ -16,13 +17,7 @@ namespace PASE.Modelos
         public string NombreSolicitante { get; set; }
         public string TipoPersona { get; set; } // Puede ser lista de roles: "Empleado,Proveedor"
         public string FirmaSeguridadNombre { get; set; }
-
         public string NombreHotel { get; set; }
-
-        // Relación con artículos
         public List<Articulo> Articulos { get; set; } = new List<Articulo>();
     }
-
-
-
 }

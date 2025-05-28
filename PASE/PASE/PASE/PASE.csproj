@@ -95,6 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controladores\MovimientoController.cs" />
+    <Compile Include="Controladores\PaseCarroController.cs" />
+    <Compile Include="Modelos\PaseCarro.cs" />
+    <Compile Include="Modelos\PaseCarroDAO.cs.cs" />
+    <Compile Include="Utils\FolioGenerator.cs" />
     <Compile Include="Utils\ReportePDF.cs" />
     <Compile Include="Vistas\Form1.cs">
       <SubType>Form</SubType>
@@ -108,6 +112,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\PDFGenerator.cs" />
+    <Compile Include="Vistas\frmCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmCarros.Designer.cs">
+      <DependentUpon>frmCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\frmReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +142,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\frmCarros.resx">
+      <DependentUpon>frmCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmReporte.resx">
       <DependentUpon>frmReporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +165,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Vistas\img\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
