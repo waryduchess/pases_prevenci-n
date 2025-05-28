@@ -65,10 +65,7 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonReporte = new System.Windows.Forms.Button();
             this.btnGenerarPDF = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textAutorizacion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textDepto = new System.Windows.Forms.TextBox();
+            this.Regresar = new System.Windows.Forms.Button();
             this.GroupEntradaSalida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeroPaquetes)).BeginInit();
             this.GroupTipo.SuspendLayout();
@@ -351,7 +348,7 @@
             // 
             // textDepartamento
             // 
-            this.textDepartamento.Location = new System.Drawing.Point(231, 592);
+            this.textDepartamento.Location = new System.Drawing.Point(231, 567);
             this.textDepartamento.Multiline = true;
             this.textDepartamento.Name = "textDepartamento";
             this.textDepartamento.Size = new System.Drawing.Size(593, 26);
@@ -362,7 +359,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(30, 589);
+            this.label8.Location = new System.Drawing.Point(30, 564);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(186, 31);
             this.label8.TabIndex = 24;
@@ -370,7 +367,7 @@
             // 
             // textNombreSeguridad
             // 
-            this.textNombreSeguridad.Location = new System.Drawing.Point(364, 705);
+            this.textNombreSeguridad.Location = new System.Drawing.Point(364, 627);
             this.textNombreSeguridad.Multiline = true;
             this.textNombreSeguridad.Name = "textNombreSeguridad";
             this.textNombreSeguridad.Size = new System.Drawing.Size(460, 26);
@@ -381,7 +378,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(30, 700);
+            this.label10.Location = new System.Drawing.Point(30, 622);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(328, 31);
             this.label10.TabIndex = 28;
@@ -423,7 +420,7 @@
             this.buttonGuardar.AutoSize = true;
             this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(190, 750);
+            this.buttonGuardar.Location = new System.Drawing.Point(310, 695);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(168, 40);
             this.buttonGuardar.TabIndex = 31;
@@ -448,7 +445,7 @@
             this.btnGenerarPDF.AutoSize = true;
             this.btnGenerarPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnGenerarPDF.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarPDF.Location = new System.Drawing.Point(487, 750);
+            this.btnGenerarPDF.Location = new System.Drawing.Point(564, 695);
             this.btnGenerarPDF.Name = "btnGenerarPDF";
             this.btnGenerarPDF.Size = new System.Drawing.Size(168, 40);
             this.btnGenerarPDF.TabIndex = 33;
@@ -456,43 +453,18 @@
             this.btnGenerarPDF.UseVisualStyleBackColor = true;
             this.btnGenerarPDF.Click += new System.EventHandler(this.btnGenerarPDF_Click);
             // 
-            // label9
+            // Regresar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(30, 644);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(234, 31);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Firma Autorización:";
-            // 
-            // textAutorizacion
-            // 
-            this.textAutorizacion.Location = new System.Drawing.Point(270, 649);
-            this.textAutorizacion.Multiline = true;
-            this.textAutorizacion.Name = "textAutorizacion";
-            this.textAutorizacion.Size = new System.Drawing.Size(554, 26);
-            this.textAutorizacion.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(30, 534);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(292, 31);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Firma de Jefe del Depto:";
-            // 
-            // textDepto
-            // 
-            this.textDepto.Location = new System.Drawing.Point(328, 537);
-            this.textDepto.Multiline = true;
-            this.textDepto.Name = "textDepto";
-            this.textDepto.Size = new System.Drawing.Size(496, 26);
-            this.textDepto.TabIndex = 23;
+            this.Regresar.AutoSize = true;
+            this.Regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Regresar.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regresar.Location = new System.Drawing.Point(64, 695);
+            this.Regresar.Name = "Regresar";
+            this.Regresar.Size = new System.Drawing.Size(168, 40);
+            this.Regresar.TabIndex = 34;
+            this.Regresar.Text = "Regresar";
+            this.Regresar.UseVisualStyleBackColor = true;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
             // Form1
             // 
@@ -500,18 +472,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1476, 824);
+            this.Controls.Add(this.Regresar);
             this.Controls.Add(this.btnGenerarPDF);
             this.Controls.Add(this.buttonReporte);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.MostrarArticulos);
             this.Controls.Add(this.textNombreSeguridad);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textAutorizacion);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.textDepartamento);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textDepto);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.GroupTipo);
             this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.textDescripcion);
@@ -584,10 +553,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn colDescripcionArticulo;
         private System.Windows.Forms.Button buttonReporte;
         private System.Windows.Forms.Button btnGenerarPDF;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textAutorizacion;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textDepto;
+        private System.Windows.Forms.Button Regresar;
     }
 }
 
