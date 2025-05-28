@@ -145,5 +145,10 @@ namespace PASE.Vistas
         {
 
         }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            Close(); // Cierra el formulario actual y regresa al anterior
+        }
     }
 }

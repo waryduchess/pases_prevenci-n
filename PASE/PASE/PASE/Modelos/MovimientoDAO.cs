@@ -9,7 +9,7 @@ namespace PASE.Modelos
 {
     public class MovimientoDAO
     {
-        private readonly string connectionString = "Data Source=ALEGRIA;Initial Catalog=ARTICULOS;Integrated Security=True";
+        private readonly string connectionString =BD.ConnectionString;
 
         public void InsertarMovimiento(Movimiento mov)
         {
