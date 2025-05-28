@@ -81,6 +81,7 @@
             this.Controls.Add(this.EntradaySalida);
             this.Controls.Add(this.panel1);
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
             this.ResumeLayout(false);
             this.PerformLayout();
