@@ -33,7 +33,6 @@
             this.labeFolio = new System.Windows.Forms.Label();
             this.textHotel = new System.Windows.Forms.TextBox();
             this.textFolio = new System.Windows.Forms.TextBox();
-            this.buttonGenerar = new System.Windows.Forms.Button();
             this.GroupEntradaSalida = new System.Windows.Forms.GroupBox();
             this.SalidaconDevolucion = new System.Windows.Forms.RadioButton();
             this.Entrada = new System.Windows.Forms.RadioButton();
@@ -69,6 +68,7 @@
             this.colDescripcionArticulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonReporte = new System.Windows.Forms.Button();
+            this.btnGenerarPDF = new System.Windows.Forms.Button();
             this.GroupEntradaSalida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeroPaquetes)).BeginInit();
             this.GroupTipo.SuspendLayout();
@@ -123,18 +123,7 @@
             this.textFolio.Name = "textFolio";
             this.textFolio.Size = new System.Drawing.Size(259, 31);
             this.textFolio.TabIndex = 4;
-            // 
-            // buttonGenerar
-            // 
-            this.buttonGenerar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonGenerar.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGenerar.Location = new System.Drawing.Point(1109, 84);
-            this.buttonGenerar.Name = "buttonGenerar";
-            this.buttonGenerar.Size = new System.Drawing.Size(122, 40);
-            this.buttonGenerar.TabIndex = 5;
-            this.buttonGenerar.Text = "Generar";
-            this.buttonGenerar.UseVisualStyleBackColor = true;
-            this.buttonGenerar.Click += new System.EventHandler(this.buttonGenerar_Click);
+            this.textFolio.TextChanged += new System.EventHandler(this.textFolio_TextChanged);
             // 
             // GroupEntradaSalida
             // 
@@ -472,11 +461,11 @@
             this.buttonGuardar.AutoSize = true;
             this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.Location = new System.Drawing.Point(348, 757);
+            this.buttonGuardar.Location = new System.Drawing.Point(190, 750);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(122, 40);
+            this.buttonGuardar.Size = new System.Drawing.Size(168, 40);
             this.buttonGuardar.TabIndex = 31;
-            this.buttonGuardar.Text = "Guardar";
+            this.buttonGuardar.Text = "Guardar Datos";
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
@@ -484,7 +473,7 @@
             // 
             this.buttonReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonReporte.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReporte.Location = new System.Drawing.Point(1269, 84);
+            this.buttonReporte.Location = new System.Drawing.Point(1174, 79);
             this.buttonReporte.Name = "buttonReporte";
             this.buttonReporte.Size = new System.Drawing.Size(122, 40);
             this.buttonReporte.TabIndex = 32;
@@ -492,12 +481,26 @@
             this.buttonReporte.UseVisualStyleBackColor = true;
             this.buttonReporte.Click += new System.EventHandler(this.buttonReporte_Click);
             // 
+            // btnGenerarPDF
+            // 
+            this.btnGenerarPDF.AutoSize = true;
+            this.btnGenerarPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGenerarPDF.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPDF.Location = new System.Drawing.Point(487, 750);
+            this.btnGenerarPDF.Name = "btnGenerarPDF";
+            this.btnGenerarPDF.Size = new System.Drawing.Size(168, 40);
+            this.btnGenerarPDF.TabIndex = 33;
+            this.btnGenerarPDF.Text = "Generar PDF";
+            this.btnGenerarPDF.UseVisualStyleBackColor = true;
+            this.btnGenerarPDF.Click += new System.EventHandler(this.btnGenerarPDF_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1476, 824);
+            this.Controls.Add(this.btnGenerarPDF);
             this.Controls.Add(this.buttonReporte);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.MostrarArticulos);
@@ -524,7 +527,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.GroupEntradaSalida);
-            this.Controls.Add(this.buttonGenerar);
             this.Controls.Add(this.textFolio);
             this.Controls.Add(this.textHotel);
             this.Controls.Add(this.labeFolio);
@@ -550,7 +552,6 @@
         private System.Windows.Forms.Label labeFolio;
         private System.Windows.Forms.TextBox textHotel;
         private System.Windows.Forms.TextBox textFolio;
-        private System.Windows.Forms.Button buttonGenerar;
         private System.Windows.Forms.GroupBox GroupEntradaSalida;
         private System.Windows.Forms.RadioButton SalidaDefinitiva;
         private System.Windows.Forms.RadioButton SalidaconDevolucion;
@@ -586,6 +587,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn colNombreArticulo;
         private System.Windows.Forms.DataGridViewButtonColumn colDescripcionArticulo;
         private System.Windows.Forms.Button buttonReporte;
+        private System.Windows.Forms.Button btnGenerarPDF;
     }
 }
 

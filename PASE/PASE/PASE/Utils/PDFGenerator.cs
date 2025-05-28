@@ -92,4 +92,44 @@ namespace PASE.Utils
             return celda;
         }
     }
+
+   
+        public static class ReporteCarroPDF
+        {
+            public static void ExportarPaseCarro(PaseCarro pase, string rutaArchivo)
+            {
+            Document doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(rutaArchivo, FileMode.Create));
+            doc.Open();
+
+            Font titulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+            Font texto = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+
+            // Si tienes logo
+            string rutaLogo = @"C:\Ruta\A\TuLogo.png"; // Ajusta esta ruta
+            if (File.Exists(rutaLogo))
+            {
+                Image logo = Image.GetInstance(rutaLogo);
+                logo.ScaleAbsolute(100, 100);
+                logo.Alignment = Element.ALIGN_LEFT;
+                doc.Add(logo);
+            }
+
+            doc.Add(new Paragraph("Hotel Alegría - Pase de Vehículo", titulo));
+            doc.Add(new Paragraph(" ", texto));
+
+            doc.Add(new Paragraph($"Folio: {pase.Folio}", texto));
+            doc.Add(new Paragraph($"Fecha: {pase.Fecha}", texto));
+            doc.Add(new Paragraph($"Nombre del Conductor: {pase.NombreConductor}", texto));
+            doc.Add(new Paragraph($"Placas: {pase.Placas}", texto));
+            doc.Add(new Paragraph($"Marca: {pase.Marca}", texto));
+            doc.Add(new Paragraph($"Modelo: {pase.Modelo}", texto));
+            doc.Add(new Paragraph($"Color: {pase.Color}", texto));
+            doc.Add(new Paragraph($"Motivo de Visita: {pase.MotivoVisita}", texto));
+            doc.Add(new Paragraph($"Firma Seguridad: {pase.FirmaSeguridadNombre}", texto));
+
+            doc.Close();
+        }
+        }
     }
+
