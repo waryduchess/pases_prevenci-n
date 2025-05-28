@@ -55,12 +55,8 @@
             this.Proveedores = new System.Windows.Forms.RadioButton();
             this.Empleado = new System.Windows.Forms.RadioButton();
             this.Contratista = new System.Windows.Forms.RadioButton();
-            this.textDepto = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textDepartamento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textAutorizacion = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.textNombreSeguridad = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.MostrarArticulos = new System.Windows.Forms.DataGridView();
@@ -69,6 +65,10 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonReporte = new System.Windows.Forms.Button();
             this.btnGenerarPDF = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textAutorizacion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textDepto = new System.Windows.Forms.TextBox();
             this.GroupEntradaSalida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeroPaquetes)).BeginInit();
             this.GroupTipo.SuspendLayout();
@@ -349,25 +349,6 @@
             this.Contratista.Text = "De Contratista";
             this.Contratista.UseVisualStyleBackColor = true;
             // 
-            // textDepto
-            // 
-            this.textDepto.Location = new System.Drawing.Point(328, 537);
-            this.textDepto.Multiline = true;
-            this.textDepto.Name = "textDepto";
-            this.textDepto.Size = new System.Drawing.Size(496, 26);
-            this.textDepto.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(30, 534);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(292, 31);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Firma de Jefe del Depto:";
-            // 
             // textDepartamento
             // 
             this.textDepartamento.Location = new System.Drawing.Point(231, 592);
@@ -386,25 +367,6 @@
             this.label8.Size = new System.Drawing.Size(186, 31);
             this.label8.TabIndex = 24;
             this.label8.Text = "Departamento:";
-            // 
-            // textAutorizacion
-            // 
-            this.textAutorizacion.Location = new System.Drawing.Point(270, 649);
-            this.textAutorizacion.Multiline = true;
-            this.textAutorizacion.Name = "textAutorizacion";
-            this.textAutorizacion.Size = new System.Drawing.Size(554, 26);
-            this.textAutorizacion.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(30, 644);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(234, 31);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Firma Autorización:";
             // 
             // textNombreSeguridad
             // 
@@ -494,6 +456,44 @@
             this.btnGenerarPDF.UseVisualStyleBackColor = true;
             this.btnGenerarPDF.Click += new System.EventHandler(this.btnGenerarPDF_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(30, 644);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(234, 31);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Firma Autorización:";
+            // 
+            // textAutorizacion
+            // 
+            this.textAutorizacion.Location = new System.Drawing.Point(270, 649);
+            this.textAutorizacion.Multiline = true;
+            this.textAutorizacion.Name = "textAutorizacion";
+            this.textAutorizacion.Size = new System.Drawing.Size(554, 26);
+            this.textAutorizacion.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(30, 534);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(292, 31);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Firma de Jefe del Depto:";
+            // 
+            // textDepto
+            // 
+            this.textDepto.Location = new System.Drawing.Point(328, 537);
+            this.textDepto.Multiline = true;
+            this.textDepto.Name = "textDepto";
+            this.textDepto.Size = new System.Drawing.Size(496, 26);
+            this.textDepto.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -574,12 +574,8 @@
         private System.Windows.Forms.RadioButton Proveedores;
         private System.Windows.Forms.RadioButton Empleado;
         private System.Windows.Forms.RadioButton Contratista;
-        private System.Windows.Forms.TextBox textDepto;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textDepartamento;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textAutorizacion;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textNombreSeguridad;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView MostrarArticulos;
@@ -588,6 +584,10 @@
         private System.Windows.Forms.DataGridViewButtonColumn colDescripcionArticulo;
         private System.Windows.Forms.Button buttonReporte;
         private System.Windows.Forms.Button btnGenerarPDF;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textAutorizacion;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textDepto;
     }
 }
 

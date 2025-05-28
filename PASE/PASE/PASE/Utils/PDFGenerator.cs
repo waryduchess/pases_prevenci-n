@@ -96,38 +96,44 @@ namespace PASE.Utils
    
         public static class ReporteCarroPDF
         {
-            public static void ExportarPaseCarro(PaseCarro pase, string rutaArchivo)
-            {
-            Document doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(rutaArchivo, FileMode.Create));
+        public static void ExportarPaseCarro(PaseCarro pase, string ruta)
+        {
+            Document doc = new Document(PageSize.A5.Rotate(), 20, 20, 20, 20); // Tarjetón horizontal
+            PdfWriter.GetInstance(doc, new FileStream(ruta, FileMode.Create));
             doc.Open();
 
-            Font titulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
-            Font texto = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+            var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+            var headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+            var normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 11);
 
-            // Si tienes logo
-            string rutaLogo = @"C:\Ruta\A\TuLogo.png"; // Ajusta esta ruta
-            if (File.Exists(rutaLogo))
+            PdfPTable tabla = new PdfPTable(1);
+            tabla.WidthPercentage = 100;
+
+            void AddCell(string texto, Font font, int align = Element.ALIGN_LEFT)
             {
-                Image logo = Image.GetInstance(rutaLogo);
-                logo.ScaleAbsolute(100, 100);
-                logo.Alignment = Element.ALIGN_LEFT;
-                doc.Add(logo);
+                PdfPCell cell = new PdfPCell(new Phrase(texto, font))
+                {
+                    Border = Rectangle.NO_BORDER,
+                    HorizontalAlignment = align,
+                    Padding = 5
+                };
+                tabla.AddCell(cell);
             }
 
-            doc.Add(new Paragraph("Hotel Alegría - Pase de Vehículo", titulo));
-            doc.Add(new Paragraph(" ", texto));
+            AddCell("TARJETON VEHICULO", titleFont, Element.ALIGN_CENTER);
+            AddCell("-----------------------------------------------", normalFont, Element.ALIGN_CENTER);
+            AddCell($"FOLIO: {pase.Folio}        FECHA: {pase.Fecha:dd/MM/yyyy}", headerFont);
+            AddCell("------------------------------------------------", normalFont);
+            AddCell($"CONDUCTOR: {pase.NombreConductor}", normalFont);
+            AddCell($"MOTIVO: {pase.MotivoVisita}", normalFont);
+            AddCell("------------------------------------------------", normalFont);
+            AddCell("VEHÍCULO", headerFont);
+            AddCell($"Placas: {pase.Placas}    Marca: {pase.Marca}    Modelo: {pase.Modelo}", normalFont);
+            AddCell($"Color: {pase.Color}", normalFont);
+            AddCell("------------------------------------------------", normalFont);
+            AddCell($"AUTORIZACIÓN SEGURIDAD: {pase.FirmaSeguridadNombre}", normalFont);
 
-            doc.Add(new Paragraph($"Folio: {pase.Folio}", texto));
-            doc.Add(new Paragraph($"Fecha: {pase.Fecha}", texto));
-            doc.Add(new Paragraph($"Nombre del Conductor: {pase.NombreConductor}", texto));
-            doc.Add(new Paragraph($"Placas: {pase.Placas}", texto));
-            doc.Add(new Paragraph($"Marca: {pase.Marca}", texto));
-            doc.Add(new Paragraph($"Modelo: {pase.Modelo}", texto));
-            doc.Add(new Paragraph($"Color: {pase.Color}", texto));
-            doc.Add(new Paragraph($"Motivo de Visita: {pase.MotivoVisita}", texto));
-            doc.Add(new Paragraph($"Firma Seguridad: {pase.FirmaSeguridadNombre}", texto));
-
+            doc.Add(tabla);
             doc.Close();
         }
         }
