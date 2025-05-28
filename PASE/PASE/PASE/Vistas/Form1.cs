@@ -193,14 +193,32 @@ namespace PASE
             Movimiento movimiento = new Movimiento
             {
                 Folio = textFolio.Text,
-                TipoMovimiento = GroupEntradaSalidaRadio(), // método que extrae el tipo del RadioButton seleccionado
+                TipoMovimiento = GroupEntradaSalidaRadio(),
                 FechaSalida = Salida.Value,
                 FechaRegreso = Regreso.Value,
                 NumeroPaquetes = (int)numeroPaquetes.Value,
                 NombreSolicitante = textNombre.Text,
-                TipoPersona = GetTipoPersonaSeleccionada(), // método que junta los checkboxes seleccionados
+                TipoPersona = GetTipoPersonaSeleccionada(),
                 FirmaSeguridadNombre = textNombreSeguridad.Text
             };
+
+            // ✅ Agregar artículos
+            foreach (DataGridViewRow row in MostrarArticulos.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                string nombre = row.Cells["colNombreArticulo"].Value?.ToString();
+                string descripcion = row.Cells["colDescripcionArticulo"].Value?.ToString();
+
+                if (!string.IsNullOrWhiteSpace(nombre))
+                {
+                    movimiento.Articulos.Add(new Articulo
+                    {
+                        NombreArticulo = nombre,
+                        DescripcionArticulo = descripcion
+                    });
+                }
+            }
 
             SaveFileDialog saveDialog = new SaveFileDialog
             {
@@ -216,6 +234,7 @@ namespace PASE
                 MessageBox.Show("PDF generado correctamente.");
                 System.Diagnostics.Process.Start(saveDialog.FileName);
             }
+
 
 
         }
