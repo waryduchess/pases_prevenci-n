@@ -14,10 +14,10 @@ namespace PASE.Modelos
         private readonly string[] cadenasConexion = new string[]
         {
             "Data Source=ALEGRIA;Initial Catalog=ARTICULOS;Integrated Security=True;",
-            "Data Source=SERVIDOR_ALTERNATIVO1;Initial Catalog=BDHotel;Integrated Security=True;",
-            "Data Source=LOCALHOST;Initial Catalog=BDHotelBackup;Integrated Security=True;"
+            "Data Source=DESKTOP-F014LE0\\SQLEXPRESS;Initial Catalog=BDHotel;Integrated Security=True;",
+            "Data Source=AQUI-VA-LO-TUYO-ISA;Initial Catalog=BDHotelBackup;Integrated Security=True;"//aqui isa
         };
-
+        
         public SqlConnection ObtenerConexion()
         {
             foreach (var cadena in cadenasConexion)
