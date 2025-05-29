@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PASE.Modelos
 {
     public class MovimientoDAO
     {
-        private readonly string connectionString = "Data Source=ALEGRIA;Initial Catalog=ARTICULOS;Integrated Security=True";
+        BD bd = new BD();
 
         public void InsertarMovimiento(Movimiento mov)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = bd.ObtenerConexion())
             {
-                conn.Open();
                 SqlTransaction tx = conn.BeginTransaction();
 
                 try
@@ -64,14 +60,12 @@ namespace PASE.Modelos
             }
         }
 
-
         public List<Movimiento> ObtenerMovimientos(DateTime desde, DateTime hasta, string tipoMovimiento = null)
         {
             List<Movimiento> lista = new List<Movimiento>();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = bd.ObtenerConexion())
             {
-                conn.Open();
                 string query = "SELECT * FROM movimientos WHERE fecha_salida BETWEEN @desde AND @hasta";
 
                 if (!string.IsNullOrEmpty(tipoMovimiento))
@@ -107,9 +101,8 @@ namespace PASE.Modelos
 
         public bool ExisteFolio(string folio)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = bd.ObtenerConexion())
             {
-                conn.Open();
                 string query = "SELECT COUNT(*) FROM movimientos WHERE folio = @folio";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@folio", folio);
@@ -118,7 +111,5 @@ namespace PASE.Modelos
                 return count > 0;
             }
         }
-
-
     }
 }

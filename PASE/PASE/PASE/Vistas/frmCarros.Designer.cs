@@ -46,6 +46,7 @@
             this.btnGenerarPDF = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textMotivo = new System.Windows.Forms.TextBox();
+            this.Regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textFolio
@@ -171,7 +172,7 @@
             // 
             // btnGuardarDatos
             // 
-            this.btnGuardarDatos.Location = new System.Drawing.Point(558, 439);
+            this.btnGuardarDatos.Location = new System.Drawing.Point(549, 376);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
             this.btnGuardarDatos.Size = new System.Drawing.Size(164, 51);
             this.btnGuardarDatos.TabIndex = 14;
@@ -181,7 +182,7 @@
             // 
             // btnGenerarPDF
             // 
-            this.btnGenerarPDF.Location = new System.Drawing.Point(813, 439);
+            this.btnGenerarPDF.Location = new System.Drawing.Point(833, 376);
             this.btnGenerarPDF.Name = "btnGenerarPDF";
             this.btnGenerarPDF.Size = new System.Drawing.Size(164, 51);
             this.btnGenerarPDF.TabIndex = 15;
@@ -206,11 +207,22 @@
             this.textMotivo.Size = new System.Drawing.Size(406, 26);
             this.textMotivo.TabIndex = 18;
             // 
+            // Regresar
+            // 
+            this.Regresar.Location = new System.Drawing.Point(693, 439);
+            this.Regresar.Name = "Regresar";
+            this.Regresar.Size = new System.Drawing.Size(164, 51);
+            this.Regresar.TabIndex = 19;
+            this.Regresar.Text = "Regresar";
+            this.Regresar.UseVisualStyleBackColor = true;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
+            // 
             // frmCarros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 519);
+            this.Controls.Add(this.Regresar);
             this.Controls.Add(this.textMotivo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnGenerarPDF);
@@ -256,5 +268,6 @@
         private System.Windows.Forms.Button btnGenerarPDF;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textMotivo;
+        private System.Windows.Forms.Button Regresar;
     }
 }

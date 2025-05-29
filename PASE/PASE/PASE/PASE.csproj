@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="Controladores\MovimientoController.cs" />
     <Compile Include="Controladores\PaseCarroController.cs" />
+    <Compile Include="Modelos\BD.cs" />
     <Compile Include="Modelos\PaseCarro.cs" />
     <Compile Include="Modelos\PaseCarroDAO.cs.cs" />
     <Compile Include="Utils\FolioGenerator.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vistas\frmCarros.resx">
       <DependentUpon>frmCarros.cs</DependentUpon>
