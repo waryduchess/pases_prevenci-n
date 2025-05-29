@@ -33,5 +33,10 @@ namespace PASE.Vistas
             Carros.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
