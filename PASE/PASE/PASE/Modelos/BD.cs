@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace PASE.Modelos
 {
@@ -15,8 +16,9 @@ namespace PASE.Modelos
         {
             "Data Source=ALEGRIA;Initial Catalog=ARTICULOS;Integrated Security=True;",
             "Data Source=DESKTOP-F014LE0\\SQLEXPRESS;Initial Catalog=BDHotel;Integrated Security=True;",
-            "Data Source=AQUI-VA-LO-TUYO-ISA;Initial Catalog=BDHotelBackup;Integrated Security=True;"//aqui isa
-        };
+            "Data Source=AQUI-VA-LO-TUYO-ISA;Initial Catalog=BDHotelBackup;Integrated Security=True;",//aqui isa
+           
+    };
         
         public SqlConnection ObtenerConexion()
         {
