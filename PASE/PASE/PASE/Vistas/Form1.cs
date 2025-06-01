@@ -20,11 +20,11 @@ namespace PASE
         public Form1()
         {
             InitializeComponent();
-            string prefijo = "HTL"; // Puedes cambiarlo por el nombre del hotel
-            string codigo = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper(); // 8 caracteres únicos
-            string folio = $"{prefijo}-{codigo}";
+           
 
-            textFolio.Text = folio;
+            
+
+            textFolio.Text = FolioGenerator.GenerarFolioUnico();
 
         }
 
