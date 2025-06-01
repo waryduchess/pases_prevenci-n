@@ -17,6 +17,7 @@ namespace PASE.Vistas
         private DataGridView dgvResultados;
         private Button btnBuscar;
         private Button btnReimprimir;
+        private Button btnRegresar;
         private Label label3;
 
         public frmBusquedaReportes()
@@ -147,6 +148,7 @@ namespace PASE.Vistas
             this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnReimprimir = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,7 +225,7 @@ namespace PASE.Vistas
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(268, 436);
+            this.btnBuscar.Location = new System.Drawing.Point(388, 437);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(134, 48);
             this.btnBuscar.TabIndex = 8;
@@ -233,7 +235,7 @@ namespace PASE.Vistas
             // 
             // btnReimprimir
             // 
-            this.btnReimprimir.Location = new System.Drawing.Point(530, 436);
+            this.btnReimprimir.Location = new System.Drawing.Point(650, 437);
             this.btnReimprimir.Name = "btnReimprimir";
             this.btnReimprimir.Size = new System.Drawing.Size(134, 48);
             this.btnReimprimir.TabIndex = 9;
@@ -241,9 +243,20 @@ namespace PASE.Vistas
             this.btnReimprimir.UseVisualStyleBackColor = true;
             this.btnReimprimir.Click += new System.EventHandler(this.btnReimprimir_Click_1);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(132, 437);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(134, 48);
+            this.btnRegresar.TabIndex = 10;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmBusquedaReportes
             // 
             this.ClientSize = new System.Drawing.Size(1103, 583);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnReimprimir);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvResultados);
@@ -261,6 +274,9 @@ namespace PASE.Vistas
 
         }
 
-      
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Close(); // Cierra el formulario actual y regresa al anterior
+        }
     }
 }

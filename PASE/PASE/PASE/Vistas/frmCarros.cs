@@ -18,11 +18,8 @@ namespace PASE.Vistas
         public frmCarros()
         {
             InitializeComponent();
-            string prefijo = "HTL"; // Puedes cambiarlo por el nombre del hotel
-            string codigo = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper(); // 8 caracteres únicos
-            string folio = $"{prefijo}-{codigo}";
 
-            textFolio.Text = folio;
+            textFolio.Text = FolioGenerator.GenerarFolioUnico();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -149,6 +146,11 @@ namespace PASE.Vistas
         private void Regresar_Click(object sender, EventArgs e)
         {
             Close(); // Cierra el formulario actual y regresa al anterior
+        }
+
+        private void frmCarros_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
