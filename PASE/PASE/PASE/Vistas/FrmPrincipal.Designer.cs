@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.EntradaySalida = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -40,10 +41,9 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Location = new System.Drawing.Point(238, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(357, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(354, 168);
+            this.panel1.Size = new System.Drawing.Size(531, 258);
             this.panel1.TabIndex = 0;
             // 
             // EntradaySalida
@@ -54,10 +54,9 @@
             this.EntradaySalida.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.EntradaySalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EntradaySalida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.EntradaySalida.Location = new System.Drawing.Point(61, 205);
-            this.EntradaySalida.Margin = new System.Windows.Forms.Padding(2);
+            this.EntradaySalida.Location = new System.Drawing.Point(92, 315);
             this.EntradaySalida.Name = "EntradaySalida";
-            this.EntradaySalida.Size = new System.Drawing.Size(284, 89);
+            this.EntradaySalida.Size = new System.Drawing.Size(426, 137);
             this.EntradaySalida.TabIndex = 1;
             this.EntradaySalida.Text = "Pase entrada y salida";
             this.EntradaySalida.UseVisualStyleBackColor = false;
@@ -72,28 +71,44 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.button2.Location = new System.Drawing.Point(423, 205);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(634, 315);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(284, 89);
+            this.button2.Size = new System.Drawing.Size(426, 137);
             this.button2.TabIndex = 2;
             this.button2.Text = "Pase de Carro";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(67)))), ((int)(((byte)(73)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.button1.FlatAppearance.BorderSize = 4;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
+            this.button1.Location = new System.Drawing.Point(370, 491);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(426, 137);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Buscar Pase";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(787, 385);
+            this.ClientSize = new System.Drawing.Size(1271, 682);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.EntradaySalida);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";
@@ -108,5 +123,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button EntradaySalida;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

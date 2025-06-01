@@ -18,10 +18,10 @@ namespace PASE.Modelos
                 {
                     string insertMov = @"
                         INSERT INTO movimientos 
-                        (folio, tipo_movimiento, fecha_salida, fecha_regreso, numero_paquetes, nombre_solicitante, tipo_persona, nombre_seguridad)
+                        (folio, tipo_movimiento, fecha_salida, fecha_regreso, numero_paquetes, nombre_solicitante, tipo_persona, nombre_seguridad, ruta_pdf)
                         OUTPUT INSERTED.ID
                         VALUES 
-                        (@folio, @tipo_mov, @fecha_salida, @fecha_regreso, @num_paquetes, @nombre, @tipo_persona, @firma_seguridad);";
+                        (@folio, @tipo_mov, @fecha_salida, @fecha_regreso, @num_paquetes, @nombre, @tipo_persona, @firma_seguridad, @ruta_pdf);";
 
                     SqlCommand cmd = new SqlCommand(insertMov, conn, tx);
                     cmd.Parameters.AddWithValue("@folio", mov.Folio);
@@ -32,6 +32,7 @@ namespace PASE.Modelos
                     cmd.Parameters.AddWithValue("@nombre", mov.NombreSolicitante);
                     cmd.Parameters.AddWithValue("@tipo_persona", mov.TipoPersona);
                     cmd.Parameters.AddWithValue("@firma_seguridad", mov.FirmaSeguridadNombre);
+                    cmd.Parameters.AddWithValue("@ruta_pdf", mov.RutaPDF ?? "");
 
                     int idMovimiento = (int)cmd.ExecuteScalar();
 
@@ -56,6 +57,20 @@ namespace PASE.Modelos
                 {
                     tx.Rollback();
                     throw new Exception("Error al insertar en la base de datos: " + ex.Message);
+                }
+            }
+        }
+
+        public void ActualizarRutaPDF(string folio, string ruta)
+        {
+            using (SqlConnection conn = bd.ObtenerConexion())
+            {
+                string sql = "UPDATE movimientos SET ruta_pdf = @ruta WHERE folio = @folio";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@folio", folio);
+                    cmd.Parameters.AddWithValue("@ruta", ruta);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
@@ -91,7 +106,8 @@ namespace PASE.Modelos
                         NumeroPaquetes = Convert.ToInt32(reader["numero_paquetes"]),
                         NombreSolicitante = reader["nombre_solicitante"].ToString(),
                         TipoPersona = reader["tipo_persona"].ToString(),
-                        FirmaSeguridadNombre = reader["nombre_seguridad"].ToString()
+                        FirmaSeguridadNombre = reader["nombre_seguridad"].ToString(),
+                        RutaPDF = reader["ruta_pdf"]?.ToString()
                     });
                 }
             }
@@ -111,5 +127,68 @@ namespace PASE.Modelos
                 return count > 0;
             }
         }
+
+        public List<Movimiento> BuscarPorFolioONombre(string folio, string nombre)
+        {
+            List<Movimiento> lista = new List<Movimiento>();
+            using (SqlConnection conn = bd.ObtenerConexion())
+            {
+                string query = "SELECT * FROM movimientos WHERE (@folio = '' OR folio = @folio) AND (@nombre = '' OR nombre_solicitante LIKE '%' + @nombre + '%')";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@folio", folio ?? "");
+                    cmd.Parameters.AddWithValue("@nombre", nombre ?? "");
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Movimiento
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Folio = reader["folio"].ToString(),
+                                TipoMovimiento = reader["tipo_movimiento"].ToString(),
+                                FechaSalida = Convert.ToDateTime(reader["fecha_salida"]),
+                                FechaRegreso = Convert.ToDateTime(reader["fecha_regreso"]),
+                                NumeroPaquetes = Convert.ToInt32(reader["numero_paquetes"]),
+                                NombreSolicitante = reader["nombre_solicitante"].ToString(),
+                                TipoPersona = reader["tipo_persona"].ToString(),
+                                FirmaSeguridadNombre = reader["nombre_seguridad"].ToString(),
+                                RutaPDF = reader["ruta_pdf"]?.ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+
+        public List<Articulo> ObtenerArticulosPorMovimiento(int idMovimiento)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            using (SqlConnection conn = bd.ObtenerConexion())
+            {
+                string query = "SELECT nombre_articulo, descripcion_articulo FROM articulos WHERE id_movimiento = @id";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idMovimiento);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Articulo
+                            {
+                                NombreArticulo = reader["nombre_articulo"].ToString(),
+                                DescripcionArticulo = reader["descripcion_articulo"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+
+
+
+
     }
 }

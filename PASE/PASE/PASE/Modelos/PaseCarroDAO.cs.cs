@@ -16,9 +16,10 @@ namespace PASE.Modelos
                 {
                     string sql = @"
                         INSERT INTO pases_carro 
-                        (folio, fecha, nombre_conductor, placas, marca, modelo, color, motivo_visita, firma_seguridad_nombre)
+                        (folio, fecha, nombre_conductor, placas, marca, modelo, color, motivo_visita, firma_seguridad_nombre, ruta_pdf)
                         VALUES 
-                        (@folio, @fecha, @conductor, @placas, @marca, @modelo, @color, @motivo, @firma_seguridad);";
+                        (@folio, @fecha, @conductor, @placas, @marca, @modelo, @color, @motivo, @firma_seguridad, @ruta_pdf)";
+
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -31,7 +32,7 @@ namespace PASE.Modelos
                         cmd.Parameters.AddWithValue("@color", pase.Color ?? "");
                         cmd.Parameters.AddWithValue("@motivo", pase.MotivoVisita ?? "");
                         cmd.Parameters.AddWithValue("@firma_seguridad", pase.FirmaSeguridadNombre ?? "");
-
+                        cmd.Parameters.AddWithValue("@ruta_pdf", pase.RutaPDF ?? "");
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -78,5 +79,58 @@ namespace PASE.Modelos
 
             return lista;
         }
+
+        public List<PaseCarro> BuscarPorFolioONombre(string folio, string nombre)
+        {
+            List<PaseCarro> lista = new List<PaseCarro>();
+            using (SqlConnection conn = bd.ObtenerConexion())
+            {
+                string sql = @"SELECT * FROM pases_carro 
+                       WHERE folio LIKE @folio OR nombre_conductor LIKE @nombre";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@folio", "%" + folio + "%");
+                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new PaseCarro
+                            {
+                                Folio = reader["folio"].ToString(),
+                                Fecha = Convert.ToDateTime(reader["fecha"]),
+                                NombreConductor = reader["nombre_conductor"].ToString(),
+                                Placas = reader["placas"].ToString(),
+                                Marca = reader["marca"].ToString(),
+                                Modelo = reader["modelo"].ToString(),
+                                Color = reader["color"].ToString(),
+                                MotivoVisita = reader["motivo_visita"].ToString(),
+                                FirmaSeguridadNombre = reader["firma_seguridad_nombre"].ToString(),
+                                RutaPDF = reader["ruta_pdf"] != DBNull.Value ? reader["ruta_pdf"].ToString() : ""
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public void ActualizarRutaPDF(string folio, string ruta)
+        {
+            using (SqlConnection conn = bd.ObtenerConexion())
+            {
+                string sql = "UPDATE pases_carro SET ruta_pdf = @ruta WHERE folio = @folio";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@folio", folio);
+                    cmd.Parameters.AddWithValue("@ruta", ruta);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
     }
 }
