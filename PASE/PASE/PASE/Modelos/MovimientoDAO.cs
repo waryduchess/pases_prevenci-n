@@ -186,6 +186,30 @@ namespace PASE.Modelos
             }
             return lista;
         }
+        public int ObtenerUltimoNumeroFolio()
+        {
+            int ultimoNumero = 0;
+
+            using (SqlConnection conn = bd.ObtenerConexion()) // Ya viene abierta
+            {
+                string query = "SELECT MAX(Folio) FROM Movimientos WHERE Folio LIKE 'HTL-%'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                // No llamar conn.Open() aquí
+
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != DBNull.Value && resultado != null)
+                {
+                    string folio = resultado.ToString(); // Ejemplo: "HTL-000123"
+                    string numeroStr = folio.Split('-')[1];
+                    int.TryParse(numeroStr, out ultimoNumero);
+                }
+            }
+
+            return ultimoNumero;
+        }
+
 
 
 

@@ -12,19 +12,15 @@ namespace PASE.Utils
         public static string GenerarFolioUnico()
         {
             MovimientoDAO dao = new MovimientoDAO();
-            string prefijo = "HTL";
-            string folio;
-            bool folioExiste;
+            string prefijo = "TEC";
 
-            do
-            {
-                string codigo = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper();
-                folio = $"{prefijo}-{codigo}";
-                folioExiste = dao.ExisteFolio(folio);
-            }
-            while (folioExiste);
+            int ultimoNumero = dao.ObtenerUltimoNumeroFolio(); // Método nuevo que debes crear
+            int nuevoNumero = ultimoNumero + 1;
+
+            // Formato con ceros a la izquierda, ejemplo: HTL-000001
+            string folio = $"{prefijo}-{nuevoNumero.ToString("D6")}";
 
             return folio;
         }
-    }
+      }
 }
