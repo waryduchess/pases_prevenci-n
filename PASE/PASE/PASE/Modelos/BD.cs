@@ -15,9 +15,9 @@ namespace PASE.Modelos
         private readonly string[] cadenasConexion = new string[]
         {
             "Data Source=ALEGRIA;Initial Catalog=ARTICULOS;Integrated Security=True;",
-            "Data Source=DESKTOP-F014LE0\\SQLEXPRESS;Initial Catalog=BDHotel;Integrated Security=True;",
-            "Data Source=AQUI-VA-LO-TUYO-ISA;Initial Catalog=BDHotelBackup;Integrated Security=True;",//aqui isa
-           
+            "Data Source=DESKTOP-F014LE0\\SQLEXPRESS;Initial Catalog=ARTICULOS;Integrated Security=True;",
+            "Data Source=AQUI-VA-LO-TUYO-ISA;Initial Catalog=ARTICULOS;Integrated Security=True;",//aqui isa
+           //DESKTOP-F014LE0\SQLEXPRESS
     };
         
         public SqlConnection ObtenerConexion()
