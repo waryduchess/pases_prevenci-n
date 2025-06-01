@@ -172,10 +172,7 @@ namespace PASE
 
         private void buttonReporte_Click(object sender, EventArgs e)
         {
-            frmReporte reporte = new frmReporte();
-            this.Hide();//Ocultael formulario actual
-            reporte.ShowDialog();//muestra el formulario
-            this.Show();//muestra el formulario actual
+         
         }
 
         private void textHotel_TextChanged(object sender, EventArgs e)

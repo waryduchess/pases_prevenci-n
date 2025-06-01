@@ -38,5 +38,13 @@ namespace PASE.Vistas
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmBusquedaReportes reporte = new frmBusquedaReportes();//Crea una instancia del formulario frmCarros
+            this.Hide();//Oculta el formulario actual
+            reporte.ShowDialog();//muestra el formulario
+            this.Show();//muestra el formulario actual
+        }
     }
 }

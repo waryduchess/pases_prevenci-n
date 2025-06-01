@@ -18,6 +18,8 @@ namespace PASE.Modelos
         public string TipoPersona { get; set; } // Puede ser lista de roles: "Empleado,Proveedor"
         public string FirmaSeguridadNombre { get; set; }
         public string NombreHotel { get; set; }
+        public string RutaPDF { get; set; }
+
         public List<Articulo> Articulos { get; set; } = new List<Articulo>();
     }
 }
