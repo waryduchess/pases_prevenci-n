@@ -16,7 +16,7 @@ namespace PASE.Modelos
         public int NumeroPaquetes { get; set; }
         public string NombreSolicitante { get; set; }
         public string TipoPersona { get; set; } // Puede ser lista de roles: "Empleado,Proveedor"
-        public string FirmaSeguridadNombre { get; set; }
+        public string nombre_seguridad { get; set; }
         public string NombreHotel { get; set; }
         public string RutaPDF { get; set; }
 

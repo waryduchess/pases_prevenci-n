@@ -42,7 +42,7 @@ namespace PASE.Utils
             doc.Add(new Paragraph($"Número de Paquetes: {mov.NumeroPaquetes}", textoFont));
             doc.Add(new Paragraph($"Solicitante: {mov.NombreSolicitante}", textoFont));
             doc.Add(new Paragraph($"Tipo de Persona: {mov.TipoPersona}", textoFont));
-            doc.Add(new Paragraph($"Nombre de Seguridad: {mov.FirmaSeguridadNombre}", textoFont));
+            doc.Add(new Paragraph($"Nombre de Seguridad: {mov.nombre_seguridad}", textoFont));
             doc.Add(new Paragraph(" "));
 
             // Tabla de artículos
@@ -131,7 +131,7 @@ namespace PASE.Utils
             AddCell($"Placas: {pase.Placas}    Marca: {pase.Marca}    Modelo: {pase.Modelo}", normalFont);
             AddCell($"Color: {pase.Color}", normalFont);
             AddCell("------------------------------------------------", normalFont);
-            AddCell($"AUTORIZACIÓN SEGURIDAD: {pase.FirmaSeguridadNombre}", normalFont);
+            AddCell($"AUTORIZACIÓN SEGURIDAD: {pase.Nombre_seguridad}", normalFont);
 
             doc.Add(tabla);
             doc.Close();

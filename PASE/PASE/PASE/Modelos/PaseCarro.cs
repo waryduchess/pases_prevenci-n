@@ -16,7 +16,7 @@ namespace PASE.Modelos
         public string Modelo { get; set; }
         public string Color { get; set; }
         public string MotivoVisita { get; set; }
-        public string FirmaSeguridadNombre { get; set; }
+        public string Nombre_seguridad { get; set; }
         public string RutaPDF { get; set; }
 
     }

@@ -70,7 +70,7 @@ namespace PASE
                     NumeroPaquetes = (int)numeroPaquetes.Value,
                     NombreSolicitante = textNombre.Text,
                     TipoPersona = GetTipoPersonaSeleccionada(), // método que junta los checkboxes seleccionados
-                    FirmaSeguridadNombre = textNombreSeguridad.Text
+                    nombre_seguridad = textNombreSeguridad.Text
                 };
 
                 // Cargar los artículos del DataGridView
@@ -196,7 +196,7 @@ namespace PASE
                 NumeroPaquetes = (int)numeroPaquetes.Value,
                 NombreSolicitante = textNombre.Text,
                 TipoPersona = GetTipoPersonaSeleccionada(),
-                FirmaSeguridadNombre = textNombreSeguridad.Text
+                nombre_seguridad = textNombreSeguridad.Text
             };
 
             // ✅ Agregar artículos

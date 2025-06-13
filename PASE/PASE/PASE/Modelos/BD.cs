@@ -6,41 +6,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data.SQLite;
+using System.IO;
 
 namespace PASE.Modelos
 {
 
-    public class BD
+
+    public static class DatabaseHelper
     {
-        private readonly string[] cadenasConexion = new string[]
+        private static string _connectionString = "Data Source=articulos.db;Version=3;";
+
+        public static SQLiteConnection GetConnection()
         {
-            "Data Source=ALEGRIA;Initial Catalog=ARTICULOS;Integrated Security=True;",
-            "Data Source=DESKTOP-F014LE0\\SQLEXPRESS;Initial Catalog=ARTICULOS;Integrated Security=True;",
-            "Data Source=AQUI-VA-LO-TUYO-ISA;Initial Catalog=ARTICULOS;Integrated Security=True;",//aqui isa
-           //DESKTOP-F014LE0\SQLEXPRESS
-    };
-        
-        public SqlConnection ObtenerConexion()
+            return new SQLiteConnection(_connectionString);
+        }
+
+        public static void InitializeDatabase()
         {
-            foreach (var cadena in cadenasConexion)
+            if (!File.Exists("articulos.db"))
             {
-                SqlConnection conexion = new SqlConnection(cadena);
-                try
+                SQLiteConnection.CreateFile("articulos.db");
+
+                using (var connection = GetConnection())
                 {
-                    conexion.Open();
-                    // Conexión exitosa
-                    return conexion;
-                }
-                catch
-                {
-                    // Intenta con la siguiente cadena
-                    continue;
+                    connection.Open();
+
+                    // Ejecutar el script de creación de tablas
+                    string createTablesScript = @"..."; // Aquí pegarías el script SQLite de arriba
+
+                    using (var command = new SQLiteCommand(createTablesScript, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
-
-            // Si llegó hasta aquí, fallaron todas
-            MessageBox.Show("No se pudo conectar a ninguna base de datos. Verifica tu conexión de red o contacta al administrador.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            throw new Exception("Fallo al conectar a todas las bases de datos.");
         }
     }
 

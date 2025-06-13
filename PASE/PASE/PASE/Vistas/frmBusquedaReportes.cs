@@ -1,4 +1,8 @@
-﻿using PASE.Modelos;
+﻿using System;
+using System.Windows.Forms;
+using PASE.Modelos;
+using PASE.Utils;
+using PASE.Modelos;
 using PASE.Utils;
 using System;
 using System.Collections.Generic;
@@ -24,6 +28,7 @@ namespace PASE.Vistas
         {
             InitializeComponent();
             comboTipo.SelectedIndex = 0; // Por defecto buscar movimientos
+            
         }
 
 
