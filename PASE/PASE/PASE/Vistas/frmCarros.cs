@@ -42,7 +42,7 @@ namespace PASE.Vistas
                 Modelo = textModelo.Text,
                 Color = textColor.Text,
                 MotivoVisita = textMotivo.Text,
-                FirmaSeguridadNombre = txtFirmaSeguridad.Text
+                Nombre_seguridad = txtFirmaSeguridad.Text
             };
 
             PaseCarroController controlador = new PaseCarroController();
@@ -66,7 +66,7 @@ namespace PASE.Vistas
                 Modelo = textModelo.Text,
                 Color = textColor.Text,
                 MotivoVisita = textMotivo.Text,
-                FirmaSeguridadNombre = txtFirmaSeguridad.Text
+                Nombre_seguridad = txtFirmaSeguridad.Text
             };
 
             SaveFileDialog saveDialog = new SaveFileDialog
