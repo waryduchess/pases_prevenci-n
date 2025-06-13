@@ -39,3 +39,8 @@ Este proyecto tiene como objetivo digitalizar y optimizar el proceso de **emisiÃ
    ```bash
    git clone https://github.com/tu-usuario/tu-repositorio.git
    cd tu-repositorio
+   Update-Package -reinstall
+## ðŸ“¦ Reinstalar nugget
+1.Abri consola  del Administrador de paquetes:
+   ```bash
+   Update-Package -reinstall
