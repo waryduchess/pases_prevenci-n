@@ -1,4 +1,4 @@
-using System;
+    using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
@@ -149,7 +149,7 @@ namespace PASE.Modelos
                             {
                                 lista.Add(new PaseCarro
                                 {
-                                   
+
                                     Folio = reader["folio"].ToString(),
                                     Fecha = Convert.ToDateTime(reader["fecha"]),
                                     NombreConductor = reader["nombre_conductor"].ToString(),
@@ -194,7 +194,7 @@ namespace PASE.Modelos
                             {
                                 lista.Add(new PaseCarro
                                 {
-                                  
+
                                     Folio = reader["folio"].ToString(),
                                     Fecha = Convert.ToDateTime(reader["fecha"]),
                                     NombreConductor = reader["nombre_conductor"].ToString(),
@@ -260,5 +260,44 @@ namespace PASE.Modelos
         {
             // Limpieza de recursos si es necesario
         }
+    
+
+
+    public string ObtenerUltimoFolio()
+        {
+            string ultimoFolio = "";
+            try
+            {
+                using (var conn = new SQLiteConnection(_connectionString))
+                {
+                    string query = @"
+                    SELECT folio 
+                    FROM pases_carro 
+                    WHERE folio LIKE 'TEC-%' 
+                    ORDER BY CAST(SUBSTR(folio, 5) AS INTEGER) DESC 
+                    LIMIT 1";
+
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != null && resultado != DBNull.Value)
+                        {
+                            ultimoFolio = resultado.ToString();
+                            Console.WriteLine($"Último folio en pases_carro: {ultimoFolio}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No se encontraron folios en pases_carro");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error obteniendo último folio de pases_carro: {ex.Message}");
+            }
+            return ultimoFolio;
+        }
+
     }
 }

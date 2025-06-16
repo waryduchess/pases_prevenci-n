@@ -1,39 +1,47 @@
 ﻿using PASE.Controladores;
 using PASE.Modelos;
 using PASE.Utils;
-using PASE.Vistas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace PASE
 {
     public partial class Form1 : Form
     {
+        private readonly MovimientoDAO _movimientoDAO;
+
         public Form1()
         {
             InitializeComponent();
-           
 
-            
+            try
+            {
+                _movimientoDAO = new MovimientoDAO();
+                int ultimoNumero = _movimientoDAO.ObtenerUltimoNumeroFolio();
+                string nuevoFolio = $"TEC-{(ultimoNumero +1):D6}"; // Formato con 6 ceros
+                textFolio.Text = nuevoFolio;
+                textFolio.ReadOnly = true; // Proteger el folio de modificaciones manuales
 
-            textFolio.Text = FolioGenerator.GenerarFolioUnico();
-
+                Console.WriteLine($"Nuevo folio generado: {nuevoFolio}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el folio: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textFolio.Text = "TEC-000001"; // Valor por defecto si hay error
+            }
         }
 
-                
-
+        private string GenerarNuevoFolio()
+        {
+            int ultimoNumero = _movimientoDAO.ObtenerUltimoNumeroFolio();
+            return $"HTL-{ultimoNumero + 1:D4}";
+        }
 
         private void buttonGenerar_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
@@ -102,19 +110,19 @@ namespace PASE
                 controller.GuardarMovimiento(movimiento);
                 MessageBox.Show("Datos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-              /*  SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Archivo PDF|*.pdf";
-                saveDialog.Title = "Guardar pase como PDF";
-                saveDialog.FileName = $"Pase_{movimiento.Folio}.pdf";
+                /*  SaveFileDialog saveDialog = new SaveFileDialog();
+                    saveDialog.Filter = "Archivo PDF|*.pdf";
+                    saveDialog.Title = "Guardar pase como PDF";
+                    saveDialog.FileName = $"Pase_{movimiento.Folio}.pdf";
 
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    PDFGenerator pdfGen = new PDFGenerator();
-                    pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
-                    MessageBox.Show("PDF generado correctamente.", "PDF listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-              */
-        
+                    if (saveDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        PDFGenerator pdfGen = new PDFGenerator();
+                        pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
+                        MessageBox.Show("PDF generado correctamente.", "PDF listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                */
+
             }
             catch (Exception ex)
             {
@@ -166,23 +174,18 @@ namespace PASE
                 }
             }
             return string.Empty;
-
-       
         }
 
         private void buttonReporte_Click(object sender, EventArgs e)
         {
-         
         }
 
         private void textHotel_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textFolio_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -231,9 +234,6 @@ namespace PASE
                 MessageBox.Show("PDF generado correctamente.");
                 System.Diagnostics.Process.Start(saveDialog.FileName);
             }
-
-
-
         }
 
         private void Regresar_Click(object sender, EventArgs e)

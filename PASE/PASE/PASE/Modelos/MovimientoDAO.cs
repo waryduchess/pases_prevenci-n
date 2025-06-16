@@ -281,23 +281,38 @@ namespace PASE.Modelos
         public int ObtenerUltimoNumeroFolio()
         {
             int ultimoNumero = 0;
-
-            using (SQLiteConnection conn = GetConnection())
+            try
             {
-                string query = "SELECT MAX(Folio) FROM movimientos WHERE Folio LIKE 'HTL-%'";
-                SQLiteCommand cmd = new SQLiteCommand(query, conn);
-
-                object resultado = cmd.ExecuteScalar();
-
-                if (resultado != DBNull.Value && resultado != null)
+                using (var conn = GetConnection())
                 {
-                    string folio = resultado.ToString();
-                    string numeroStr = folio.Split('-')[1];
-                    int.TryParse(numeroStr, out ultimoNumero);
+                    // Consulta mejorada para obtener el último número de folio
+                    string query = @"
+                    SELECT MAX(CAST(SUBSTR(folio, 5) AS INTEGER)) as ultimo_numero
+                    FROM movimientos 
+                    WHERE folio LIKE 'TEC-%' 
+                    AND LENGTH(folio) >= 10";
+
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != null && resultado != DBNull.Value)
+                        {
+                            ultimoNumero = Convert.ToInt32(resultado);
+                            Console.WriteLine($"Último número de folio encontrado: {ultimoNumero}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No se encontraron folios, comenzando desde 0");
+                        }
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error obteniendo último folio: {ex.Message}");
+                // En caso de error, retornamos 0 para que el siguiente folio sea TEC-000001
+            }
             return ultimoNumero;
         }
     }
-}
+    }
