@@ -41,7 +41,7 @@ namespace PASE.Modelos
                         modelo TEXT NOT NULL,
                         color TEXT NOT NULL,
                         motivo_visita TEXT NOT NULL,
-                        firma_seguridad_nombre TEXT NOT NULL,
+                        nombre_seguridad TEXT NOT NULL,
                         ruta_pdf TEXT,
                         CONSTRAINT folio_unique UNIQUE (folio)
                     )";
@@ -75,7 +75,7 @@ namespace PASE.Modelos
                                 {
                                     string sql = @"
                                     INSERT INTO pases_carro 
-                                    (folio, fecha, nombre_conductor, placas, marca, modelo, color, motivo_visita, firma_seguridad_nombre, ruta_pdf)
+                                    (folio, fecha, nombre_conductor, placas, marca, modelo, color, motivo_visita, nombre_seguridad, ruta_pdf)
                                     VALUES 
                                     (@folio, @fecha, @nombre_conductor, @placas, @marca, @modelo, @color, @motivo_visita, @firma_seguridad_nombre, @ruta_pdf)";
 
@@ -203,7 +203,7 @@ namespace PASE.Modelos
                                     Modelo = reader["modelo"].ToString(),
                                     Color = reader["color"].ToString(),
                                     MotivoVisita = reader["motivo_visita"].ToString(),
-                                    Nombre_seguridad = reader["firma_seguridad_nombre"].ToString(),
+                                    Nombre_seguridad = reader["nombre_seguridad"].ToString(),
                                     RutaPDF = reader["ruta_pdf"] == DBNull.Value ? null : reader["ruta_pdf"].ToString()
                                 });
                             }
