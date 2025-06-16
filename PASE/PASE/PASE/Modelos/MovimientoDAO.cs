@@ -93,7 +93,7 @@ namespace PASE.Modelos
                          nombre_solicitante, tipo_persona, nombre_seguridad, ruta_pdf)
                         VALUES 
                         (@folio, @tipo_mov, @fecha_salida, @fecha_regreso, @num_paquetes, 
-                         @nombre, @tipo_persona, @firma_seguridad, @ruta_pdf);
+                         @nombre, @tipo_persona, @nombre_seguridad, @ruta_pdf);
                         SELECT last_insert_rowid();";
 
                     SQLiteCommand cmd = new SQLiteCommand(insertMov, conn, tx);
@@ -110,7 +110,7 @@ namespace PASE.Modelos
                     cmd.Parameters.AddWithValue("@num_paquetes", mov.NumeroPaquetes);
                     cmd.Parameters.AddWithValue("@nombre", mov.NombreSolicitante);
                     cmd.Parameters.AddWithValue("@tipo_persona", mov.TipoPersona);
-                    cmd.Parameters.AddWithValue("@firma_seguridad", mov.nombre_seguridad);
+                    cmd.Parameters.AddWithValue("@nombre_seguridad", mov.nombre_seguridad);
                     cmd.Parameters.AddWithValue("@ruta_pdf", mov.RutaPDF ?? "");
 
                     int idMovimiento = Convert.ToInt32(cmd.ExecuteScalar());
