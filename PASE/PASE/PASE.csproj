@@ -171,6 +171,7 @@
     <Compile Include="Vistas\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\GlassPanel.cs" />
     <Compile Include="Vistas\login.cs">
       <SubType>Form</SubType>
     </Compile>
