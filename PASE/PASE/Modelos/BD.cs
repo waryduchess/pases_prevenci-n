@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.Data.SQLite;
 using System.IO;
 
 namespace PASE.Modelos
 {
-
-
     public static class DatabaseHelper
     {
         private static string _connectionString = "Data Source=articulos.db;Version=3;";
 
         public static SQLiteConnection GetConnection()
         {
-            return new SQLiteConnection(_connectionString);
+            var conn = new SQLiteConnection(_connectionString);
+            conn.Open(); // Muy importante: abrir la conexión antes de usarla
+            return conn;
         }
 
         public static void InitializeDatabase()
@@ -28,12 +21,53 @@ namespace PASE.Modelos
             {
                 SQLiteConnection.CreateFile("articulos.db");
 
-                using (var connection = GetConnection())
+                using (var connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
 
-                    // Ejecutar el script de creación de tablas
-                    string createTablesScript = @"..."; // Aquí pegarías el script SQLite de arriba
+                    string createTablesScript = @"
+                        CREATE TABLE IF NOT EXISTS movimientos (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            folio TEXT,
+                            tipo_movimiento TEXT,
+                            fecha_salida TEXT,
+                            fecha_regreso TEXT,
+                            numero_paquetes INTEGER,
+                            nombre_solicitante TEXT,
+                            tipo_persona TEXT,
+                            nombre_seguridad TEXT,
+                            ruta_pdf TEXT
+                        );
+
+                        CREATE TABLE IF NOT EXISTS articulos (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            id_movimiento INTEGER,
+                            nombre_articulo TEXT,
+                            descripcion_articulo TEXT,
+                            FOREIGN KEY (id_movimiento) REFERENCES movimientos(id)
+                        );
+
+                        CREATE TABLE IF NOT EXISTS usuarios (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            nombre_usuario TEXT NOT NULL UNIQUE,
+                            contrasena TEXT NOT NULL
+                        );
+
+                        CREATE TABLE IF NOT EXISTS pases_carro (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            folio TEXT NOT NULL UNIQUE,
+                            fecha DATETIME NOT NULL,
+                            nombre_conductor TEXT NOT NULL,
+                            placas TEXT NOT NULL,
+                            marca TEXT NOT NULL,
+                            modelo TEXT NOT NULL,
+                            color TEXT NOT NULL,
+                            motivo_visita TEXT NOT NULL,
+                            nombre_seguridad TEXT NOT NULL,
+                            ruta_pdf TEXT,
+                            CONSTRAINT folio_unique UNIQUE (folio)
+                        );
+                    ";
 
                     using (var command = new SQLiteCommand(createTablesScript, connection))
                     {
@@ -43,8 +77,4 @@ namespace PASE.Modelos
             }
         }
     }
-
-
 }
-
-
