@@ -200,10 +200,12 @@
     <EmbeddedResource Include="Vistas\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\login.es.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Modelos\articulos.bd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

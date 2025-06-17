@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.IO;
 
 namespace PASE.Modelos
 {
     public class MovimientoDAO
     {
         private static string _connectionString = "Data Source=articulos.db;Version=3;";
-
-        public MovimientoDAO()
-        {
-            // Asegurarse que la base de datos existe al crear el DAO
-            if (!File.Exists("articulos.db"))
-            {
-                InitializeDatabase();
-            }
-        }
 
         private SQLiteConnection GetConnection()
         {
@@ -25,66 +15,11 @@ namespace PASE.Modelos
             return connection;
         }
 
-        private void InitializeDatabase()
-        {
-            SQLiteConnection.CreateFile("articulos.db");
-
-            using (var connection = GetConnection())
-            {
-                // Script de creación de tablas
-                string createTablesScript = @"
-                BEGIN TRANSACTION;
-
-                CREATE TABLE IF NOT EXISTS [movimientos] (
-                    [id] INTEGER PRIMARY KEY AUTOINCREMENT,
-                    [folio] TEXT,
-                    [tipo_movimiento] TEXT,
-                    [fecha_salida] DATETIME,
-                    [fecha_regreso] DATETIME,
-                    [numero_paquetes] INTEGER,
-                    [nombre_solicitante] TEXT,
-                    [tipo_persona] TEXT,
-                    [nombre_seguridad] TEXT,
-                    [ruta_pdf] TEXT
-                );
-
-                CREATE TABLE IF NOT EXISTS [articulos] (
-                    [id] INTEGER PRIMARY KEY AUTOINCREMENT,
-                    [id_movimiento] INTEGER,
-                    [nombre_articulo] TEXT,
-                    [descripcion_articulo] TEXT,
-                    FOREIGN KEY([id_movimiento]) REFERENCES [movimientos]([id])
-                );
-
-                CREATE TABLE IF NOT EXISTS [pases_carro] (
-                    [id] INTEGER PRIMARY KEY AUTOINCREMENT,
-                    [folio] TEXT,
-                    [fecha] DATETIME,
-                    [nombre_conductor] TEXT,
-                    [placas] TEXT,
-                    [marca] TEXT,
-                    [modelo] TEXT,
-                    [color] TEXT,
-                    [motivo_visita] TEXT,
-                    [nombre_seguridad] TEXT,
-                    [ruta_pdf] TEXT
-                );
-
-                COMMIT;";
-
-                using (var command = new SQLiteCommand(createTablesScript, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
         public void InsertarMovimiento(Movimiento mov)
         {
             using (SQLiteConnection conn = GetConnection())
+            using (SQLiteTransaction tx = conn.BeginTransaction())
             {
-                SQLiteTransaction tx = conn.BeginTransaction();
-
                 try
                 {
                     string insertMov = @"
@@ -100,13 +35,7 @@ namespace PASE.Modelos
                     cmd.Parameters.AddWithValue("@folio", mov.Folio);
                     cmd.Parameters.AddWithValue("@tipo_mov", mov.TipoMovimiento);
                     cmd.Parameters.AddWithValue("@fecha_salida", mov.FechaSalida);
-
-                    // Manejo correcto de fecha_regreso que puede ser null
-                    if (mov.FechaRegreso == null)
-                        cmd.Parameters.AddWithValue("@fecha_regreso", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@fecha_regreso", mov.FechaRegreso);
-
+                    cmd.Parameters.AddWithValue("@fecha_regreso", mov.FechaRegreso.HasValue ? mov.FechaRegreso.Value : (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@num_paquetes", mov.NumeroPaquetes);
                     cmd.Parameters.AddWithValue("@nombre", mov.NombreSolicitante);
                     cmd.Parameters.AddWithValue("@tipo_persona", mov.TipoPersona);
@@ -142,10 +71,10 @@ namespace PASE.Modelos
 
         public void ActualizarRutaPDF(string folio, string ruta)
         {
-            using (SQLiteConnection conn = GetConnection())
+            using (var conn = GetConnection())
             {
                 string sql = "UPDATE movimientos SET ruta_pdf = @ruta WHERE folio = @folio";
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                using (var cmd = new SQLiteCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@folio", folio);
                     cmd.Parameters.AddWithValue("@ruta", ruta);
@@ -157,43 +86,38 @@ namespace PASE.Modelos
         public List<Movimiento> ObtenerMovimientos(DateTime desde, DateTime hasta, string tipoMovimiento = null)
         {
             List<Movimiento> lista = new List<Movimiento>();
-
-            using (SQLiteConnection conn = GetConnection())
+            using (var conn = GetConnection())
             {
                 string query = "SELECT * FROM movimientos WHERE fecha_salida BETWEEN @desde AND @hasta";
-
                 if (!string.IsNullOrEmpty(tipoMovimiento))
                     query += " AND tipo_movimiento = @tipo_mov";
 
-                SQLiteCommand cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.AddWithValue("@desde", desde);
-                cmd.Parameters.AddWithValue("@hasta", hasta);
-
-                if (!string.IsNullOrEmpty(tipoMovimiento))
-                    cmd.Parameters.AddWithValue("@tipo_mov", tipoMovimiento);
-
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
-                    DateTime? fechaRegreso = null;
-                    if (reader["fecha_regreso"] != DBNull.Value)
-                    {
-                        fechaRegreso = Convert.ToDateTime(reader["fecha_regreso"]);
-                    }
+                    cmd.Parameters.AddWithValue("@desde", desde);
+                    cmd.Parameters.AddWithValue("@hasta", hasta);
+                    if (!string.IsNullOrEmpty(tipoMovimiento))
+                        cmd.Parameters.AddWithValue("@tipo_mov", tipoMovimiento);
 
-                    lista.Add(new Movimiento
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        Id = Convert.ToInt32(reader["id"]),
-                        Folio = reader["folio"].ToString(),
-                        TipoMovimiento = reader["tipo_movimiento"].ToString(),
-                        FechaSalida = Convert.ToDateTime(reader["fecha_salida"]),
-                        FechaRegreso = (DateTime)fechaRegreso,
-                        NumeroPaquetes = Convert.ToInt32(reader["numero_paquetes"]),
-                        NombreSolicitante = reader["nombre_solicitante"].ToString(),
-                        TipoPersona = reader["tipo_persona"].ToString(),
-                        nombre_seguridad = reader["nombre_seguridad"].ToString(),
-                        RutaPDF = reader["ruta_pdf"]?.ToString()
-                    });
+                        while (reader.Read())
+                        {
+                            lista.Add(new Movimiento
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Folio = reader["folio"].ToString(),
+                                TipoMovimiento = reader["tipo_movimiento"].ToString(),
+                                FechaSalida = Convert.ToDateTime(reader["fecha_salida"]),
+                                FechaRegreso = reader["fecha_regreso"] != DBNull.Value ? Convert.ToDateTime(reader["fecha_regreso"]) : (DateTime?)null,
+                                NumeroPaquetes = Convert.ToInt32(reader["numero_paquetes"]),
+                                NombreSolicitante = reader["nombre_solicitante"].ToString(),
+                                TipoPersona = reader["tipo_persona"].ToString(),
+                                nombre_seguridad = reader["nombre_seguridad"].ToString(),
+                                RutaPDF = reader["ruta_pdf"]?.ToString()
+                            });
+                        }
+                    }
                 }
             }
 
@@ -202,44 +126,39 @@ namespace PASE.Modelos
 
         public bool ExisteFolio(string folio)
         {
-            using (SQLiteConnection conn = GetConnection())
+            using (var conn = GetConnection())
             {
                 string query = "SELECT COUNT(*) FROM movimientos WHERE folio = @folio";
-                SQLiteCommand cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.AddWithValue("@folio", folio);
-
-                long count = (long)cmd.ExecuteScalar();
-                return count > 0;
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@folio", folio);
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
             }
         }
 
         public List<Movimiento> BuscarPorFolioONombre(string folio, string nombre)
         {
             List<Movimiento> lista = new List<Movimiento>();
-            using (SQLiteConnection conn = GetConnection())
+            using (var conn = GetConnection())
             {
                 string query = "SELECT * FROM movimientos WHERE (@folio = '' OR folio = @folio) AND (@nombre = '' OR nombre_solicitante LIKE '%' || @nombre || '%')";
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@folio", folio ?? "");
                     cmd.Parameters.AddWithValue("@nombre", nombre ?? "");
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+
+                    using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            DateTime? fechaRegreso = null;
-                            if (reader["fecha_regreso"] != DBNull.Value)
-                            {
-                                fechaRegreso = Convert.ToDateTime(reader["fecha_regreso"]);
-                            }
-
                             lista.Add(new Movimiento
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                 Folio = reader["folio"].ToString(),
                                 TipoMovimiento = reader["tipo_movimiento"].ToString(),
                                 FechaSalida = Convert.ToDateTime(reader["fecha_salida"]),
-                                FechaRegreso = (DateTime)fechaRegreso,
+                                FechaRegreso = reader["fecha_regreso"] != DBNull.Value ? Convert.ToDateTime(reader["fecha_regreso"]) : (DateTime?)null,
                                 NumeroPaquetes = Convert.ToInt32(reader["numero_paquetes"]),
                                 NombreSolicitante = reader["nombre_solicitante"].ToString(),
                                 TipoPersona = reader["tipo_persona"].ToString(),
@@ -256,13 +175,13 @@ namespace PASE.Modelos
         public List<Articulo> ObtenerArticulosPorMovimiento(int idMovimiento)
         {
             List<Articulo> lista = new List<Articulo>();
-            using (SQLiteConnection conn = GetConnection())
+            using (var conn = GetConnection())
             {
                 string query = "SELECT nombre_articulo, descripcion_articulo FROM articulos WHERE id_movimiento = @id";
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", idMovimiento);
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -280,39 +199,20 @@ namespace PASE.Modelos
 
         public int ObtenerUltimoNumeroFolio()
         {
-            int ultimoNumero = 0;
-            try
+            using (var conn = GetConnection())
             {
-                using (var conn = GetConnection())
-                {
-                    // Consulta mejorada para obtener el último número de folio
-                    string query = @"
+                string query = @"
                     SELECT MAX(CAST(SUBSTR(folio, 5) AS INTEGER)) as ultimo_numero
                     FROM movimientos 
                     WHERE folio LIKE 'TEC-%' 
                     AND LENGTH(folio) >= 10";
 
-                    using (var cmd = new SQLiteCommand(query, conn))
-                    {
-                        object resultado = cmd.ExecuteScalar();
-                        if (resultado != null && resultado != DBNull.Value)
-                        {
-                            ultimoNumero = Convert.ToInt32(resultado);
-                            Console.WriteLine($"Último número de folio encontrado: {ultimoNumero}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No se encontraron folios, comenzando desde 0");
-                        }
-                    }
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    object resultado = cmd.ExecuteScalar();
+                    return (resultado != DBNull.Value && resultado != null) ? Convert.ToInt32(resultado) : 0;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error obteniendo último folio: {ex.Message}");
-                // En caso de error, retornamos 0 para que el siguiente folio sea TEC-000001
-            }
-            return ultimoNumero;
         }
     }
-    }
+}
