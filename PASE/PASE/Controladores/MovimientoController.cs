@@ -20,13 +20,8 @@ namespace PASE.Controladores
             dao.InsertarMovimiento(movimiento);
         }
 
-        /// <summary>
-        /// Obtiene una lista de movimientos filtrados por fecha y tipo.
-        /// </summary>
-        /// <param name="desde">Fecha de inicio</param>
-        /// <param name="hasta">Fecha de fin</param>
-        /// <param name="tipoMovimiento">Tipo de movimiento o null para todos</param>
-        /// <returns>Lista de movimientos</returns>
+       
+       
         public List<Movimiento> ObtenerMovimientos(DateTime desde, DateTime hasta, string tipoMovimiento = null)
         {
             return dao.ObtenerMovimientos(desde, hasta, tipoMovimiento);
