@@ -1,6 +1,6 @@
 ﻿namespace PASE
 {
-    partial class Form1
+    partial class frmPases
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPases));
             this.label1 = new System.Windows.Forms.Label();
             this.labelHotel = new System.Windows.Forms.Label();
             this.labeFolio = new System.Windows.Forms.Label();
@@ -64,7 +64,6 @@
             this.colNombreArticulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDescripcionArticulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.buttonReporte = new System.Windows.Forms.Button();
             this.btnGenerarPDF = new System.Windows.Forms.Button();
             this.Regresar = new System.Windows.Forms.Button();
             this.GroupEntradaSalida.SuspendLayout();
@@ -102,7 +101,7 @@
             this.labeFolio.AutoSize = true;
             this.labeFolio.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeFolio.ForeColor = System.Drawing.Color.Black;
-            this.labeFolio.Location = new System.Drawing.Point(488, 57);
+            this.labeFolio.Location = new System.Drawing.Point(592, 56);
             this.labeFolio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labeFolio.Name = "labeFolio";
             this.labeFolio.Size = new System.Drawing.Size(51, 21);
@@ -117,17 +116,15 @@
             this.textHotel.Name = "textHotel";
             this.textHotel.Size = new System.Drawing.Size(242, 18);
             this.textHotel.TabIndex = 3;
-            this.textHotel.TextChanged += new System.EventHandler(this.textHotel_TextChanged);
             // 
             // textFolio
             // 
-            this.textFolio.Location = new System.Drawing.Point(542, 57);
+            this.textFolio.Location = new System.Drawing.Point(646, 56);
             this.textFolio.Margin = new System.Windows.Forms.Padding(2);
             this.textFolio.Multiline = true;
             this.textFolio.Name = "textFolio";
             this.textFolio.Size = new System.Drawing.Size(174, 22);
             this.textFolio.TabIndex = 4;
-            this.textFolio.TextChanged += new System.EventHandler(this.textFolio_TextChanged);
             // 
             // GroupEntradaSalida
             // 
@@ -467,20 +464,6 @@
             this.buttonGuardar.UseVisualStyleBackColor = false;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
-            // buttonReporte
-            // 
-            this.buttonReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(120)))));
-            this.buttonReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonReporte.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReporte.Location = new System.Drawing.Point(783, 51);
-            this.buttonReporte.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonReporte.Name = "buttonReporte";
-            this.buttonReporte.Size = new System.Drawing.Size(81, 26);
-            this.buttonReporte.TabIndex = 32;
-            this.buttonReporte.Text = "Reporte";
-            this.buttonReporte.UseVisualStyleBackColor = false;
-            this.buttonReporte.Click += new System.EventHandler(this.buttonReporte_Click);
-            // 
             // btnGenerarPDF
             // 
             this.btnGenerarPDF.AutoSize = true;
@@ -511,7 +494,7 @@
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
-            // Form1
+            // frmPases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -520,7 +503,6 @@
             this.ClientSize = new System.Drawing.Size(913, 487);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.btnGenerarPDF);
-            this.Controls.Add(this.buttonReporte);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.MostrarArticulos);
             this.Controls.Add(this.textNombreSeguridad);
@@ -549,7 +531,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "frmPases";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PASES DE ENTRADA Y SALIDA";
             this.GroupEntradaSalida.ResumeLayout(false);
@@ -600,7 +582,6 @@
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.DataGridViewButtonColumn colNombreArticulo;
         private System.Windows.Forms.DataGridViewButtonColumn colDescripcionArticulo;
-        private System.Windows.Forms.Button buttonReporte;
         private System.Windows.Forms.Button btnGenerarPDF;
         private System.Windows.Forms.Button Regresar;
     }

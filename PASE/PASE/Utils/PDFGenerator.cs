@@ -23,7 +23,7 @@ namespace PASE.Utils
             Font textoFont = FontFactory.GetFont(FontFactory.HELVETICA, 11);
 
             // Encabezado con nombre del hotel
-            string nombreHotel = string.IsNullOrWhiteSpace(mov.NombreHotel) ? "HOTEL NO DEFINIDO" : mov.NombreHotel.ToUpper();
+            string nombreHotel = string.IsNullOrWhiteSpace(mov.NombreHotel) ? "THE EXECELLENCE COLECTION" : mov.NombreHotel.ToUpper();
             Paragraph hotel = new Paragraph(nombreHotel,tituloFont);
             hotel.Alignment = Element.ALIGN_CENTER;
             hotel.SpacingAfter = 10f;

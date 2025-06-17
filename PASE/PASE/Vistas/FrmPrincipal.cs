@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace PASE.Vistas
 {
-    public partial class FrmPrincipal : Form
+    public partial class frmPrincipal : Form
     {
-        public FrmPrincipal()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
 
         private void EntradaySalida_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();//Crea una instancia del formulario Form1
+            frmPases form1 = new frmPases();//Crea una instancia del formulario Form1
             this.Hide();//Ocultael formulario actual
             form1.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
@@ -33,12 +33,6 @@ namespace PASE.Vistas
             Carros.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
         }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             frmBusquedaReportes reporte = new frmBusquedaReportes();//Crea una instancia del formulario frmCarros

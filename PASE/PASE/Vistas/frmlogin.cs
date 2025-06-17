@@ -12,41 +12,14 @@ using PASE.Modelos;
 
 namespace PASE.Vistas
 {
-    public partial class login : Form
+    public partial class frmlogin : Form
     {
-        public login()
+        public frmlogin()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /*FrmPrincipal frmPrincipal = new FrmPrincipal();//Crea una instancia del formulario Form1
-            this.Hide();//Ocultael formulario actual
-            frmPrincipal.ShowDialog();//muestra el formulario
-            this.Show();*/
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void lbUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void txtUser_Enter(object sender, EventArgs e)
         {
             if (txtUser.Text == "Usuario")
@@ -104,7 +77,7 @@ namespace PASE.Vistas
             {
                 MessageBox.Show($"Bienvenido, {usuarioLogeado.UsuarioLogin}");
                 // Aquí puedes abrir el formulario principal, por ejemplo:
-                FrmPrincipal principal = new FrmPrincipal();
+                frmPrincipal principal = new frmPrincipal();
                 this.Hide();
                 principal.ShowDialog();
                 this.Show();
@@ -114,6 +87,11 @@ namespace PASE.Vistas
             {
                 MessageBox.Show("Usuario o contraseña incorrectos.");
             }
+        }
+
+        private void lbUsuario_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

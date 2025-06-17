@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace PASE
 {
-    public partial class Form1 : Form
+    public partial class frmPases : Form
     {
         private readonly MovimientoDAO _movimientoDAO;
 
-        public Form1()
+        public frmPases()
         {
             InitializeComponent();
 
@@ -31,16 +31,6 @@ namespace PASE
                               MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textFolio.Text = "TEC-000001"; // Valor por defecto si hay error
             }
-        }
-
-        private string GenerarNuevoFolio()
-        {
-            int ultimoNumero = _movimientoDAO.ObtenerUltimoNumeroFolio();
-            return $"HTL-{ultimoNumero + 1:D4}";
-        }
-
-        private void buttonGenerar_Click(object sender, EventArgs e)
-        {
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
@@ -165,17 +155,6 @@ namespace PASE
             return string.Empty;
         }
 
-        private void buttonReporte_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textHotel_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textFolio_TextChanged(object sender, EventArgs e)
-        {
-        }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
         {

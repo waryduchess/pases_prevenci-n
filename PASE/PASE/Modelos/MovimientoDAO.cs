@@ -24,14 +24,15 @@ namespace PASE.Modelos
                 {
                     string insertMov = @"
                         INSERT INTO movimientos 
-                        (folio, tipo_movimiento, fecha_salida, fecha_regreso, numero_paquetes, 
+                        (nombre_hotel,folio, tipo_movimiento, fecha_salida, fecha_regreso, numero_paquetes, 
                          nombre_solicitante, tipo_persona, nombre_seguridad, ruta_pdf)
                         VALUES 
-                        (@folio, @tipo_mov, @fecha_salida, @fecha_regreso, @num_paquetes, 
+                        (@nombre_hotel,@folio, @tipo_mov, @fecha_salida, @fecha_regreso, @num_paquetes, 
                          @nombre, @tipo_persona, @nombre_seguridad, @ruta_pdf);
                         SELECT last_insert_rowid();";
 
                     SQLiteCommand cmd = new SQLiteCommand(insertMov, conn, tx);
+                    cmd.Parameters.AddWithValue("@nombre_hotel", mov.NombreHotel ?? "THE EXECELLENCE COLECTION");
                     cmd.Parameters.AddWithValue("@folio", mov.Folio);
                     cmd.Parameters.AddWithValue("@tipo_mov", mov.TipoMovimiento);
                     cmd.Parameters.AddWithValue("@fecha_salida", mov.FechaSalida);

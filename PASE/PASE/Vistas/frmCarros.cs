@@ -22,11 +22,6 @@ namespace PASE.Vistas
             textFolio.Text = FolioGenerator.GenerarFolioUnico();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardarDatos_Click(object sender, EventArgs e)
         {
             if (!ValidarCampos())
@@ -138,19 +133,13 @@ namespace PASE.Vistas
             return true; // Todo correcto
         }
 
-        private void textFolio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Regresar_Click(object sender, EventArgs e)
         {
             Close(); // Cierra el formulario actual y regresa al anterior
         }
 
-        private void frmCarros_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

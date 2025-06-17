@@ -1,6 +1,6 @@
 ﻿namespace PASE.Vistas
 {
-    partial class login
+    partial class frmlogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Panel panel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -75,7 +75,6 @@
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.ForeColor = System.Drawing.Color.Silver;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
@@ -90,7 +89,6 @@
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.ForeColor = System.Drawing.Color.Silver;
             this.txtUser.Name = "txtUser";
-            this.txtUser.TextChanged += new System.EventHandler(this.button1_Click);
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
@@ -98,22 +96,22 @@
             // 
             resources.ApplyResources(this.lbUsuario, "lbUsuario");
             this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Click += new System.EventHandler(this.lbUsuario_Click_1);
             // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // login
+            // frmlogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.OldLace;
             this.Controls.Add(panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "login";
+            this.Name = "frmlogin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
