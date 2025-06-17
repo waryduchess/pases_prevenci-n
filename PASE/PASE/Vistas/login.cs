@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PASE.Controladores;
+using PASE.Modelos;
 
 namespace PASE.Vistas
 {
@@ -84,10 +86,7 @@ namespace PASE.Vistas
             }
         }
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -95,6 +94,36 @@ namespace PASE.Vistas
             this.Hide();//Ocultael formulario actual
             frmPrincipal.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUser.Text.Trim();
+            string contrasena = txtPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
+            {
+                MessageBox.Show("Por favor, ingresa usuario y contraseña.");
+                return;
+            }
+
+            var controlador =new LoginController();
+            var usuarioLogeado = controlador.IniciarSesion(usuario, contrasena);
+
+            if (usuarioLogeado != null)
+            {
+                MessageBox.Show($"Bienvenido, {usuarioLogeado.UsuarioLogin}");
+                // Aquí puedes abrir el formulario principal, por ejemplo:
+                FrmPrincipal principal = new FrmPrincipal();
+                this.Hide();
+                principal.ShowDialog();
+                this.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos.");
+            }
+
         }
     }
 }

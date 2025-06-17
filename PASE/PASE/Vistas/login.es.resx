@@ -303,50 +303,62 @@
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 65</value>
   </data>
+
   <data name="btnLogin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
+
   <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 212</value>
   </data>
   <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 35</value>
   </data>
+
   <data name="txtPassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
+
   <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 151</value>
   </data>
   <data name="txtPassword.Size" type="System.Drawing.Size, System.Drawing">
+
     <value>161, 26</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 157</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+
     <value>107, 20</value>
   </data>
   <data name="txtUser.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
+
   </data>
   <data name="txtUser.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 97</value>
   </data>
   <data name="txtUser.Size" type="System.Drawing.Size, System.Drawing">
+
     <value>161, 26</value>
   </data>
   <data name="lbUsuario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+
   </data>
   <data name="lbUsuario.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 103</value>
   </data>
   <data name="lbUsuario.Size" type="System.Drawing.Size, System.Drawing">
+
     <value>81, 20</value>
+
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>251, 113</value>
@@ -5015,6 +5027,7 @@
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 461</value>
   </data>
+
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
@@ -5027,6 +5040,7 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Iniciar Sesion</value>
   </data>
+
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
   </data>

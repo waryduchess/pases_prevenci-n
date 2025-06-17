@@ -11,7 +11,7 @@ namespace PASE.Modelos
         public static SQLiteConnection GetConnection()
         {
             var conn = new SQLiteConnection(_connectionString);
-            conn.Open(); // Muy importante: abrir la conexión antes de usarla
+            conn.Open();
             return conn;
         }
 
@@ -64,14 +64,23 @@ namespace PASE.Modelos
                             color TEXT NOT NULL,
                             motivo_visita TEXT NOT NULL,
                             nombre_seguridad TEXT NOT NULL,
-                            ruta_pdf TEXT,
-                            CONSTRAINT folio_unique UNIQUE (folio)
+                            ruta_pdf TEXT
                         );
                     ";
 
                     using (var command = new SQLiteCommand(createTablesScript, connection))
                     {
                         command.ExecuteNonQuery();
+                    }
+
+                    // ✅ Insertar usuario por defecto
+                    string insertAdmin = @"
+                        INSERT INTO usuarios (nombre_usuario, contrasena)
+                        VALUES ('admi', 'admin123');";
+
+                    using (var insertCmd = new SQLiteCommand(insertAdmin, connection))
+                    {
+                        insertCmd.ExecuteNonQuery();
                     }
                 }
             }
