@@ -12,7 +12,8 @@ namespace PASE.Modelos
         public string Folio { get; set; }
         public string TipoMovimiento { get; set; }
         public DateTime FechaSalida { get; set; }
-        public DateTime FechaRegreso { get; set; }
+        public DateTime? FechaRegreso { get; set; }
+
         public int NumeroPaquetes { get; set; }
         public string NombreSolicitante { get; set; }
         public string TipoPersona { get; set; } // Puede ser lista de roles: "Empleado,Proveedor"
