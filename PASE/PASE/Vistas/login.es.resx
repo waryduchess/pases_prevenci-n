@@ -293,6 +293,48 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z
 </value>
   </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 65</value>
+  </data>
+  <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 212</value>
+  </data>
+  <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 35</value>
+  </data>
+  <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 151</value>
+  </data>
+  <data name="txtPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 27</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 157</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 19</value>
+  </data>
+  <data name="txtUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 97</value>
+  </data>
+  <data name="txtUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 27</value>
+  </data>
+  <data name="lbUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 103</value>
+  </data>
+  <data name="lbUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 19</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 113</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 254</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8S
@@ -4950,5 +4992,14 @@
         OUXE1ePTJJ9jM6lOPuYYSE/eY8Nzx8qy6bCoqzOe1xI17BpyWNrLb3Ly3bsyT2+w/s/4SD5gj8K6JQbd
         tmcItPfg/9k=
 </value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 461</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 461</value>
   </data>
 </root>

@@ -32,7 +32,7 @@ namespace PASE.Modelos
                             {
                                 Id = Convert.ToInt32(reader["id"]),
                                
-                                UsuarioLogin = reader["usuario"].ToString(),
+                                UsuarioLogin = reader["nombre_usuario"].ToString(),
                                 Contrasena = reader["contrasena"].ToString(),
                               
                             };
