@@ -67,6 +67,7 @@
             resources.ApplyResources(this.btnLogin, "btnLogin");
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 

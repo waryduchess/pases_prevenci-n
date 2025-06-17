@@ -138,11 +138,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\LoginController.cs" />
     <Compile Include="Controladores\MovimientoController.cs" />
     <Compile Include="Controladores\PaseCarroController.cs" />
     <Compile Include="Modelos\BD.cs" />
     <Compile Include="Modelos\PaseCarro.cs" />
     <Compile Include="Modelos\PaseCarroDAO.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
+    <Compile Include="Modelos\UsuarioDAO.cs.cs" />
     <Compile Include="Utils\FolioGenerator.cs" />
     <Compile Include="Vistas\Form1.cs">
       <SubType>Form</SubType>
@@ -171,7 +174,6 @@
     <Compile Include="Vistas\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\GlassPanel.cs" />
     <Compile Include="Vistas\login.cs">
       <SubType>Form</SubType>
     </Compile>

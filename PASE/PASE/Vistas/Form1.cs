@@ -110,18 +110,7 @@ namespace PASE
                 controller.GuardarMovimiento(movimiento);
                 MessageBox.Show("Datos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                /*  SaveFileDialog saveDialog = new SaveFileDialog();
-                    saveDialog.Filter = "Archivo PDF|*.pdf";
-                    saveDialog.Title = "Guardar pase como PDF";
-                    saveDialog.FileName = $"Pase_{movimiento.Folio}.pdf";
-
-                    if (saveDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        PDFGenerator pdfGen = new PDFGenerator();
-                        pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
-                        MessageBox.Show("PDF generado correctamente.", "PDF listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                */
+             
 
             }
             catch (Exception ex)
