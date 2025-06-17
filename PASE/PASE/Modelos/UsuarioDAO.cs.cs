@@ -24,7 +24,7 @@ namespace PASE.Modelos
                     cmd.Parameters.AddWithValue("@usuario", usuario);
                     cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
-                    using (var reader = cmd.ExecuteReader())
+                    using ( var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {

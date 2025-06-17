@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+    using PASE.Modelos;
+
 
 namespace PASE
 {
@@ -15,9 +17,12 @@ namespace PASE
         [STAThread]
         static void Main()
         {
+            DatabaseHelper.InitializeDatabase();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new login());
+            
+
         }
     }
 }

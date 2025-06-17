@@ -14,9 +14,12 @@ namespace PASE.Vistas
 {
     public partial class login : Form
     {
+      
+
         public login()
         {
             InitializeComponent();
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -94,7 +97,7 @@ namespace PASE.Vistas
             this.Hide();//Ocultael formulario actual
             frmPrincipal.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
-
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string usuario = txtUser.Text.Trim();

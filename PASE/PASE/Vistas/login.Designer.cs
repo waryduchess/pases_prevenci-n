@@ -56,7 +56,7 @@
             panel1.Controls.Add(this.txtUser);
             panel1.Controls.Add(this.lbUsuario);
             panel1.Name = "panel1";
-            panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+           // panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // pictureBox2
             // 
