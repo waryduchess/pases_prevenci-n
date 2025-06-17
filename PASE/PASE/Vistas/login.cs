@@ -83,5 +83,18 @@ namespace PASE.Vistas
 
             }
         }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();//Crea una instancia del formulario Form1
+            this.Hide();//Ocultael formulario actual
+            frmPrincipal.ShowDialog();//muestra el formulario
+            this.Show();//muestra el formulario actual
+        }
     }
 }
