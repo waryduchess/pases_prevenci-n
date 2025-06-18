@@ -146,7 +146,8 @@
     <Compile Include="Modelos\PaseCarroDAO.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Modelos\UsuarioDAO.cs.cs" />
-    <Compile Include="Utils\FolioGenerator.cs" />
+    <Compile Include="Utils\FoliogeneradorArticulos.cs" />
+    <Compile Include="Utils\FolioGeneratorCarros.cs" />
     <Compile Include="Vistas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

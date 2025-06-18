@@ -15,29 +15,11 @@ namespace PASE
         {
             InitializeComponent();
 
-            try
-            {
-                _movimientoDAO = new MovimientoDAO();
-                int ultimoNumero = _movimientoDAO.ObtenerUltimoNumeroFolio();
-                string nuevoFolio = $"TEC-{(ultimoNumero +1):D6}"; // Formato con 6 ceros
-                textFolio.Text = nuevoFolio;
-                textFolio.ReadOnly = true; // Proteger el folio de modificaciones manuales
+            textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
 
-                Console.WriteLine($"Nuevo folio generado: {nuevoFolio}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al generar el folio: {ex.Message}", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textFolio.Text = "TEC-000001"; // Valor por defecto si hay error
-            }
         }
 
-        private string GenerarNuevoFolio()
-        {
-            int ultimoNumero = _movimientoDAO.ObtenerUltimoNumeroFolio();
-            return $"HTL-{ultimoNumero + 1:D4}";
-        }
+        
 
         private void buttonGenerar_Click(object sender, EventArgs e)
         {
@@ -117,6 +99,7 @@ namespace PASE
             {
                 MessageBox.Show("Error al guardar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -228,6 +211,11 @@ namespace PASE
         private void Regresar_Click(object sender, EventArgs e)
         {
             Close(); // Cierra el formulario actual y regresa al anterior
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
