@@ -8,7 +8,7 @@ using PASE.Modelos;
 
 namespace PASE.Utils
 {
-    public static class FolioGenerator
+    public static class FolioGeneratorCarros
     {
         private static readonly PaseCarroDAO _carrosDAO = new PaseCarroDAO();
 
