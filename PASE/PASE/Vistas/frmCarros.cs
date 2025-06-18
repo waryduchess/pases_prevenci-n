@@ -154,5 +154,10 @@ namespace PASE.Vistas
         {
 
         }
+
+        private void textConductor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
