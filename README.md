@@ -15,10 +15,9 @@ Este proyecto tiene como objetivo digitalizar y optimizar el proceso de **emisi�
   - Motivo del movimiento
 - Visualización de historial de pases emitidos
 - Búsqueda y filtrado de registros
-- Generación de comprobantes digitales (opcional: exportar a PDF)
+- Generación de comprobantes digitales  exportados a PDF
 - Funciona en:
   - **PCs con Windows**
-  - **Tablets con Android**
 
 ---
 
@@ -26,9 +25,9 @@ Este proyecto tiene como objetivo digitalizar y optimizar el proceso de **emisi�
 
 - **Lenguaje:** C#
 - **Framework:** .NET
-- **Base de datos:** No se cual usaremos aun
-- **IDE recomendado:** Visual Studio 2022+ con la carga de trabajo .NET MAUI
-- **Sistema operativo objetivo:** Windows y Android
+- **Base de datos:** SQLite
+- **IDE recomendado:** Visual Studio 2022+ con la carga de trabajo .NET WindForms
+- **Sistema operativo objetivo:** Windows 
 
 ---
 
