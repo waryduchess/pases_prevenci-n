@@ -173,7 +173,7 @@ namespace PASE.Vistas
             "Pases de Carro"});
             this.cbxBuscar.Location = new System.Drawing.Point(287, 176);
             this.cbxBuscar.Name = "cbxBuscar";
-            this.cbxBuscar.Size = new System.Drawing.Size(200, 28);
+            this.cbxBuscar.Size = new System.Drawing.Size(200, 31);
             this.cbxBuscar.TabIndex = 0;
             // 
             // label1
@@ -182,7 +182,7 @@ namespace PASE.Vistas
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(87, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tipo de pase:";
             // 
@@ -192,7 +192,7 @@ namespace PASE.Vistas
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(87, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.Size = new System.Drawing.Size(124, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Buscar por: ";
             // 
@@ -202,7 +202,7 @@ namespace PASE.Vistas
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(87, 278);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.Size = new System.Drawing.Size(101, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nombre: ";
             // 
@@ -212,7 +212,7 @@ namespace PASE.Vistas
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(87, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 4;
             this.label4.Text = "Folio: ";
             // 
@@ -221,7 +221,7 @@ namespace PASE.Vistas
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(287, 269);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(195, 27);
+            this.txtNombre.Size = new System.Drawing.Size(195, 32);
             this.txtNombre.TabIndex = 5;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -230,7 +230,7 @@ namespace PASE.Vistas
             this.txtFolio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFolio.Location = new System.Drawing.Point(287, 269);
             this.txtFolio.Name = "txtFolio";
-            this.txtFolio.Size = new System.Drawing.Size(195, 27);
+            this.txtFolio.Size = new System.Drawing.Size(195, 32);
             this.txtFolio.TabIndex = 6;
             // 
             // dgvResultados
@@ -298,7 +298,7 @@ namespace PASE.Vistas
             "Folio"});
             this.comboBox1.Location = new System.Drawing.Point(287, 222);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 28);
+            this.comboBox1.Size = new System.Drawing.Size(200, 31);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -320,6 +320,7 @@ namespace PASE.Vistas
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxBuscar);
             this.Name = "frmBusquedaReportes";
+            this.Text = "Buscador de Pases";
             this.Load += new System.EventHandler(this.frmBusquedaReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

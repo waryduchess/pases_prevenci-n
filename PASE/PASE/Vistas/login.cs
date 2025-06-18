@@ -93,9 +93,9 @@ namespace PASE.Vistas
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmCarros frmcarro = new frmCarros();//Crea una instancia del formulario Form1
+            Form1 frmart = new Form1();//Crea una instancia del formulario Form1
             this.Hide();//Ocultael formulario actual
-            frmcarro.ShowDialog();//muestra el formulario
+            frmart.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
         }
         private void btnLogin_Click(object sender, EventArgs e)
@@ -126,6 +126,11 @@ namespace PASE.Vistas
             {
                 MessageBox.Show("Usuario o contraseña incorrectos.");
             }
+
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
 
         }
     }
