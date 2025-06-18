@@ -93,9 +93,9 @@ namespace PASE.Vistas
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmBusquedaReportes frmBusRepor = new frmBusquedaReportes();//Crea una instancia del formulario Form1
+            frmCarros frmcarro = new frmCarros();//Crea una instancia del formulario Form1
             this.Hide();//Ocultael formulario actual
-            frmBusRepor.ShowDialog();//muestra el formulario
+            frmcarro.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
         }
         private void btnLogin_Click(object sender, EventArgs e)
