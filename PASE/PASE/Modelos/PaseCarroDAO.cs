@@ -186,11 +186,10 @@ namespace PASE.Modelos
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     string query = @"
-                        SELECT folio 
-                        FROM pases_carro 
-                        WHERE folio LIKE 'TEC-%' 
-                        ORDER BY CAST(SUBSTR(folio, 5) AS INTEGER) DESC 
-                        LIMIT 1";
+                         SELECT MAX(CAST(SUBSTR(folio, 5) AS INTEGER)) as ultimo_numero
+                    FROM pases_carro 
+                    WHERE folio LIKE 'TEC-%' 
+                    AND LENGTH(folio) >= 10";
 
                     using (var cmd = new SQLiteCommand(query, conn))
                     {
@@ -205,7 +204,7 @@ namespace PASE.Modelos
                 return "";
             }
         }
-
+      
         public void Dispose()
         {
             // No se necesita liberar recursos en este DAO en particular.
