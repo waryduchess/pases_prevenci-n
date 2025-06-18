@@ -1,26 +1,33 @@
-﻿using PASE.Modelos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using PASE.Modelos;
 
 namespace PASE.Utils
 {
-       public static class FolioGenerator
+    public static class FolioGenerator
     {
+        private static readonly PaseCarroDAO _carrosDAO = new PaseCarroDAO();
+
         public static string GenerarFolioUnico()
         {
-            MovimientoDAO dao = new MovimientoDAO();
-            string prefijo = "TEC";
+            try
+            {
+                int ultimoNumero = _carrosDAO.ObtenerUltimoNumeroFolio();
+                string nuevoFolio = $"TEC-{(ultimoNumero + 1):D6}"; // Formato con 6 ceros
 
-            int ultimoNumero = dao.ObtenerUltimoNumeroFolio(); // Método nuevo que debes crear
-            int nuevoNumero = ultimoNumero + 1;
-
-            // Formato con ceros a la izquierda, ejemplo: HTL-000001
-            string folio = $"{prefijo}-{nuevoNumero.ToString("D6")}";
-
-            return folio;
+                Console.WriteLine($"Nuevo folio generado: {nuevoFolio}");
+                return nuevoFolio;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el folio: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "TEC-000001"; // Valor por defecto si hay error
+            }
         }
-      }
+    }
 }

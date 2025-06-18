@@ -20,6 +20,7 @@ namespace PASE.Vistas
             InitializeComponent();
 
             textFolio.Text = FolioGenerator.GenerarFolioUnico();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace PASE.Vistas
             controlador.GuardarPase(pase);
 
             MessageBox.Show("Pase de vehículo guardado correctamente en la base de datos.");
+            textFolio.Text = FolioGenerator.GenerarFolioUnico();
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)

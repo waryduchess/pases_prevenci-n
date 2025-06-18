@@ -229,5 +229,10 @@ namespace PASE
         {
             Close(); // Cierra el formulario actual y regresa al anterior
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

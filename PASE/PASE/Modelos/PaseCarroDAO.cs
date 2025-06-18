@@ -8,7 +8,13 @@ namespace PASE.Modelos
     public class PaseCarroDAO : IDisposable
     {
         private static readonly object _dbLock = new object();
-
+        private static string _connectionString = "Data Source=articulos.db;Version=3;";
+        private SQLiteConnection GetConnection()
+        {
+            var connection = new SQLiteConnection(_connectionString);
+            connection.Open();
+            return connection;
+        }
         public void InsertarPaseCarro(PaseCarro pase)
         {
             int intentos = 0;
@@ -179,32 +185,24 @@ namespace PASE.Modelos
                 }
         }
 
-        public string ObtenerUltimoFolio()
+        public int ObtenerUltimoNumeroFolio()
         {
-            try
+            using (var conn = GetConnection())
             {
-                using (var conn = DatabaseHelper.GetConnection())
-                {
-                    string query = @"
-                         SELECT MAX(CAST(SUBSTR(folio, 5) AS INTEGER)) as ultimo_numero
+                string query = @"
+                    SELECT MAX(CAST(SUBSTR(folio, 5) AS INTEGER)) as ultimo_numero
                     FROM pases_carro 
                     WHERE folio LIKE 'TEC-%' 
                     AND LENGTH(folio) >= 10";
 
-                    using (var cmd = new SQLiteCommand(query, conn))
-                    {
-                        object resultado = cmd.ExecuteScalar();
-                        return (resultado != null && resultado != DBNull.Value) ? resultado.ToString() : "";
-                    }
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    object resultado = cmd.ExecuteScalar();
+                    return (resultado != DBNull.Value && resultado != null) ? Convert.ToInt32(resultado) : 0;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error obteniendo último folio de pases_carro: {ex.Message}");
-                return "";
-            }
         }
-      
+
         public void Dispose()
         {
             // No se necesita liberar recursos en este DAO en particular.
