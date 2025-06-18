@@ -46,5 +46,10 @@ namespace PASE.Vistas
             reporte.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -191,7 +191,7 @@
             // 
             // btnGuardarDatos
             // 
-            this.btnGuardarDatos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarDatos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarDatos.Location = new System.Drawing.Point(434, 404);
             this.btnGuardarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
@@ -203,7 +203,7 @@
             // 
             // btnGenerarPDF
             // 
-            this.btnGenerarPDF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPDF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarPDF.Location = new System.Drawing.Point(597, 404);
             this.btnGenerarPDF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGenerarPDF.Name = "btnGenerarPDF";
@@ -234,7 +234,7 @@
             // 
             // Regresar
             // 
-            this.Regresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.Location = new System.Drawing.Point(761, 404);
             this.Regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Regresar.Name = "Regresar";
