@@ -80,9 +80,9 @@
             this.label1.Location = new System.Drawing.Point(8, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(340, 32);
+            this.label1.Size = new System.Drawing.Size(238, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pase De Entrada y Salida";
+            this.label1.Text = "Pase De Articulos";
             // 
             // labelHotel
             // 
@@ -305,7 +305,7 @@
             this.buttonAgregar.BackColor = System.Drawing.Color.White;
             this.buttonAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.Location = new System.Drawing.Point(266, 267);
+            this.buttonAgregar.Location = new System.Drawing.Point(634, 224);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(109, 33);
@@ -321,7 +321,7 @@
             this.GroupTipo.Controls.Add(this.Empleado);
             this.GroupTipo.Controls.Add(this.Contratista);
             this.GroupTipo.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupTipo.Location = new System.Drawing.Point(14, 304);
+            this.GroupTipo.Location = new System.Drawing.Point(14, 267);
             this.GroupTipo.Margin = new System.Windows.Forms.Padding(2);
             this.GroupTipo.Name = "GroupTipo";
             this.GroupTipo.Padding = new System.Windows.Forms.Padding(2);
@@ -332,7 +332,7 @@
             // Huespedes
             // 
             this.Huespedes.AutoSize = true;
-            this.Huespedes.Location = new System.Drawing.Point(396, 8);
+            this.Huespedes.Location = new System.Drawing.Point(373, 8);
             this.Huespedes.Margin = new System.Windows.Forms.Padding(2);
             this.Huespedes.Name = "Huespedes";
             this.Huespedes.Size = new System.Drawing.Size(103, 17);
@@ -340,11 +340,12 @@
             this.Huespedes.TabStop = true;
             this.Huespedes.Text = "De Huéspedes";
             this.Huespedes.UseVisualStyleBackColor = true;
+            this.Huespedes.CheckedChanged += new System.EventHandler(this.Huespedes_CheckedChanged);
             // 
             // Proveedores
             // 
             this.Proveedores.AutoSize = true;
-            this.Proveedores.Location = new System.Drawing.Point(258, 8);
+            this.Proveedores.Location = new System.Drawing.Point(243, 8);
             this.Proveedores.Margin = new System.Windows.Forms.Padding(2);
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.Size = new System.Drawing.Size(111, 17);
@@ -356,7 +357,7 @@
             // Empleado
             // 
             this.Empleado.AutoSize = true;
-            this.Empleado.Location = new System.Drawing.Point(136, 8);
+            this.Empleado.Location = new System.Drawing.Point(125, 8);
             this.Empleado.Margin = new System.Windows.Forms.Padding(2);
             this.Empleado.Name = "Empleado";
             this.Empleado.Size = new System.Drawing.Size(99, 17);
@@ -434,12 +435,12 @@
             this.MostrarArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNombreArticulo,
             this.colDescripcionArticulo});
-            this.MostrarArticulos.Location = new System.Drawing.Point(509, 231);
+            this.MostrarArticulos.Location = new System.Drawing.Point(517, 267);
             this.MostrarArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.MostrarArticulos.Name = "MostrarArticulos";
             this.MostrarArticulos.RowHeadersWidth = 62;
             this.MostrarArticulos.RowTemplate.Height = 28;
-            this.MostrarArticulos.Size = new System.Drawing.Size(432, 297);
+            this.MostrarArticulos.Size = new System.Drawing.Size(432, 235);
             this.MostrarArticulos.TabIndex = 30;
             // 
             // colNombreArticulo
