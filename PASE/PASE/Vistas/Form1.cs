@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace PASE
 {
-    public partial class Form1 : Form
+    public partial class frmArticulos : Form
     {
         private readonly MovimientoDAO _movimientoDAO;
 
-        public Form1()
+        public frmArticulos()
         {
             InitializeComponent();
 

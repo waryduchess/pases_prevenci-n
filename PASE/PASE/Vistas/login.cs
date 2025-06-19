@@ -93,7 +93,7 @@ namespace PASE.Vistas
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 frmart = new Form1();//Crea una instancia del formulario Form1
+            frmArticulos frmart = new frmArticulos();//Crea una instancia del formulario Form1
             this.Hide();//Ocultael formulario actual
             frmart.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual

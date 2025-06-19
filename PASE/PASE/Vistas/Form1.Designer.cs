@@ -1,6 +1,6 @@
 ﻿namespace PASE
 {
-    partial class Form1
+    partial class frmArticulos
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
             this.label1 = new System.Windows.Forms.Label();
             this.labelHotel = new System.Windows.Forms.Label();
             this.labeFolio = new System.Windows.Forms.Label();
@@ -63,7 +63,6 @@
             this.colNombreArticulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDescripcionArticulo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.buttonReporte = new System.Windows.Forms.Button();
             this.btnGenerarPDF = new System.Windows.Forms.Button();
             this.Regresar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -90,7 +89,7 @@
             this.labelHotel.AutoSize = true;
             this.labelHotel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHotel.ForeColor = System.Drawing.Color.Black;
-            this.labelHotel.Location = new System.Drawing.Point(75, 57);
+            this.labelHotel.Location = new System.Drawing.Point(31, 68);
             this.labelHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHotel.Name = "labelHotel";
             this.labelHotel.Size = new System.Drawing.Size(54, 20);
@@ -102,7 +101,7 @@
             this.labeFolio.AutoSize = true;
             this.labeFolio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeFolio.ForeColor = System.Drawing.Color.Black;
-            this.labeFolio.Location = new System.Drawing.Point(488, 57);
+            this.labeFolio.Location = new System.Drawing.Point(696, 27);
             this.labeFolio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labeFolio.Name = "labeFolio";
             this.labeFolio.Size = new System.Drawing.Size(47, 20);
@@ -112,7 +111,7 @@
             // textFolio
             // 
             this.textFolio.Enabled = false;
-            this.textFolio.Location = new System.Drawing.Point(542, 57);
+            this.textFolio.Location = new System.Drawing.Point(747, 20);
             this.textFolio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textFolio.Multiline = true;
             this.textFolio.Name = "textFolio";
@@ -127,18 +126,18 @@
             this.GroupEntradaSalida.Controls.Add(this.SalidaDefinitiva);
             this.GroupEntradaSalida.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupEntradaSalida.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.GroupEntradaSalida.Location = new System.Drawing.Point(154, 92);
+            this.GroupEntradaSalida.Location = new System.Drawing.Point(14, 95);
             this.GroupEntradaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GroupEntradaSalida.Name = "GroupEntradaSalida";
             this.GroupEntradaSalida.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.GroupEntradaSalida.Size = new System.Drawing.Size(680, 46);
+            this.GroupEntradaSalida.Size = new System.Drawing.Size(387, 46);
             this.GroupEntradaSalida.TabIndex = 6;
             this.GroupEntradaSalida.TabStop = false;
             // 
             // SalidaconDevolucion
             // 
             this.SalidaconDevolucion.AutoSize = true;
-            this.SalidaconDevolucion.Location = new System.Drawing.Point(501, 17);
+            this.SalidaconDevolucion.Location = new System.Drawing.Point(229, 17);
             this.SalidaconDevolucion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SalidaconDevolucion.Name = "SalidaconDevolucion";
             this.SalidaconDevolucion.Size = new System.Drawing.Size(148, 17);
@@ -150,7 +149,7 @@
             // Entrada
             // 
             this.Entrada.AutoSize = true;
-            this.Entrada.Location = new System.Drawing.Point(292, 17);
+            this.Entrada.Location = new System.Drawing.Point(140, 17);
             this.Entrada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Entrada.Name = "Entrada";
             this.Entrada.Size = new System.Drawing.Size(69, 17);
@@ -465,20 +464,6 @@
             this.buttonGuardar.UseVisualStyleBackColor = false;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
-            // buttonReporte
-            // 
-            this.buttonReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(120)))));
-            this.buttonReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonReporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReporte.Location = new System.Drawing.Point(783, 51);
-            this.buttonReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonReporte.Name = "buttonReporte";
-            this.buttonReporte.Size = new System.Drawing.Size(109, 33);
-            this.buttonReporte.TabIndex = 32;
-            this.buttonReporte.Text = "Reporte";
-            this.buttonReporte.UseVisualStyleBackColor = false;
-            this.buttonReporte.Click += new System.EventHandler(this.buttonReporte_Click);
-            // 
             // btnGenerarPDF
             // 
             this.btnGenerarPDF.AutoSize = true;
@@ -511,18 +496,19 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "XPM",
             "FPM",
             "BPM"});
-            this.comboBox1.Location = new System.Drawing.Point(146, 51);
+            this.comboBox1.Location = new System.Drawing.Point(90, 60);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(167, 28);
             this.comboBox1.TabIndex = 35;
             // 
-            // Form1
+            // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -532,7 +518,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.btnGenerarPDF);
-            this.Controls.Add(this.buttonReporte);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.MostrarArticulos);
             this.Controls.Add(this.textNombreSeguridad);
@@ -560,7 +545,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Name = "frmArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pase Articulos";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -609,7 +594,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView MostrarArticulos;
         private System.Windows.Forms.Button buttonGuardar;
-        private System.Windows.Forms.Button buttonReporte;
         private System.Windows.Forms.Button btnGenerarPDF;
         private System.Windows.Forms.Button Regresar;
         private System.Windows.Forms.DataGridViewButtonColumn colNombreArticulo;
