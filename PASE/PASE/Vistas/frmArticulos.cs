@@ -105,6 +105,7 @@ namespace PASE
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
+
             string nombre = textArticulo.Text.Trim();
             string descripcion = textDescripcion.Text.Trim();
 
@@ -115,6 +116,7 @@ namespace PASE
             }
 
             MostrarArticulos.Rows.Add(nombre, descripcion);
+            numeroPaquetes.Value = numeroPaquetes.Value + 1;
 
             // Limpiar campos
             textArticulo.Clear();
