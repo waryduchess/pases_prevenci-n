@@ -20,7 +20,7 @@ namespace PASE.Vistas
 
         private void EntradaySalida_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();//Crea una instancia del formulario Form1
+            frmArticulos form1 = new frmArticulos();//Crea una instancia del formulario Form1
             this.Hide();//Ocultael formulario actual
             form1.ShowDialog();//muestra el formulario
             this.Show();//muestra el formulario actual
