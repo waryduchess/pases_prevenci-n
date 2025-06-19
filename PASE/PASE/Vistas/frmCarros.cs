@@ -75,7 +75,7 @@ namespace PASE.Vistas
             {
                 Filter = "Archivo PDF|*.pdf",
                 Title = "Guardar Pase de Vehículo",
-                FileName = $"PaseCarro_{pase.Folio}.pdf"
+                FileName = $"Pase vehiculo_{pase.Folio}.pdf"
             };
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
