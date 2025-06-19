@@ -197,12 +197,13 @@ namespace PASE
             {
                 Filter = "Archivo PDF|*.pdf",
                 Title = "Guardar Pase de Vehículo",
-                FileName = $"PaseCarro_{movimiento.Folio}.pdf"
+                FileName = $"Pase articulos_{movimiento.Folio}.pdf"
             };
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
                 PDFGenerator pdfGen = new PDFGenerator();
+
                 pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
                 MessageBox.Show("PDF generado correctamente.");
                 System.Diagnostics.Process.Start(saveDialog.FileName);
