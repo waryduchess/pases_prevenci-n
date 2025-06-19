@@ -167,6 +167,7 @@ namespace PASE
         {
             Movimiento movimiento = new Movimiento
             {
+                NombreHotel = cbxNmbreHotel.Text,
                 Folio = textFolio.Text,
                 TipoMovimiento = GroupEntradaSalidaRadio(),
                 FechaSalida = Salida.Value,
