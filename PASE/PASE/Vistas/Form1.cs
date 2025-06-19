@@ -53,6 +53,7 @@ namespace PASE
             {
                 Movimiento movimiento = new Movimiento
                 {
+                    NombreHotel = cbxNmbreHotel.Text,
                     Folio = textFolio.Text,
                     TipoMovimiento = GroupEntradaSalidaRadio(), // método que extrae el tipo del RadioButton seleccionado
                     FechaSalida = Salida.Value,

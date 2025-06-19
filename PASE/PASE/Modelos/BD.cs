@@ -28,6 +28,7 @@ namespace PASE.Modelos
                     string createTablesScript = @"
                         CREATE TABLE IF NOT EXISTS movimientos (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            nombre_hotel TEXT,
                             folio TEXT,
                             tipo_movimiento TEXT,
                             fecha_salida TEXT,
