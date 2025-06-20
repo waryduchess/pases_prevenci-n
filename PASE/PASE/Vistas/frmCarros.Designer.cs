@@ -72,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(502, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.Size = new System.Drawing.Size(47, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Folio:";
             // 
@@ -83,7 +83,7 @@
             this.label2.Location = new System.Drawing.Point(28, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 21);
+            this.label2.Size = new System.Drawing.Size(161, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Placas del vehiculo:";
             // 
@@ -104,7 +104,7 @@
             this.label3.Location = new System.Drawing.Point(322, 170);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 21);
+            this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Marca: ";
             // 
@@ -124,7 +124,7 @@
             this.label4.Location = new System.Drawing.Point(28, 170);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 21);
+            this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Modelo:";
             // 
@@ -144,7 +144,7 @@
             this.label5.Location = new System.Drawing.Point(28, 213);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 21);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Color:";
             // 
@@ -164,7 +164,7 @@
             this.label6.Location = new System.Drawing.Point(28, 278);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(238, 21);
+            this.label6.Size = new System.Drawing.Size(237, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "Nombre y Firma de seguridad";
             // 
@@ -184,7 +184,7 @@
             this.label7.Location = new System.Drawing.Point(28, 93);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 21);
+            this.label7.Size = new System.Drawing.Size(170, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "Nombre Conductor: ";
             // 
@@ -201,10 +201,10 @@
             // btnGuardarDatos
             // 
             this.btnGuardarDatos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarDatos.Location = new System.Drawing.Point(416, 317);
+            this.btnGuardarDatos.Location = new System.Drawing.Point(396, 317);
             this.btnGuardarDatos.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
-            this.btnGuardarDatos.Size = new System.Drawing.Size(134, 48);
+            this.btnGuardarDatos.Size = new System.Drawing.Size(149, 48);
             this.btnGuardarDatos.TabIndex = 16;
             this.btnGuardarDatos.Text = "Guardar Datos";
             this.btnGuardarDatos.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             this.label8.Location = new System.Drawing.Point(322, 213);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 21);
+            this.label8.Size = new System.Drawing.Size(68, 20);
             this.label8.TabIndex = 12;
             this.label8.Text = "Motivo:";
             // 
@@ -265,7 +265,7 @@
             "Beloved PM"});
             this.cbxNmbreHotel.Location = new System.Drawing.Point(87, 51);
             this.cbxNmbreHotel.Name = "cbxNmbreHotel";
-            this.cbxNmbreHotel.Size = new System.Drawing.Size(167, 29);
+            this.cbxNmbreHotel.Size = new System.Drawing.Size(167, 28);
             this.cbxNmbreHotel.TabIndex = 37;
             // 
             // labelHotel
@@ -276,7 +276,7 @@
             this.labelHotel.Location = new System.Drawing.Point(27, 59);
             this.labelHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHotel.Name = "labelHotel";
-            this.labelHotel.Size = new System.Drawing.Size(55, 21);
+            this.labelHotel.Size = new System.Drawing.Size(54, 20);
             this.labelHotel.TabIndex = 36;
             this.labelHotel.Text = "Hotel:";
             // 
@@ -288,7 +288,7 @@
             this.label9.Location = new System.Drawing.Point(26, 7);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(255, 33);
+            this.label9.Size = new System.Drawing.Size(254, 32);
             this.label9.TabIndex = 38;
             this.label9.Text = "Pase De Vehículos";
             // 
