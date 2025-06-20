@@ -116,6 +116,7 @@ namespace PASE
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
+            
             string nombre = textArticulo.Text.Trim();
             string descripcion = textDescripcion.Text.Trim();
 
@@ -127,6 +128,15 @@ namespace PASE
 
             MostrarArticulos.Rows.Add(nombre, descripcion);
             numeroPaquetes.Value = numeroPaquetes.Value + 1;
+            MostrarArticulos.Visible = true;
+            btnContinuar.Visible = true;
+            GroupTipo.Visible = false;
+            label8.Visible = false;
+            textDepartamento.Visible = false;
+            label10.Visible = false;
+            textNombreSeguridad.Visible = false;
+            Regresar.Visible = false;
+            buttonGuardar.Visible = false;
 
             // Limpiar campos
             textArticulo.Clear();
@@ -184,10 +194,40 @@ namespace PASE
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MostrarArticulos.Visible = false;
+            btnContinuar.Visible = false;
         }
 
         private void Huespedes_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+        private void textNombreSeguridad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnContinuar_Click(object sender, EventArgs e)
+        {
+            MostrarArticulos.Visible = false;
+            btnContinuar.Visible = false;
+            GroupTipo.Visible = true;
+            label8.Visible = true;
+            textDepartamento.Visible = true;
+            label10.Visible = true;
+            textNombreSeguridad.Visible = true;
+            Regresar.Visible = true;
+            buttonGuardar.Visible = true;
+        }
+
+        private void textDepartamento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

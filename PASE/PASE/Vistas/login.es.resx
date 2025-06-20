@@ -298,79 +298,58 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="pictureBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>3, 3</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 117</value>
+    <value>320, 94</value>
   </data>
   <data name="btnLogin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt</value>
   </data>
   <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 265</value>
-  </data>
-  <data name="btnLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>83, 212</value>
   </data>
   <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 44</value>
+    <value>156, 35</value>
   </data>
   <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 189</value>
-  </data>
-  <data name="txtPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>135, 151</value>
   </data>
   <data name="txtPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 32</value>
+    <value>161, 27</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 196</value>
-  </data>
-  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>12, 157</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 23</value>
+    <value>117, 20</value>
   </data>
   <data name="txtUser.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt</value>
   </data>
   <data name="txtUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 133</value>
-  </data>
-  <data name="txtUser.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>135, 106</value>
   </data>
   <data name="txtUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 32</value>
+    <value>161, 27</value>
   </data>
   <data name="lbUsuario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <data name="lbUsuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 138</value>
-  </data>
-  <data name="lbUsuario.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
+    <value>12, 110</value>
   </data>
   <data name="lbUsuario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 23</value>
+    <value>82, 20</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 141</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>251, 113</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>413, 319</value>
+    <value>331, 256</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5030,38 +5009,14 @@
         tmcItPfg/9k=
 </value>
   </data>
-  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
-  </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 576</value>
-  </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>409, 49</value>
-  </data>
-  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 44</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Iniciar Sesion</value>
+    <value>800, 461</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>120, 120</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 576</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>800, 461</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Login</value>
