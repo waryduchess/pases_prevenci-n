@@ -16,10 +16,7 @@ namespace PASE
             InitializeComponent();
 
             textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
-
         }
-
-        
 
         private void buttonGenerar_Click(object sender, EventArgs e)
         {
@@ -27,6 +24,37 @@ namespace PASE
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            Movimiento movimiento = new Movimiento
+            {
+                NombreHotel = cbxNmbreHotel.Text,
+                Folio = textFolio.Text,
+                TipoMovimiento = GroupEntradaSalidaRadio(), // método que extrae el tipo del RadioButton seleccionado
+                FechaSalida = Salida.Value,
+                FechaRegreso = Regreso.Value,
+                NumeroPaquetes = (int)numeroPaquetes.Value,
+                NombreSolicitante = textNombre.Text,
+                TipoPersona = GetTipoPersonaSeleccionada(), // método que junta los checkboxes seleccionados
+                nombre_seguridad = textNombreSeguridad.Text
+            };
+
+            // Cargar los artículos del DataGridView
+            foreach (DataGridViewRow row in MostrarArticulos.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                string nombre = row.Cells["colNombreArticulo"].Value?.ToString();
+                string descripcion = row.Cells["colDescripcionArticulo"].Value?.ToString();
+
+                if (!string.IsNullOrWhiteSpace(nombre))
+                {
+                    movimiento.Articulos.Add(new Articulo
+                    {
+                        NombreArticulo = nombre,
+                        DescripcionArticulo = descripcion
+                    });
+                }
+            }
+
             var controller = new MovimientoController();
 
             // Validación de fechas
@@ -51,37 +79,6 @@ namespace PASE
 
             try
             {
-                Movimiento movimiento = new Movimiento
-                {
-                    NombreHotel = cbxNmbreHotel.Text,
-                    Folio = textFolio.Text,
-                    TipoMovimiento = GroupEntradaSalidaRadio(), // método que extrae el tipo del RadioButton seleccionado
-                    FechaSalida = Salida.Value,
-                    FechaRegreso = Regreso.Value,
-                    NumeroPaquetes = (int)numeroPaquetes.Value,
-                    NombreSolicitante = textNombre.Text,
-                    TipoPersona = GetTipoPersonaSeleccionada(), // método que junta los checkboxes seleccionados
-                    nombre_seguridad = textNombreSeguridad.Text
-                };
-
-                // Cargar los artículos del DataGridView
-                foreach (DataGridViewRow row in MostrarArticulos.Rows)
-                {
-                    if (row.IsNewRow) continue;
-
-                    string nombre = row.Cells["colNombreArticulo"].Value?.ToString();
-                    string descripcion = row.Cells["colDescripcionArticulo"].Value?.ToString();
-
-                    if (!string.IsNullOrWhiteSpace(nombre))
-                    {
-                        movimiento.Articulos.Add(new Articulo
-                        {
-                            NombreArticulo = nombre,
-                            DescripcionArticulo = descripcion
-                        });
-                    }
-                }
-
                 // Validar que haya al menos un artículo
                 if (movimiento.Articulos.Count == 0)
                 {
@@ -93,19 +90,32 @@ namespace PASE
                 controller.GuardarMovimiento(movimiento);
                 MessageBox.Show("Datos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-             
+                SaveFileDialog saveDialog = new SaveFileDialog
+                {
+                    Filter = "Archivo PDF|*.pdf",
+                    Title = "Guardar Pase de Vehículo",
+                    FileName = $"Pase articulos_{movimiento.Folio}.pdf"
+                };
 
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    PDFGenerator pdfGen = new PDFGenerator();
+
+                    pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
+                    MessageBox.Show("PDF generado correctamente.");
+                    System.Diagnostics.Process.Start(saveDialog.FileName);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-
             string nombre = textArticulo.Text.Trim();
             string descripcion = textDescripcion.Text.Trim();
 
@@ -165,52 +175,6 @@ namespace PASE
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
         {
-            Movimiento movimiento = new Movimiento
-            {
-                NombreHotel = cbxNmbreHotel.Text,
-                Folio = textFolio.Text,
-                TipoMovimiento = GroupEntradaSalidaRadio(),
-                FechaSalida = Salida.Value,
-                FechaRegreso = Regreso.Value,
-                NumeroPaquetes = (int)numeroPaquetes.Value,
-                NombreSolicitante = textNombre.Text,
-                TipoPersona = GetTipoPersonaSeleccionada(),
-                nombre_seguridad = textNombreSeguridad.Text
-            };
-
-            // ✅ Agregar artículos
-            foreach (DataGridViewRow row in MostrarArticulos.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                string nombre = row.Cells["colNombreArticulo"].Value?.ToString();
-                string descripcion = row.Cells["colDescripcionArticulo"].Value?.ToString();
-
-                if (!string.IsNullOrWhiteSpace(nombre))
-                {
-                    movimiento.Articulos.Add(new Articulo
-                    {
-                        NombreArticulo = nombre,
-                        DescripcionArticulo = descripcion
-                    });
-                }
-            }
-
-            SaveFileDialog saveDialog = new SaveFileDialog
-            {
-                Filter = "Archivo PDF|*.pdf",
-                Title = "Guardar Pase de Vehículo",
-                FileName = $"Pase articulos_{movimiento.Folio}.pdf"
-            };
-
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                PDFGenerator pdfGen = new PDFGenerator();
-
-                pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
-                MessageBox.Show("PDF generado correctamente.");
-                System.Diagnostics.Process.Start(saveDialog.FileName);
-            }
         }
 
         private void Regresar_Click(object sender, EventArgs e)
@@ -220,12 +184,10 @@ namespace PASE
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Huespedes_CheckedChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
