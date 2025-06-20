@@ -123,12 +123,13 @@ namespace PASE.Modelos
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     string sql = @"SELECT * FROM pases_carro 
-                               WHERE folio LIKE @folio OR nombre_conductor LIKE @nombre";
+                                   WHERE (@folio = '' OR folio LIKE @folio)
+                                     AND (@nombre = '' OR nombre_conductor LIKE @nombre)";
 
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@folio", "%" + folio + "%");
-                        cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                        cmd.Parameters.AddWithValue("@folio", string.IsNullOrEmpty(folio) ? "" : "%" + folio + "%");
+                        cmd.Parameters.AddWithValue("@nombre", string.IsNullOrEmpty(nombre) ? "" : "%" + nombre + "%");
 
                         using (var reader = cmd.ExecuteReader())
                         {
