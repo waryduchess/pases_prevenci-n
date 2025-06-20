@@ -51,11 +51,28 @@ namespace PASE.Vistas
             controlador.GuardarPase(pase);
 
             MessageBox.Show("Pase de vehículo guardado correctamente en la base de datos.");
+
+            // Generar PDF después de guardar
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Archivo PDF|*.pdf",
+                Title = "Guardar Pase de Vehículo",
+                FileName = $"Pase vehiculo_{pase.Folio}.pdf"
+            };
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                ReporteCarroPDF.ExportarPaseCarro(pase, saveDialog.FileName);
+                MessageBox.Show("PDF generado correctamente.");
+                System.Diagnostics.Process.Start(saveDialog.FileName);
+            }
+
             textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
         {
+            /*
             if (!ValidarCampos())
                 return;
 
@@ -86,6 +103,7 @@ namespace PASE.Vistas
                 MessageBox.Show("PDF generado correctamente.");
                 System.Diagnostics.Process.Start(saveDialog.FileName);
             }
+            */
         }
 
         private bool ValidarCampos()
