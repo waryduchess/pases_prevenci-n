@@ -127,6 +127,15 @@ namespace PASE.Vistas
                 MessageBox.Show("Usuario o contraseña incorrectos.");
             }
 
+            // Limpiar campos
+            txtUser.Text = "Usuario";
+            txtUser.ForeColor = Color.Silver;
+
+            txtPassword.Text = "Contraseña";
+            txtPassword.ForeColor = Color.Silver;
+            txtPassword.UseSystemPasswordChar = false;
+
+
         }
 
         private void login_Load(object sender, EventArgs e)

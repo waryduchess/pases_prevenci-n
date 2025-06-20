@@ -14,7 +14,7 @@ namespace PASE.Utils
     {
         public void GenerarPDF(Movimiento mov, string rutaArchivo)
         {
-            Document doc = new Document(PageSize.A4, 40, 40, 40, 40);
+            Document doc = new Document(PageSize.A4, 30, 30, 30, 30);
             PdfWriter.GetInstance(doc, new FileStream(rutaArchivo, FileMode.Create));
             doc.Open();
 
@@ -35,7 +35,7 @@ namespace PASE.Utils
             doc.Add(titulo);
 
             // Información del pase
-            doc.Add(new Paragraph($"Folio: {mov.Folio}",textoFont));
+            doc.Add(new Paragraph($"Folio: {mov.Folio}", textoFont));
             doc.Add(new Paragraph($"Tipo de Movimiento: {mov.TipoMovimiento}", textoFont));
             doc.Add(new Paragraph($"Fecha de Salida: {mov.FechaSalida:dd/MM/yyyy}", textoFont));
             doc.Add(new Paragraph($"Fecha de Regreso: {mov.FechaRegreso:dd/MM/yyyy}", textoFont));
@@ -49,10 +49,10 @@ namespace PASE.Utils
             PdfPTable tabla = new PdfPTable(2);
             tabla.WidthPercentage = 100;
             tabla.SetWidths(new float[] { 2, 4 });
+            tabla.SpacingBefore = 10f;
 
-            PdfPCell header1 = new PdfPCell(new Phrase("Nombre del Artículo", textoFont));
-            PdfPCell header2 = new PdfPCell(new Phrase("Descripción", textoFont));
-            header1.BackgroundColor = header2.BackgroundColor = BaseColor.LIGHT_GRAY;
+            PdfPCell header1 = new PdfPCell(new Phrase("Nombre del Artículo", textoFont)) { BackgroundColor = BaseColor.LIGHT_GRAY };
+            PdfPCell header2 = new PdfPCell(new Phrase("Descripción", textoFont)) { BackgroundColor = BaseColor.LIGHT_GRAY };
             tabla.AddCell(header1);
             tabla.AddCell(header2);
 
@@ -69,7 +69,7 @@ namespace PASE.Utils
             PdfPTable firmas = new PdfPTable(3);
             firmas.WidthPercentage = 100;
             firmas.SetWidths(new float[] { 1, 1, 1 });
-            firmas.SpacingBefore = 30f;
+            firmas.SpacingBefore = 10f;
 
             firmas.AddCell(CeldaFirma("Firma Jefe Departamento", textoFont));
             firmas.AddCell(CeldaFirma("Firma de Autorización", textoFont));
@@ -83,18 +83,21 @@ namespace PASE.Utils
         {
             PdfPCell celda = new PdfPCell();
             celda.Border = PdfPCell.NO_BORDER;
-            celda.PaddingTop = 20f;
+            celda.PaddingTop = 5f;
 
-            Paragraph p = new Paragraph("\n\n_________________________\n" + titulo, font);
-            p.Alignment = Element.ALIGN_CENTER;
+            Paragraph p = new Paragraph("_________________________\n" + titulo, font)
+            {
+                Alignment = Element.ALIGN_CENTER
+            };
             celda.AddElement(p);
 
             return celda;
         }
     }
+}
 
-   
-        public static class ReporteCarroPDF
+
+    public static class ReporteCarroPDF
         {
         public static void ExportarPaseCarro(PaseCarro pase, string ruta)
         {
@@ -138,5 +141,6 @@ namespace PASE.Utils
             doc.Close();
         }
         }
-    }
+    
+}
 
