@@ -36,7 +36,7 @@ Este proyecto tiene como objetivo digitalizar y optimizar el proceso de **emisiÃ
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git](https://github.com/waryduchess/pases_prevenci-n.git
+   git clone https://github.com/tu-usuario/tu-repositorio.git
    
 ## ðŸ“¦ Reinstalar nugget
 1.Abri consola  del Administrador de paquetes:
