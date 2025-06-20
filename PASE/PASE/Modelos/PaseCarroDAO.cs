@@ -95,6 +95,7 @@ namespace PASE.Modelos
                             {
                                 lista.Add(new PaseCarro
                                 {
+                                    NombreHotel = reader["nombre_hotel"].ToString(),
                                     Folio = reader["folio"].ToString(),
                                     Fecha = Convert.ToDateTime(reader["fecha"]),
                                     NombreConductor = reader["nombre_conductor"].ToString(),
@@ -135,6 +136,7 @@ namespace PASE.Modelos
                             {
                                 lista.Add(new PaseCarro
                                 {
+                                    NombreHotel = reader["nombre_hotel"].ToString(),
                                     Folio = reader["folio"].ToString(),
                                     Fecha = Convert.ToDateTime(reader["fecha"]),
                                     NombreConductor = reader["nombre_conductor"].ToString(),

@@ -80,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(8, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 32);
+            this.label1.Size = new System.Drawing.Size(239, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pase De Articulos";
             // 
@@ -92,7 +92,7 @@
             this.labelHotel.Location = new System.Drawing.Point(31, 68);
             this.labelHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHotel.Name = "labelHotel";
-            this.labelHotel.Size = new System.Drawing.Size(54, 20);
+            this.labelHotel.Size = new System.Drawing.Size(55, 21);
             this.labelHotel.TabIndex = 1;
             this.labelHotel.Text = "Hotel:";
             // 
@@ -104,7 +104,7 @@
             this.labeFolio.Location = new System.Drawing.Point(696, 27);
             this.labeFolio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labeFolio.Name = "labeFolio";
-            this.labeFolio.Size = new System.Drawing.Size(47, 20);
+            this.labeFolio.Size = new System.Drawing.Size(48, 21);
             this.labeFolio.TabIndex = 2;
             this.labeFolio.Text = "Folio:";
             // 
@@ -141,7 +141,7 @@
             this.SalidaconDevolucion.Location = new System.Drawing.Point(229, 17);
             this.SalidaconDevolucion.Margin = new System.Windows.Forms.Padding(2);
             this.SalidaconDevolucion.Name = "SalidaconDevolucion";
-            this.SalidaconDevolucion.Size = new System.Drawing.Size(148, 17);
+            this.SalidaconDevolucion.Size = new System.Drawing.Size(148, 20);
             this.SalidaconDevolucion.TabIndex = 2;
             this.SalidaconDevolucion.TabStop = true;
             this.SalidaconDevolucion.Text = "Salida con Devolucion";
@@ -153,7 +153,7 @@
             this.Entrada.Location = new System.Drawing.Point(140, 17);
             this.Entrada.Margin = new System.Windows.Forms.Padding(2);
             this.Entrada.Name = "Entrada";
-            this.Entrada.Size = new System.Drawing.Size(69, 17);
+            this.Entrada.Size = new System.Drawing.Size(69, 20);
             this.Entrada.TabIndex = 1;
             this.Entrada.TabStop = true;
             this.Entrada.Text = "Entrada";
@@ -165,7 +165,7 @@
             this.SalidaDefinitiva.Location = new System.Drawing.Point(15, 17);
             this.SalidaDefinitiva.Margin = new System.Windows.Forms.Padding(2);
             this.SalidaDefinitiva.Name = "SalidaDefinitiva";
-            this.SalidaDefinitiva.Size = new System.Drawing.Size(113, 17);
+            this.SalidaDefinitiva.Size = new System.Drawing.Size(113, 20);
             this.SalidaDefinitiva.TabIndex = 0;
             this.SalidaDefinitiva.TabStop = true;
             this.SalidaDefinitiva.Text = "Salida Definitiva";
@@ -179,7 +179,7 @@
             this.label2.Location = new System.Drawing.Point(31, 156);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 20);
+            this.label2.Size = new System.Drawing.Size(139, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Fecha de Salida:";
             // 
@@ -191,7 +191,7 @@
             this.label3.Location = new System.Drawing.Point(419, 156);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 20);
+            this.label3.Size = new System.Drawing.Size(154, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Fecha de Regreso:";
             // 
@@ -231,7 +231,7 @@
             this.labelNombre.Location = new System.Drawing.Point(20, 197);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(76, 20);
+            this.labelNombre.Size = new System.Drawing.Size(77, 21);
             this.labelNombre.TabIndex = 12;
             this.labelNombre.Text = "Nombre:";
             // 
@@ -243,7 +243,7 @@
             this.label4.Location = new System.Drawing.Point(352, 197);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 20);
+            this.label4.Size = new System.Drawing.Size(139, 21);
             this.label4.TabIndex = 14;
             this.label4.Text = "No.de Paquetes:";
             // 
@@ -274,7 +274,7 @@
             this.label5.Location = new System.Drawing.Point(20, 237);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 20);
+            this.label5.Size = new System.Drawing.Size(75, 21);
             this.label5.TabIndex = 16;
             this.label5.Text = "Articulo:";
             // 
@@ -296,7 +296,7 @@
             this.label6.Location = new System.Drawing.Point(300, 238);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 20);
+            this.label6.Size = new System.Drawing.Size(104, 21);
             this.label6.TabIndex = 18;
             this.label6.Text = "Descripción:";
             // 
@@ -335,7 +335,7 @@
             this.Huespedes.Location = new System.Drawing.Point(373, 8);
             this.Huespedes.Margin = new System.Windows.Forms.Padding(2);
             this.Huespedes.Name = "Huespedes";
-            this.Huespedes.Size = new System.Drawing.Size(103, 17);
+            this.Huespedes.Size = new System.Drawing.Size(103, 20);
             this.Huespedes.TabIndex = 22;
             this.Huespedes.TabStop = true;
             this.Huespedes.Text = "De Huéspedes";
@@ -348,7 +348,7 @@
             this.Proveedores.Location = new System.Drawing.Point(243, 8);
             this.Proveedores.Margin = new System.Windows.Forms.Padding(2);
             this.Proveedores.Name = "Proveedores";
-            this.Proveedores.Size = new System.Drawing.Size(111, 17);
+            this.Proveedores.Size = new System.Drawing.Size(111, 20);
             this.Proveedores.TabIndex = 2;
             this.Proveedores.TabStop = true;
             this.Proveedores.Text = "De Proveedores";
@@ -360,7 +360,7 @@
             this.Empleado.Location = new System.Drawing.Point(125, 8);
             this.Empleado.Margin = new System.Windows.Forms.Padding(2);
             this.Empleado.Name = "Empleado";
-            this.Empleado.Size = new System.Drawing.Size(99, 17);
+            this.Empleado.Size = new System.Drawing.Size(99, 20);
             this.Empleado.TabIndex = 1;
             this.Empleado.TabStop = true;
             this.Empleado.Text = "De Empleado";
@@ -372,7 +372,7 @@
             this.Contratista.Location = new System.Drawing.Point(10, 8);
             this.Contratista.Margin = new System.Windows.Forms.Padding(2);
             this.Contratista.Name = "Contratista";
-            this.Contratista.Size = new System.Drawing.Size(103, 17);
+            this.Contratista.Size = new System.Drawing.Size(103, 20);
             this.Contratista.TabIndex = 0;
             this.Contratista.TabStop = true;
             this.Contratista.Text = "De Contratista";
@@ -396,7 +396,7 @@
             this.label8.Location = new System.Drawing.Point(20, 356);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 20);
+            this.label8.Size = new System.Drawing.Size(133, 21);
             this.label8.TabIndex = 24;
             this.label8.Text = "Departamento:";
             // 
@@ -418,7 +418,7 @@
             this.label10.Location = new System.Drawing.Point(20, 404);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(218, 20);
+            this.label10.Size = new System.Drawing.Size(219, 21);
             this.label10.TabIndex = 28;
             this.label10.Text = "Nombre y Firma Seguridad:";
             // 
@@ -508,12 +508,12 @@
             this.cbxNmbreHotel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNmbreHotel.FormattingEnabled = true;
             this.cbxNmbreHotel.Items.AddRange(new object[] {
-            "XPM",
-            "FPM",
-            "BPM"});
+            "Excellence PM",
+            "Finest PM",
+            "Beloved PM"});
             this.cbxNmbreHotel.Location = new System.Drawing.Point(90, 60);
             this.cbxNmbreHotel.Name = "cbxNmbreHotel";
-            this.cbxNmbreHotel.Size = new System.Drawing.Size(167, 28);
+            this.cbxNmbreHotel.Size = new System.Drawing.Size(167, 29);
             this.cbxNmbreHotel.TabIndex = 35;
             // 
             // frmArticulos

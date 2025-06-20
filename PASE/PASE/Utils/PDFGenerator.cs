@@ -130,6 +130,7 @@ namespace PASE.Utils
             AddCell("VEHÍCULO", headerFont);
             AddCell($"Placas: {pase.Placas}    Marca: {pase.Marca}    Modelo: {pase.Modelo}", normalFont);
             AddCell($"Color: {pase.Color}", normalFont);
+            AddCell($"Nombre del Hotel: {pase.NombreHotel}", normalFont);
             AddCell("------------------------------------------------", normalFont);
             AddCell($"AUTORIZACIÓN SEGURIDAD: {pase.Nombre_seguridad}", normalFont);
 
