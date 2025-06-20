@@ -35,6 +35,7 @@ namespace PASE.Vistas
 
             PaseCarro pase = new PaseCarro
             {
+                NombreHotel = cbxNmbreHotel.Text,
                 Folio = textFolio.Text,
                 Fecha = DateTime.Now,
                 NombreConductor = textConductor.Text,
@@ -60,6 +61,7 @@ namespace PASE.Vistas
 
             PaseCarro pase = new PaseCarro
             {
+                NombreHotel = cbxNmbreHotel.Text, // Nombre del hotel por defecto
                 Folio = textFolio.Text,
                 Fecha = DateTime.Now,
                 NombreConductor = textConductor.Text,
@@ -88,6 +90,12 @@ namespace PASE.Vistas
 
         private bool ValidarCampos()
         {
+            if (cbxNmbreHotel.Text == "")
+            {
+                MessageBox.Show("Seleccione el nombre del hotel.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textConductor.Focus();
+                return false;
+            }
             if (string.IsNullOrWhiteSpace(textConductor.Text))
             {
                 MessageBox.Show("Ingrese el nombre del conductor.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);

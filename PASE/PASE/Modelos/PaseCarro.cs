@@ -8,6 +8,7 @@ namespace PASE.Modelos
 {
     public class PaseCarro
     {
+        public string NombreHotel { get; set; } = "Hotel TEC"; // Default hotel name
         public string Folio { get; set; }
         public DateTime Fecha { get; set; }
         public string NombreConductor { get; set; }

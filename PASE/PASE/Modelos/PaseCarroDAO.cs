@@ -32,12 +32,13 @@ namespace PASE.Modelos
                         {
                             string sql = @"
                                 INSERT INTO pases_carro 
-                                (folio, fecha, nombre_conductor, placas, marca, modelo, color, motivo_visita, nombre_seguridad, ruta_pdf)
+                                (nombre_hotel,folio, fecha, nombre_conductor, placas, marca, modelo, color, motivo_visita, nombre_seguridad, ruta_pdf)
                                 VALUES 
-                                (@folio, @fecha, @nombre_conductor, @placas, @marca, @modelo, @color, @motivo_visita, @nombre_seguridad, @ruta_pdf)";
+                                (@nombre_hotel,@folio, @fecha, @nombre_conductor, @placas, @marca, @modelo, @color, @motivo_visita, @nombre_seguridad, @ruta_pdf)";
 
                             using (var cmd = new SQLiteCommand(sql, conn, transaction))
                             {
+                                cmd.Parameters.AddWithValue("@nombre_hotel", pase.NombreHotel ?? "");
                                 cmd.Parameters.AddWithValue("@folio", pase.Folio);
                                 cmd.Parameters.AddWithValue("@fecha", pase.Fecha);
                                 cmd.Parameters.AddWithValue("@nombre_conductor", pase.NombreConductor ?? "");

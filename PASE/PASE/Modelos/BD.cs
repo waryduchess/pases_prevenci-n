@@ -56,6 +56,7 @@ namespace PASE.Modelos
 
                         CREATE TABLE IF NOT EXISTS pases_carro (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            nombre_hotel TEXT NOT NULL,
                             folio TEXT NOT NULL UNIQUE,
                             fecha DATETIME NOT NULL,
                             nombre_conductor TEXT NOT NULL,
