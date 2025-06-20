@@ -222,5 +222,10 @@ namespace PASE
         {
 
         }
+
+        private void Huespedes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
