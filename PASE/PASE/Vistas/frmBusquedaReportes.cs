@@ -30,9 +30,7 @@ namespace PASE.Vistas
         {
             InitializeComponent();
             cbxBuscar.SelectedIndex = 0; // Por defecto buscar movimientos
-            
         }
-
 
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
@@ -45,7 +43,6 @@ namespace PASE.Vistas
                 return;
             }
 
-
             if (cbxBuscar.SelectedIndex == 0) // Movimientos
             {
                 MovimientoDAO dao = new MovimientoDAO();
@@ -56,7 +53,6 @@ namespace PASE.Vistas
             {
                 PaseCarroDAO dao = new PaseCarroDAO();
                 var resultados = dao.BuscarPorFolioONombre(folio, nombre);
-                dgvResultados.DataSource = null;
                 dgvResultados.DataSource = null;
                 dgvResultados.DataSource = resultados;
             }
@@ -134,13 +130,6 @@ namespace PASE.Vistas
                     }
                 }
             }
-
-
-
-
-
-
-
         }
 
         private void InitializeComponent()
@@ -232,6 +221,7 @@ namespace PASE.Vistas
             this.txtFolio.Name = "txtFolio";
             this.txtFolio.Size = new System.Drawing.Size(195, 27);
             this.txtFolio.TabIndex = 6;
+            this.txtFolio.TextChanged += new System.EventHandler(this.txtFolio_TextChanged);
             // 
             // dgvResultados
             // 
@@ -326,7 +316,6 @@ namespace PASE.Vistas
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -336,7 +325,12 @@ namespace PASE.Vistas
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+            RealizarBusqueda();
+        }
 
+        private void txtFolio_TextChanged(object sender, EventArgs e)
+        {
+            RealizarBusqueda();
         }
 
         private void frmBusquedaReportes_Load(object sender, EventArgs e)
@@ -370,7 +364,41 @@ namespace PASE.Vistas
                 label4.Visible = false;
                 txtFolio.Visible = false;
             }
-           
+        }
+
+        private void RealizarBusqueda()
+        {
+            try
+            {
+                string folio = txtFolio.Text.Trim();
+                string nombre = txtNombre.Text.Trim();
+
+                // Si ambos campos están vacíos, limpiamos el grid y retornamos
+                if (string.IsNullOrWhiteSpace(folio) && string.IsNullOrWhiteSpace(nombre))
+                {
+                    dgvResultados.DataSource = null;
+                    return;
+                }
+
+                if (cbxBuscar.SelectedIndex == 0) // Movimientos
+                {
+                    MovimientoDAO dao = new MovimientoDAO();
+                    var resultados = dao.BuscarPorFolioONombre(folio, nombre);
+                    dgvResultados.DataSource = resultados;
+                }
+                else // Pases de carro
+                {
+                    PaseCarroDAO dao = new PaseCarroDAO();
+                    var resultados = dao.BuscarPorFolioONombre(folio, nombre);
+                    dgvResultados.DataSource = null;
+                    dgvResultados.DataSource = resultados;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo silencioso del error para no interrumpir la experiencia del usuario
+                Console.WriteLine($"Error en búsqueda: {ex.Message}");
+            }
         }
     }
 }
