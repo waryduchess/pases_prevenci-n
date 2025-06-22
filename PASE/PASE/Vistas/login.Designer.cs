@@ -113,8 +113,8 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.Controls.Add(panel1);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
             this.Name = "login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.login_Load);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

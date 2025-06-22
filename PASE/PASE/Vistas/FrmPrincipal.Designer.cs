@@ -44,10 +44,10 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(0, 318);
+            this.panel1.Location = new System.Drawing.Point(0, 398);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 171);
+            this.panel1.Size = new System.Drawing.Size(1270, 214);
             this.panel1.TabIndex = 0;
             // 
             // EntradaySalida
@@ -60,10 +60,10 @@
             this.EntradaySalida.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.EntradaySalida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EntradaySalida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.EntradaySalida.Location = new System.Drawing.Point(68, 458);
+            this.EntradaySalida.Location = new System.Drawing.Point(76, 572);
             this.EntradaySalida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EntradaySalida.Name = "EntradaySalida";
-            this.EntradaySalida.Size = new System.Drawing.Size(297, 84);
+            this.EntradaySalida.Size = new System.Drawing.Size(334, 105);
             this.EntradaySalida.TabIndex = 1;
             this.EntradaySalida.Text = "Pase de Articulos";
             this.EntradaySalida.UseVisualStyleBackColor = false;
@@ -80,10 +80,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.button2.Location = new System.Drawing.Point(412, 458);
+            this.button2.Location = new System.Drawing.Point(464, 572);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(297, 84);
+            this.button2.Size = new System.Drawing.Size(334, 105);
             this.button2.TabIndex = 2;
             this.button2.Text = "Pase de Carro";
             this.button2.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.button1.Location = new System.Drawing.Point(757, 458);
+            this.button1.Location = new System.Drawing.Point(852, 572);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(297, 84);
+            this.button1.Size = new System.Drawing.Size(334, 105);
             this.button1.TabIndex = 3;
             this.button1.Text = "Buscar Pase";
             this.button1.UseVisualStyleBackColor = false;
@@ -114,9 +114,9 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1129, 361);
+            this.pictureBox1.Size = new System.Drawing.Size(1270, 451);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -124,12 +124,12 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1129, 545);
+            this.ClientSize = new System.Drawing.Size(1270, 681);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -137,6 +137,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TEC";

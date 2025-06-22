@@ -19,7 +19,6 @@ namespace PASE.Vistas
         private TextBox txtNombre;
         private TextBox txtFolio;
         private DataGridView dgvResultados;
-        private Button btnBuscar;
         private Button btnReimprimir;
         private Button btnRegresar;
         private PictureBox pictureBox1;
@@ -143,7 +142,6 @@ namespace PASE.Vistas
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtFolio = new System.Windows.Forms.TextBox();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnReimprimir = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -162,7 +160,7 @@ namespace PASE.Vistas
             "Pase de Carro"});
             this.cbxBuscar.Location = new System.Drawing.Point(287, 176);
             this.cbxBuscar.Name = "cbxBuscar";
-            this.cbxBuscar.Size = new System.Drawing.Size(200, 28);
+            this.cbxBuscar.Size = new System.Drawing.Size(200, 38);
             this.cbxBuscar.TabIndex = 0;
             // 
             // label1
@@ -171,7 +169,7 @@ namespace PASE.Vistas
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(87, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.Size = new System.Drawing.Size(173, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tipo de pase:";
             // 
@@ -181,7 +179,7 @@ namespace PASE.Vistas
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(87, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.Size = new System.Drawing.Size(151, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Buscar por: ";
             // 
@@ -191,7 +189,7 @@ namespace PASE.Vistas
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(87, 278);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.Size = new System.Drawing.Size(124, 30);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nombre: ";
             // 
@@ -201,7 +199,7 @@ namespace PASE.Vistas
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(87, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(83, 30);
             this.label4.TabIndex = 4;
             this.label4.Text = "Folio: ";
             // 
@@ -210,7 +208,7 @@ namespace PASE.Vistas
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(287, 269);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(195, 27);
+            this.txtNombre.Size = new System.Drawing.Size(195, 37);
             this.txtNombre.TabIndex = 5;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -219,7 +217,7 @@ namespace PASE.Vistas
             this.txtFolio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFolio.Location = new System.Drawing.Point(287, 269);
             this.txtFolio.Name = "txtFolio";
-            this.txtFolio.Size = new System.Drawing.Size(195, 27);
+            this.txtFolio.Size = new System.Drawing.Size(195, 37);
             this.txtFolio.TabIndex = 6;
             this.txtFolio.TextChanged += new System.EventHandler(this.txtFolio_TextChanged);
             // 
@@ -234,21 +232,10 @@ namespace PASE.Vistas
             this.dgvResultados.Size = new System.Drawing.Size(960, 284);
             this.dgvResultados.TabIndex = 7;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(813, 164);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(134, 48);
-            this.btnBuscar.TabIndex = 8;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
-            // 
             // btnReimprimir
             // 
             this.btnReimprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReimprimir.Location = new System.Drawing.Point(813, 218);
+            this.btnReimprimir.Location = new System.Drawing.Point(813, 176);
             this.btnReimprimir.Name = "btnReimprimir";
             this.btnReimprimir.Size = new System.Drawing.Size(134, 48);
             this.btnReimprimir.TabIndex = 9;
@@ -259,7 +246,7 @@ namespace PASE.Vistas
             // btnRegresar
             // 
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(813, 272);
+            this.btnRegresar.Location = new System.Drawing.Point(813, 230);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(134, 48);
             this.btnRegresar.TabIndex = 10;
@@ -288,7 +275,7 @@ namespace PASE.Vistas
             "Folio"});
             this.comboBox1.Location = new System.Drawing.Point(287, 222);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 28);
+            this.comboBox1.Size = new System.Drawing.Size(200, 38);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -300,7 +287,6 @@ namespace PASE.Vistas
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnReimprimir);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.txtFolio);
             this.Controls.Add(this.txtNombre);
@@ -309,6 +295,8 @@ namespace PASE.Vistas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxBuscar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmBusquedaReportes";
             this.Text = "Buscador de Pases";
             this.Load += new System.EventHandler(this.frmBusquedaReportes_Load);
@@ -316,6 +304,7 @@ namespace PASE.Vistas
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
