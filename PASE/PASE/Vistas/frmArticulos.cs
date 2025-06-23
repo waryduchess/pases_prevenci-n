@@ -115,8 +115,22 @@ namespace PASE
             textNombre.Clear();
             textDepartamento.Clear();
             textNombreSeguridad.Clear();
-            
-            
+            MostrarArticulos.Rows.Clear();
+            foreach (RadioButton radioButton in GroupEntradaSalida.Controls)
+            {
+                if (radioButton is RadioButton)
+                {
+                    radioButton.Checked = false;
+                }
+            }
+            foreach (RadioButton radioButton in GroupTipo.Controls)
+            {
+                if (radioButton is RadioButton)
+                {
+                    radioButton.Checked = false;
+                }
+            }
+
 
         }
         
