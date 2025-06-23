@@ -3,6 +3,7 @@ using PASE.Modelos;
 using PASE.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace PASE
@@ -27,16 +28,15 @@ namespace PASE
             {
                 NombreHotel = cbxNmbreHotel.Text,
                 Folio = textFolio.Text,
-                TipoMovimiento = GroupEntradaSalidaRadio(), // método que extrae el tipo del RadioButton seleccionado
+                TipoMovimiento = GroupEntradaSalidaRadio(),
                 FechaSalida = Salida.Value,
                 FechaRegreso = Regreso.Value,
                 NumeroPaquetes = (int)numeroPaquetes.Value,
                 NombreSolicitante = textNombre.Text,
-                TipoPersona = GetTipoPersonaSeleccionada(), // método que junta los checkboxes seleccionados
+                TipoPersona = GetTipoPersonaSeleccionada(),
                 nombre_seguridad = textNombreSeguridad.Text
             };
 
-            // Cargar los artículos del DataGridView
             foreach (DataGridViewRow row in MostrarArticulos.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -56,7 +56,6 @@ namespace PASE
 
             var controller = new MovimientoController();
 
-            // Validación de fechas
             if (Salida.Value.Date < DateTime.Today)
             {
                 MessageBox.Show("La fecha de salida no puede ser anterior a la fecha actual.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -69,46 +68,42 @@ namespace PASE
                 return;
             }
 
-            // Validar campos obligatorios
             if (string.IsNullOrWhiteSpace(textFolio.Text) || string.IsNullOrWhiteSpace(textNombre.Text))
             {
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            if (movimiento.Articulos.Count == 0)
+            {
+                MessageBox.Show("Debes agregar al menos un artículo.", "Sin artículos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                // Validar que haya al menos un artículo
-                if (movimiento.Articulos.Count == 0)
-                {
-                    MessageBox.Show("Debes agregar al menos un artículo.", "Sin artículos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                // 1. Generar ruta del PDF
+                string rutaPDF = Path.Combine("Reportes", $"Pase_articulos_{movimiento.Folio}.pdf");
+                Directory.CreateDirectory("Reportes");
 
-                // Guardar
+                // 2. Generar PDF y asignar la ruta
+                PDFGenerator pdfGen = new PDFGenerator();
+                pdfGen.GenerarPDF(movimiento, rutaPDF);
+                movimiento.RutaPDF = rutaPDF;
+
+                // 3. Guardar en base de datos
                 controller.GuardarMovimiento(movimiento);
                 MessageBox.Show("Datos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SaveFileDialog saveDialog = new SaveFileDialog
-                {
-                    Filter = "Archivo PDF|*.pdf",
-                    Title = "Guardar Pase de Vehículo",
-                    FileName = $"Pase articulos_{movimiento.Folio}.pdf"
-                };
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    PDFGenerator pdfGen = new PDFGenerator();
-
-                    pdfGen.GenerarPDF(movimiento, saveDialog.FileName);
-                    MessageBox.Show("PDF generado correctamente.");
-                    System.Diagnostics.Process.Start(saveDialog.FileName);
-                }
+                // 4. Abrir el PDF si el usuario desea
+                System.Diagnostics.Process.Start(rutaPDF);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // Limpiar campos
             Regreso.Value = DateTime.Today;
             limpiarFormulario();
             numeroPaquetes.Value = 0;
