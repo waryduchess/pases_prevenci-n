@@ -1,4 +1,4 @@
-﻿    using PASE.Controladores;
+﻿   using PASE.Controladores;
     using PASE.Modelos;
     using PASE.Utils;
     using System;
@@ -175,4 +175,12 @@
 
             }
         }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+}
+
