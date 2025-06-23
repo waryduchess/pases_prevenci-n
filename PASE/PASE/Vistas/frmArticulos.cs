@@ -83,18 +83,23 @@ namespace PASE
             try
             {
                 string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string rutaCarpeta = Path.Combine(documentos, "Pases_Articulos");
-                Directory.CreateDirectory(rutaCarpeta);
+                // Carpeta principal
+                string carpetaPrincipal = Path.Combine(documentos, "PASE");
+                Directory.CreateDirectory(carpetaPrincipal);
 
-                string archivoPDF = Path.Combine(rutaCarpeta, $"Pase_Articulos_{movimiento.Folio}.pdf");
+                // Subcarpeta Articulos
+                string carpetaArticulos = Path.Combine(carpetaPrincipal, "Articulos");
+                Directory.CreateDirectory(carpetaArticulos);
 
-                // 2. Asignar la ruta al objeto
+                string archivoPDF = Path.Combine(carpetaArticulos, $"Pase_Articulos_{movimiento.Folio}.pdf");
+
+                // Asignar la ruta al objeto
                 movimiento.RutaPDF = archivoPDF;
 
-                // 3. Guardar en base de datos
+                // Guardar en base de datos
                 controller.GuardarMovimiento(movimiento);
 
-                // 4. Generar PDF
+                // Generar PDF
                 PDFGenerator pdfGen = new PDFGenerator();
                 pdfGen.GenerarPDF(movimiento, archivoPDF);
 
@@ -112,6 +117,7 @@ namespace PASE
             numeroPaquetes.Value = 0;
             textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
         }
+
         private void limpiarFormulario()
         {
             cbxNmbreHotel.SelectedIndex = -1;
@@ -133,14 +139,10 @@ namespace PASE
                     radioButton.Checked = false;
                 }
             }
-
-
         }
-        
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            
             string nombre = textArticulo.Text.Trim();
             string descripcion = textDescripcion.Text.Trim();
 
@@ -228,7 +230,6 @@ namespace PASE
 
         private void textNombreSeguridad_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -246,17 +247,14 @@ namespace PASE
 
         private void textDepartamento_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-
         }
 
         private void GroupTipo_Enter(object sender, EventArgs e)
         {
-
         }
     }
 }

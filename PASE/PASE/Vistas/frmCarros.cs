@@ -46,25 +46,29 @@ namespace PASE.Vistas
             {
                 string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-                // 2. Ruta donde guardar los pases de carros
-                string rutaCarpeta = Path.Combine(documentos, "Pases_Carros");
-                Directory.CreateDirectory(rutaCarpeta); // Crea si no existe
+                // Carpeta principal
+                string carpetaPrincipal = Path.Combine(documentos, "PASE");
+                Directory.CreateDirectory(carpetaPrincipal);
 
-                // 3. Ruta completa del archivo
-                string archivoPDF = Path.Combine(rutaCarpeta, $"Pase_Vehiculo_{pase.Folio}.pdf");
+                // Subcarpeta Vehiculos
+                string carpetaVehiculos = Path.Combine(carpetaPrincipal, "Vehiculos");
+                Directory.CreateDirectory(carpetaVehiculos);
 
-                // 4. Generar PDF
+                // Ruta completa del archivo PDF
+                string archivoPDF = Path.Combine(carpetaVehiculos, $"Pase_Vehiculo_{pase.Folio}.pdf");
+
+                // Generar PDF
                 ReporteCarroPDF.ExportarPaseCarro(pase, archivoPDF);
                 pase.RutaPDF = archivoPDF;
 
-                // 5. Guardar en base de datos
+                // Guardar en base de datos
                 PaseCarroController controlador = new PaseCarroController();
                 controlador.GuardarPase(pase);
 
                 MessageBox.Show("Pase de vehículo guardado correctamente y PDF generado.");
                 System.Diagnostics.Process.Start(archivoPDF);
 
-                // 6. Limpiar formulario
+                // Limpiar formulario
                 textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
                 LimpiarCampos();
             }
