@@ -82,21 +82,24 @@ namespace PASE
 
             try
             {
-                // 1. Generar ruta del PDF
-                string rutaPDF = Path.Combine("Reportes", $"Pase_articulos_{movimiento.Folio}.pdf");
-                Directory.CreateDirectory("Reportes");
+                string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string rutaCarpeta = Path.Combine(documentos, "Pases_Articulos");
+                Directory.CreateDirectory(rutaCarpeta);
 
-                // 2. Generar PDF y asignar la ruta
-                PDFGenerator pdfGen = new PDFGenerator();
-                pdfGen.GenerarPDF(movimiento, rutaPDF);
-                movimiento.RutaPDF = rutaPDF;
+                string archivoPDF = Path.Combine(rutaCarpeta, $"Pase_Articulos_{movimiento.Folio}.pdf");
+
+                // 2. Asignar la ruta al objeto
+                movimiento.RutaPDF = archivoPDF;
 
                 // 3. Guardar en base de datos
                 controller.GuardarMovimiento(movimiento);
-                MessageBox.Show("Datos guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // 4. Abrir el PDF si el usuario desea
-                System.Diagnostics.Process.Start(rutaPDF);
+                // 4. Generar PDF
+                PDFGenerator pdfGen = new PDFGenerator();
+                pdfGen.GenerarPDF(movimiento, archivoPDF);
+
+                MessageBox.Show("Datos guardados y PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(archivoPDF);
             }
             catch (Exception ex)
             {

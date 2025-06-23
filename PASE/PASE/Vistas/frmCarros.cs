@@ -1,36 +1,30 @@
-﻿   using PASE.Controladores;
-    using PASE.Modelos;
-    using PASE.Utils;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
+﻿using PASE.Controladores;
+using PASE.Modelos;
+using PASE.Utils;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
-    namespace PASE.Vistas
+namespace PASE.Vistas
+{
+    public partial class frmCarros : Form
+
     {
-        public partial class frmCarros : Form
+        public frmCarros()
         {
-            public frmCarros()
-            {
-                InitializeComponent();
+            InitializeComponent();
 
-                textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
+            textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
 
-            }
+        }
 
-            private void textBox1_TextChanged(object sender, EventArgs e)
-            {
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
-            }
+        }
 
-            private void btnGuardarDatos_Click(object sender, EventArgs e)
-            {
+        private void btnGuardarDatos_Click(object sender, EventArgs e)
+        {
             if (!ValidarCampos())
                 return;
 
@@ -50,31 +44,29 @@
 
             try
             {
-                // 1. Seleccionar ruta donde guardar el PDF
-                SaveFileDialog saveDialog = new SaveFileDialog
-                {
-                    Filter = "Archivo PDF|*.pdf",
-                    Title = "Guardar Pase de Vehículo",
-                    FileName = $"Pase_vehiculo_{pase.Folio}.pdf"
-                };
+                string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // 2. Generar PDF y asignar ruta
-                    ReporteCarroPDF.ExportarPaseCarro(pase, saveDialog.FileName);
-                    pase.RutaPDF = saveDialog.FileName;
+                // 2. Ruta donde guardar los pases de carros
+                string rutaCarpeta = Path.Combine(documentos, "Pases_Carros");
+                Directory.CreateDirectory(rutaCarpeta); // Crea si no existe
 
-                    // 3. Guardar en base de datos
-                    PaseCarroController controlador = new PaseCarroController();
-                    controlador.GuardarPase(pase);
+                // 3. Ruta completa del archivo
+                string archivoPDF = Path.Combine(rutaCarpeta, $"Pase_Vehiculo_{pase.Folio}.pdf");
 
-                    MessageBox.Show("Pase de vehículo guardado correctamente y PDF generado.");
-                    System.Diagnostics.Process.Start(saveDialog.FileName);
+                // 4. Generar PDF
+                ReporteCarroPDF.ExportarPaseCarro(pase, archivoPDF);
+                pase.RutaPDF = archivoPDF;
 
-                    // 4. Limpiar
-                    textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
-                    LimpiarCampos();
-                }
+                // 5. Guardar en base de datos
+                PaseCarroController controlador = new PaseCarroController();
+                controlador.GuardarPase(pase);
+
+                MessageBox.Show("Pase de vehículo guardado correctamente y PDF generado.");
+                System.Diagnostics.Process.Start(archivoPDF);
+
+                // 6. Limpiar formulario
+                textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
@@ -84,100 +76,94 @@
         }
 
         private void LimpiarCampos()
+        {
+            cbxNmbreHotel.SelectedIndex = -1;
+            textConductor.Clear();
+            textPlacas.Clear();
+            textMarca.Clear();
+            textModelo.Clear();
+            textColor.Clear();
+            textMotivo.Clear();
+            txtFirmaSeguridad.Clear();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (cbxNmbreHotel.Text == "")
             {
-                cbxNmbreHotel.SelectedIndex = -1;
-                textConductor.Clear();
-                textPlacas.Clear();
-                textMarca.Clear();
-                textModelo.Clear();
-                textColor.Clear();
-                textMotivo.Clear();
-                txtFirmaSeguridad.Clear();
+                MessageBox.Show("Seleccione el nombre del hotel.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textConductor.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(textConductor.Text))
+            {
+                MessageBox.Show("Ingrese el nombre del conductor.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textConductor.Focus();
+                return false;
             }
 
-            private bool ValidarCampos()
+            if (string.IsNullOrWhiteSpace(textPlacas.Text))
             {
-                if (cbxNmbreHotel.Text == "")
-                {
-                    MessageBox.Show("Seleccione el nombre del hotel.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textConductor.Focus();
-                    return false;
-                }
-                if (string.IsNullOrWhiteSpace(textConductor.Text))
-                {
-                    MessageBox.Show("Ingrese el nombre del conductor.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textConductor.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(textPlacas.Text))
-                {
-                    MessageBox.Show("Ingrese las placas del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textPlacas.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(textMarca.Text))
-                {
-                    MessageBox.Show("Ingrese la marca del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textMarca.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(textModelo.Text))
-                {
-                    MessageBox.Show("Ingrese el modelo del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textModelo.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(textColor.Text))
-                {
-                    MessageBox.Show("Ingrese el color del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textColor.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(textMotivo.Text))
-                {
-                    MessageBox.Show("Ingrese el motivo de la visita.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textMotivo.Focus();
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtFirmaSeguridad.Text))
-                {
-                    MessageBox.Show("Ingrese el nombre de quien autoriza en seguridad.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtFirmaSeguridad.Focus();
-                    return false;
-                }
-
-                return true; // Todo correcto
+                MessageBox.Show("Ingrese las placas del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textPlacas.Focus();
+                return false;
             }
 
-            private void textFolio_TextChanged(object sender, EventArgs e)
+            if (string.IsNullOrWhiteSpace(textMarca.Text))
             {
-
+                MessageBox.Show("Ingrese la marca del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textMarca.Focus();
+                return false;
             }
 
-            private void Regresar_Click(object sender, EventArgs e)
+            if (string.IsNullOrWhiteSpace(textModelo.Text))
             {
-                Close(); // Cierra el formulario actual y regresa al anterior
+                MessageBox.Show("Ingrese el modelo del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textModelo.Focus();
+                return false;
             }
 
-            private void frmCarros_Load(object sender, EventArgs e)
+            if (string.IsNullOrWhiteSpace(textColor.Text))
             {
-
+                MessageBox.Show("Ingrese el color del vehículo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textColor.Focus();
+                return false;
             }
 
-            private void textConductor_TextChanged(object sender, EventArgs e)
+            if (string.IsNullOrWhiteSpace(textMotivo.Text))
             {
-
+                MessageBox.Show("Ingrese el motivo de la visita.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textMotivo.Focus();
+                return false;
             }
-        
+
+            if (string.IsNullOrWhiteSpace(txtFirmaSeguridad.Text))
+            {
+                MessageBox.Show("Ingrese el nombre de quien autoriza en seguridad.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtFirmaSeguridad.Focus();
+                return false;
+            }
 
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+            return true; // Todo correcto
+        }
+
+        private void textFolio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            Close(); // Cierra el formulario actual y regresa al anterior
+        }
+
+        private void frmCarros_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textConductor_TextChanged(object sender, EventArgs e)
         {
 
         }
