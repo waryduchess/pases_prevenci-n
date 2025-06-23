@@ -8,6 +8,7 @@ using System.Windows.Forms;
 namespace PASE.Vistas
 {
     public partial class frmCarros : Form
+
     {
         public frmCarros()
         {
@@ -143,6 +144,7 @@ namespace PASE.Vistas
                 return false;
             }
 
+
             return true; // Todo correcto
         }
 
@@ -167,3 +169,4 @@ namespace PASE.Vistas
         }
     }
 }
+
