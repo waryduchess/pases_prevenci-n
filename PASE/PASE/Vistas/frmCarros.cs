@@ -68,42 +68,19 @@ namespace PASE.Vistas
             }
 
             textFolio.Text = FolioGeneratorCarros.GenerarFolioUnico();
+            LimpiarCampos();
         }
 
-        private void btnGenerarPDF_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
-            /*
-            if (!ValidarCampos())
-                return;
-
-            PaseCarro pase = new PaseCarro
-            {
-                NombreHotel = cbxNmbreHotel.Text, // Nombre del hotel por defecto
-                Folio = textFolio.Text,
-                Fecha = DateTime.Now,
-                NombreConductor = textConductor.Text,
-                Placas = textPlacas.Text,
-                Marca = textMarca.Text,
-                Modelo = textModelo.Text,
-                Color = textColor.Text,
-                MotivoVisita = textMotivo.Text,
-                Nombre_seguridad = txtFirmaSeguridad.Text
-            };
-
-            SaveFileDialog saveDialog = new SaveFileDialog
-            {
-                Filter = "Archivo PDF|*.pdf",
-                Title = "Guardar Pase de Vehículo",
-                FileName = $"Pase vehiculo_{pase.Folio}.pdf"
-            };
-
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                ReporteCarroPDF.ExportarPaseCarro(pase, saveDialog.FileName);
-                MessageBox.Show("PDF generado correctamente.");
-                System.Diagnostics.Process.Start(saveDialog.FileName);
-            }
-            */
+            cbxNmbreHotel.SelectedIndex = -1;
+            textConductor.Clear();
+            textPlacas.Clear();
+            textMarca.Clear();
+            textModelo.Clear();
+            textColor.Clear();
+            textMotivo.Clear();
+            txtFirmaSeguridad.Clear();
         }
 
         private bool ValidarCampos()

@@ -110,7 +110,9 @@ namespace PASE
             {
                 MessageBox.Show("Error al guardar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            Regreso.Value = DateTime.Today;
+            textNombre.Clear();
+            numeroPaquetes.Value = 0;
             textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
         }
 
