@@ -14,7 +14,6 @@ namespace PASE
         public frmArticulos()
         {
             InitializeComponent();
-
             textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
         }
 
@@ -111,10 +110,21 @@ namespace PASE
                 MessageBox.Show("Error al guardar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Regreso.Value = DateTime.Today;
-            textNombre.Clear();
+            limpiarFormulario();
             numeroPaquetes.Value = 0;
             textFolio.Text = FoliogeneradorArticulos.GenerarFolioUnico();
         }
+        private void limpiarFormulario()
+        {
+            cbxNmbreHotel.SelectedIndex = -1;
+            textNombre.Clear();
+            textDepartamento.Clear();
+            textNombreSeguridad.Clear();
+            
+            
+
+        }
+        
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
@@ -228,6 +238,11 @@ namespace PASE
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupTipo_Enter(object sender, EventArgs e)
         {
 
         }
