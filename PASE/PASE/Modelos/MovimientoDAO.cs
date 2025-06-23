@@ -164,6 +164,7 @@ namespace PASE.Modelos
                                 NombreSolicitante = reader["nombre_solicitante"].ToString(),
                                 TipoPersona = reader["tipo_persona"].ToString(),
                                 nombre_seguridad = reader["nombre_seguridad"].ToString(),
+                                NombreHotel = reader["nombre_hotel"].ToString(),
                                 RutaPDF = reader["ruta_pdf"]?.ToString()
                             });
                         }
