@@ -103,7 +103,7 @@ namespace PASE
                 PDFGenerator pdfGen = new PDFGenerator();
                 pdfGen.GenerarPDF(movimiento, archivoPDF);
 
-                MessageBox.Show("Datos guardados y PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Datos guardados, PDF generado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 System.Diagnostics.Process.Start(archivoPDF);
             }
             catch (Exception ex)
