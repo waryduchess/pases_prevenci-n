@@ -115,7 +115,7 @@
             this.textFolio.Enabled = false;
             this.textFolio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textFolio.Location = new System.Drawing.Point(747, 20);
-            this.textFolio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textFolio.Margin = new System.Windows.Forms.Padding(2);
             this.textFolio.Multiline = true;
             this.textFolio.Name = "textFolio";
             this.textFolio.Size = new System.Drawing.Size(144, 27);
@@ -130,9 +130,9 @@
             this.GroupEntradaSalida.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupEntradaSalida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GroupEntradaSalida.Location = new System.Drawing.Point(35, 106);
-            this.GroupEntradaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupEntradaSalida.Margin = new System.Windows.Forms.Padding(2);
             this.GroupEntradaSalida.Name = "GroupEntradaSalida";
-            this.GroupEntradaSalida.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupEntradaSalida.Padding = new System.Windows.Forms.Padding(2);
             this.GroupEntradaSalida.Size = new System.Drawing.Size(387, 46);
             this.GroupEntradaSalida.TabIndex = 5;
             this.GroupEntradaSalida.TabStop = false;
@@ -141,7 +141,7 @@
             // 
             this.SalidaconDevolucion.AutoSize = true;
             this.SalidaconDevolucion.Location = new System.Drawing.Point(229, 17);
-            this.SalidaconDevolucion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SalidaconDevolucion.Margin = new System.Windows.Forms.Padding(2);
             this.SalidaconDevolucion.Name = "SalidaconDevolucion";
             this.SalidaconDevolucion.Size = new System.Drawing.Size(148, 17);
             this.SalidaconDevolucion.TabIndex = 2;
@@ -153,7 +153,7 @@
             // 
             this.Entrada.AutoSize = true;
             this.Entrada.Location = new System.Drawing.Point(140, 17);
-            this.Entrada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Entrada.Margin = new System.Windows.Forms.Padding(2);
             this.Entrada.Name = "Entrada";
             this.Entrada.Size = new System.Drawing.Size(69, 17);
             this.Entrada.TabIndex = 1;
@@ -165,7 +165,7 @@
             // 
             this.SalidaDefinitiva.AutoSize = true;
             this.SalidaDefinitiva.Location = new System.Drawing.Point(15, 17);
-            this.SalidaDefinitiva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SalidaDefinitiva.Margin = new System.Windows.Forms.Padding(2);
             this.SalidaDefinitiva.Name = "SalidaDefinitiva";
             this.SalidaDefinitiva.Size = new System.Drawing.Size(113, 17);
             this.SalidaDefinitiva.TabIndex = 0;
@@ -201,7 +201,7 @@
             // 
             this.Salida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Salida.Location = new System.Drawing.Point(170, 169);
-            this.Salida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Salida.Margin = new System.Windows.Forms.Padding(2);
             this.Salida.Name = "Salida";
             this.Salida.Size = new System.Drawing.Size(218, 27);
             this.Salida.TabIndex = 7;
@@ -210,7 +210,7 @@
             // 
             this.Regreso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regreso.Location = new System.Drawing.Point(575, 169);
-            this.Regreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Regreso.Margin = new System.Windows.Forms.Padding(2);
             this.Regreso.Name = "Regreso";
             this.Regreso.Size = new System.Drawing.Size(216, 27);
             this.Regreso.TabIndex = 9;
@@ -219,7 +219,7 @@
             // 
             this.textNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNombre.Location = new System.Drawing.Point(106, 221);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(2);
             this.textNombre.Multiline = true;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(242, 27);
@@ -253,7 +253,7 @@
             // 
             this.numeroPaquetes.Enabled = false;
             this.numeroPaquetes.Location = new System.Drawing.Point(498, 231);
-            this.numeroPaquetes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numeroPaquetes.Margin = new System.Windows.Forms.Padding(2);
             this.numeroPaquetes.Name = "numeroPaquetes";
             this.numeroPaquetes.Size = new System.Drawing.Size(80, 20);
             this.numeroPaquetes.TabIndex = 13;
@@ -262,7 +262,7 @@
             // 
             this.textArticulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textArticulo.Location = new System.Drawing.Point(100, 272);
-            this.textArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.textArticulo.Multiline = true;
             this.textArticulo.Name = "textArticulo";
             this.textArticulo.Size = new System.Drawing.Size(192, 27);
@@ -285,7 +285,7 @@
             // 
             this.textDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDescripcion.Location = new System.Drawing.Point(410, 273);
-            this.textDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
             this.textDescripcion.Size = new System.Drawing.Size(192, 27);
@@ -309,7 +309,7 @@
             this.buttonAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregar.Location = new System.Drawing.Point(629, 252);
-            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(149, 48);
             this.buttonAgregar.TabIndex = 18;
@@ -325,11 +325,11 @@
             this.GroupTipo.Controls.Add(this.Contratista);
             this.GroupTipo.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupTipo.Location = new System.Drawing.Point(35, 327);
-            this.GroupTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupTipo.Margin = new System.Windows.Forms.Padding(2);
             this.GroupTipo.Name = "GroupTipo";
-            this.GroupTipo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GroupTipo.Padding = new System.Windows.Forms.Padding(2);
             this.GroupTipo.Size = new System.Drawing.Size(485, 34);
-            this.GroupTipo.TabIndex = 21;
+            this.GroupTipo.TabIndex = 20;
             this.GroupTipo.TabStop = false;
             this.GroupTipo.Enter += new System.EventHandler(this.GroupTipo_Enter);
             // 
@@ -337,7 +337,7 @@
             // 
             this.Huespedes.AutoSize = true;
             this.Huespedes.Location = new System.Drawing.Point(373, 8);
-            this.Huespedes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Huespedes.Margin = new System.Windows.Forms.Padding(2);
             this.Huespedes.Name = "Huespedes";
             this.Huespedes.Size = new System.Drawing.Size(103, 17);
             this.Huespedes.TabIndex = 22;
@@ -350,7 +350,7 @@
             // 
             this.Proveedores.AutoSize = true;
             this.Proveedores.Location = new System.Drawing.Point(243, 8);
-            this.Proveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Proveedores.Margin = new System.Windows.Forms.Padding(2);
             this.Proveedores.Name = "Proveedores";
             this.Proveedores.Size = new System.Drawing.Size(111, 17);
             this.Proveedores.TabIndex = 2;
@@ -362,7 +362,7 @@
             // 
             this.Empleado.AutoSize = true;
             this.Empleado.Location = new System.Drawing.Point(125, 8);
-            this.Empleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Empleado.Margin = new System.Windows.Forms.Padding(2);
             this.Empleado.Name = "Empleado";
             this.Empleado.Size = new System.Drawing.Size(99, 17);
             this.Empleado.TabIndex = 1;
@@ -374,7 +374,7 @@
             // 
             this.Contratista.AutoSize = true;
             this.Contratista.Location = new System.Drawing.Point(10, 8);
-            this.Contratista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Contratista.Margin = new System.Windows.Forms.Padding(2);
             this.Contratista.Name = "Contratista";
             this.Contratista.Size = new System.Drawing.Size(103, 17);
             this.Contratista.TabIndex = 0;
@@ -386,11 +386,11 @@
             // 
             this.textDepartamento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDepartamento.Location = new System.Drawing.Point(156, 378);
-            this.textDepartamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textDepartamento.Margin = new System.Windows.Forms.Padding(2);
             this.textDepartamento.Multiline = true;
             this.textDepartamento.Name = "textDepartamento";
             this.textDepartamento.Size = new System.Drawing.Size(266, 27);
-            this.textDepartamento.TabIndex = 23;
+            this.textDepartamento.TabIndex = 22;
             this.textDepartamento.TextChanged += new System.EventHandler(this.textDepartamento_TextChanged);
             // 
             // label8
@@ -402,18 +402,18 @@
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 20);
-            this.label8.TabIndex = 22;
+            this.label8.TabIndex = 21;
             this.label8.Text = "Departamento:";
             // 
             // textNombreSeguridad
             // 
             this.textNombreSeguridad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNombreSeguridad.Location = new System.Drawing.Point(100, 477);
-            this.textNombreSeguridad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textNombreSeguridad.Margin = new System.Windows.Forms.Padding(2);
             this.textNombreSeguridad.Multiline = true;
             this.textNombreSeguridad.Name = "textNombreSeguridad";
             this.textNombreSeguridad.Size = new System.Drawing.Size(279, 27);
-            this.textNombreSeguridad.TabIndex = 25;
+            this.textNombreSeguridad.TabIndex = 24;
             this.textNombreSeguridad.TextChanged += new System.EventHandler(this.textNombreSeguridad_TextChanged);
             // 
             // label10
@@ -425,7 +425,7 @@
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(218, 20);
-            this.label10.TabIndex = 24;
+            this.label10.TabIndex = 23;
             this.label10.Text = "Nombre y Firma Seguridad:";
             // 
             // MostrarArticulos
@@ -442,12 +442,12 @@
             this.colNombreArticulo,
             this.colDescripcionArticulo});
             this.MostrarArticulos.Location = new System.Drawing.Point(35, 307);
-            this.MostrarArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MostrarArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.MostrarArticulos.Name = "MostrarArticulos";
             this.MostrarArticulos.RowHeadersWidth = 62;
             this.MostrarArticulos.RowTemplate.Height = 28;
             this.MostrarArticulos.Size = new System.Drawing.Size(889, 230);
-            this.MostrarArticulos.TabIndex = 20;
+            this.MostrarArticulos.TabIndex = 27;
             // 
             // colNombreArticulo
             // 
@@ -470,10 +470,10 @@
             this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.Location = new System.Drawing.Point(547, 477);
-            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(149, 48);
-            this.buttonGuardar.TabIndex = 26;
+            this.buttonGuardar.TabIndex = 25;
             this.buttonGuardar.Text = "Guardar Datos";
             this.buttonGuardar.UseVisualStyleBackColor = false;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
@@ -485,10 +485,10 @@
             this.Regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Regresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.Location = new System.Drawing.Point(747, 477);
-            this.Regresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Regresar.Margin = new System.Windows.Forms.Padding(2);
             this.Regresar.Name = "Regresar";
             this.Regresar.Size = new System.Drawing.Size(134, 48);
-            this.Regresar.TabIndex = 27;
+            this.Regresar.TabIndex = 26;
             this.Regresar.Text = "Regresar";
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
@@ -513,7 +513,7 @@
             this.btnContinuar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnContinuar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar.Location = new System.Drawing.Point(790, 252);
-            this.btnContinuar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContinuar.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(149, 48);
             this.btnContinuar.TabIndex = 19;
@@ -569,7 +569,7 @@
             this.Controls.Add(this.MostrarArticulos);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmArticulos";

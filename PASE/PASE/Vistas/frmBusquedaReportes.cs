@@ -160,8 +160,8 @@ namespace PASE.Vistas
             "Pase de Carro"});
             this.cbxBuscar.Location = new System.Drawing.Point(287, 176);
             this.cbxBuscar.Name = "cbxBuscar";
-            this.cbxBuscar.Size = new System.Drawing.Size(200, 38);
-            this.cbxBuscar.TabIndex = 0;
+            this.cbxBuscar.Size = new System.Drawing.Size(200, 28);
+            this.cbxBuscar.TabIndex = 1;
             // 
             // label1
             // 
@@ -169,8 +169,8 @@ namespace PASE.Vistas
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(87, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 30);
-            this.label1.TabIndex = 1;
+            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de pase:";
             // 
             // label2
@@ -179,7 +179,7 @@ namespace PASE.Vistas
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(87, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 30);
+            this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Buscar por: ";
             // 
@@ -189,8 +189,8 @@ namespace PASE.Vistas
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(87, 278);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 30);
-            this.label3.TabIndex = 3;
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 5;
             this.label3.Text = "Nombre: ";
             // 
             // label4
@@ -199,7 +199,7 @@ namespace PASE.Vistas
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(87, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 30);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Folio: ";
             // 
@@ -208,7 +208,7 @@ namespace PASE.Vistas
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(287, 269);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(195, 37);
+            this.txtNombre.Size = new System.Drawing.Size(195, 27);
             this.txtNombre.TabIndex = 5;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -217,7 +217,7 @@ namespace PASE.Vistas
             this.txtFolio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFolio.Location = new System.Drawing.Point(287, 269);
             this.txtFolio.Name = "txtFolio";
-            this.txtFolio.Size = new System.Drawing.Size(195, 37);
+            this.txtFolio.Size = new System.Drawing.Size(195, 27);
             this.txtFolio.TabIndex = 6;
             this.txtFolio.TextChanged += new System.EventHandler(this.txtFolio_TextChanged);
             // 
@@ -230,7 +230,7 @@ namespace PASE.Vistas
             this.dgvResultados.RowHeadersWidth = 62;
             this.dgvResultados.RowTemplate.Height = 28;
             this.dgvResultados.Size = new System.Drawing.Size(960, 284);
-            this.dgvResultados.TabIndex = 7;
+            this.dgvResultados.TabIndex = 9;
             // 
             // btnReimprimir
             // 
@@ -238,7 +238,7 @@ namespace PASE.Vistas
             this.btnReimprimir.Location = new System.Drawing.Point(813, 176);
             this.btnReimprimir.Name = "btnReimprimir";
             this.btnReimprimir.Size = new System.Drawing.Size(134, 48);
-            this.btnReimprimir.TabIndex = 9;
+            this.btnReimprimir.TabIndex = 7;
             this.btnReimprimir.Text = "Reimprimir";
             this.btnReimprimir.UseVisualStyleBackColor = true;
             this.btnReimprimir.Click += new System.EventHandler(this.btnReimprimir_Click_1);
@@ -249,7 +249,7 @@ namespace PASE.Vistas
             this.btnRegresar.Location = new System.Drawing.Point(813, 230);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(134, 48);
-            this.btnRegresar.TabIndex = 10;
+            this.btnRegresar.TabIndex = 8;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
@@ -275,8 +275,8 @@ namespace PASE.Vistas
             "Folio"});
             this.comboBox1.Location = new System.Drawing.Point(287, 222);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 38);
-            this.comboBox1.TabIndex = 12;
+            this.comboBox1.Size = new System.Drawing.Size(200, 28);
+            this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmBusquedaReportes
