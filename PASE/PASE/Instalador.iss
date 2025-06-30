@@ -2,7 +2,7 @@
 [Setup]
 AppName=Control de Pases
 AppVersion=1.0
-DefaultDirName={pf}\ControlDePases
+DefaultDirName=C:\ControlDePases
 DefaultGroupName=ControlDePases
 OutputBaseFilename=Instalador_ControlDePases
 Compression=lzma
@@ -10,6 +10,7 @@ SolidCompression=yes
 LicenseFile=Licencia.txt
 ArchitecturesInstallIn64BitMode=x64
 DisableProgramGroupPage=yes
+
 
 [Files]
 ; Ejecutable principal
