@@ -44,10 +44,10 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(0, 259);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel1.Location = new System.Drawing.Point(0, 319);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 139);
+            this.panel1.Size = new System.Drawing.Size(1129, 171);
             this.panel1.TabIndex = 0;
             // 
             // EntradaySalida
@@ -60,12 +60,12 @@
             this.EntradaySalida.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.EntradaySalida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EntradaySalida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.EntradaySalida.Location = new System.Drawing.Point(51, 372);
-            this.EntradaySalida.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.EntradaySalida.Location = new System.Drawing.Point(68, 458);
+            this.EntradaySalida.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.EntradaySalida.Name = "EntradaySalida";
-            this.EntradaySalida.Size = new System.Drawing.Size(223, 68);
+            this.EntradaySalida.Size = new System.Drawing.Size(297, 84);
             this.EntradaySalida.TabIndex = 1;
-            this.EntradaySalida.Text = "Pase de Articulos";
+            this.EntradaySalida.Text = "Pase de Artículos";
             this.EntradaySalida.UseVisualStyleBackColor = false;
             this.EntradaySalida.Click += new System.EventHandler(this.EntradaySalida_Click);
             // 
@@ -80,10 +80,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.button2.Location = new System.Drawing.Point(309, 372);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button2.Location = new System.Drawing.Point(412, 458);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(223, 68);
+            this.button2.Size = new System.Drawing.Size(297, 84);
             this.button2.TabIndex = 2;
             this.button2.Text = "Pase de Vehículo";
             this.button2.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.button1.Location = new System.Drawing.Point(568, 372);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button1.Location = new System.Drawing.Point(757, 458);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 68);
+            this.button1.Size = new System.Drawing.Size(297, 84);
             this.button1.TabIndex = 3;
             this.button1.Text = "Buscar Pase";
             this.button1.UseVisualStyleBackColor = false;
@@ -114,8 +114,9 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(847, 293);
+            this.pictureBox1.Size = new System.Drawing.Size(1129, 361);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -123,19 +124,19 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(847, 443);
+            this.ClientSize = new System.Drawing.Size(1129, 545);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.EntradaySalida);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
